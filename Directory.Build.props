@@ -1,0 +1,9 @@
+<Project>
+  <!-- Gemeinsame Einstellungen fuer alle Aufgaben (wie subprojects {} in build.gradle) -->
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Fbs.Lg2</RootNamespace>
+  </PropertyGroup>
+</Project>
