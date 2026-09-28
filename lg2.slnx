@@ -1,2 +1,6 @@
 <Solution>
+  <Folder Name="/AUFGABE20/">
+    <Project Path="AUFGABE20/Sparkonto.Tests/Sparkonto.Tests.csproj" />
+    <Project Path="AUFGABE20/Sparkonto/Sparkonto.csproj" />
+  </Folder>
 </Solution>
