@@ -4,7 +4,7 @@
     <Project Path="AUFGABE20/Sparkonto/Sparkonto.csproj" />
   </Folder>
   <Folder Name="/AUFGABE21/">
-    <Project Path="AUFGABE21/Aufgabe21.Tests/Aufgabe21.Tests.csproj" />
-    <Project Path="AUFGABE21/Aufgabe21/Aufgabe21.csproj" />
+    <Project Path="AUFGABE21/Scooter.Tests/Scooter.Tests.csproj" />
+    <Project Path="AUFGABE21/Scooter/Scooter.csproj" />
   </Folder>
 </Solution>

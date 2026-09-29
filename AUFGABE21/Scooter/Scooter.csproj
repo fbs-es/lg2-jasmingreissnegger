@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <Description>Aufgabe 21: CityGlide scooter rental – encapsulated state, validated rental flow, automatic dunning.</Description>
+  </PropertyGroup>
+
+</Project>
