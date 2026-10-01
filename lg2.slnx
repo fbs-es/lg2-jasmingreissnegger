@@ -7,4 +7,8 @@
     <Project Path="AUFGABE21/Scooter.Tests/Scooter.Tests.csproj" />
     <Project Path="AUFGABE21/Scooter/Scooter.csproj" />
   </Folder>
+  <Folder Name="/AUFGABE22/">
+    <Project Path="AUFGABE22/Product.Tests/Product.Tests.csproj" />
+    <Project Path="AUFGABE22/Product/Product.csproj" />
+  </Folder>
 </Solution>
