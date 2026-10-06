@@ -11,4 +11,12 @@
     <Project Path="AUFGABE22/Product.Tests/Product.Tests.csproj" />
     <Project Path="AUFGABE22/Product/Product.csproj" />
   </Folder>
+  <Folder Name="/AUFGABE23/">
+    <Project Path="AUFGABE23/Bestellung.Tests/Bestellung.Tests.csproj" />
+    <Project Path="AUFGABE23/Bestellung/Bestellung.csproj" />
+  </Folder>
+  <Folder Name="/AUFGABE24/">
+    <Project Path="AUFGABE24/Bibliothek.Tests/Bibliothek.Tests.csproj" />
+    <Project Path="AUFGABE24/Bibliothek/Bibliothek.csproj" />
+  </Folder>
 </Solution>

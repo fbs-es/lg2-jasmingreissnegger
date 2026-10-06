@@ -1,0 +1,133 @@
+TransferTo - Vorbedingungen, Invarianten, Nachbedingungen
+=========================================================
+
+Methode: transferAmount(target : Sparkonto, amount : decimal) : void
+
+
+Vorbedingungen (Preconditions)
+------------------------------
+Damit die Methode starten darf, muessen alle folgenden Bedingungen erfuellt sein:
+
+  P1  target != null
+  P2  target != this                  (keine Selbstueberweisung)
+  P3  amount > 0m
+  P4  this._balance >= amount          (ausreichende Deckung auf dem Quellkonto)
+
+Begruendung:
+  P1  Ohne Zielkonto kann nichts gutgeschrieben werden.
+  P2  Ein Selbst-Transfer waere eine zustandslose Operation
+      (Abbuchung == Gutschrift auf demselben Konto), die fachlich keinen
+      Sinn ergibt.
+  P3  Ein Betrag von 0 oder negativ verletzt die Invariante
+      (_balance >= 0) auf dem Quellkonto.
+  P4  Andernfalls wuerde das Quellkonto ins Minus gehen, was die
+      Invariante direkt verletzt.
+
+Wird eine dieser Vorbedingungen verletzt, wird die Methode mit einer
+passenden Exception abgebrochen, BEVOR irgendein Zustand veraendert wird.
+
+
+Invarianten (Class Invariants)
+------------------------------
+Invariante muessen fuer JEDE Sparkonto-Instanz zu JEDEM Zeitpunkt gelten
+(ausserhalb von Methoden-Aufrufen, d.h. nach jeder abgeschlossenen Operation):
+
+  I1  _balance >= 0m
+  I2  _accountHolder ist nicht null, leer oder nur Whitespace
+  I3  _accountNumber ist nicht null, leer oder nur Whitespace
+  I4  _iban ist nicht null, leer oder nur Whitespace
+  I5  _accountNumber und _iban sind eindeutig im System
+
+Fuer transferAmount sind insbesondere relevant: I1, I2 (Rest sind
+durch Konstruktor und UpdateName bereits abgesichert).
+
+
+Nachbedingungen (Postconditions)
+--------------------------------
+Wenn die Methode erfolgreich zurueckkehrt, muss garantiert gelten:
+
+  Q1  this._balance == this._balance_alt - amount
+  Q2  target._balance == target._balance_alt + amount
+  Q3  this._balance >= 0m                       (Invariante weiterhin erfuellt)
+  Q4  target._balance >= 0m                     (Invariante weiterhin erfuellt)
+  Q5  this._balance + target._balance ==
+       this._balance_alt + target._balance_alt
+       (Die Summe beider Kontostaende bleibt unveraendert - Geld wird
+       nur umverteilt, nicht erzeugt oder vernichtet.)
+
+Fehlschlag (eine Vorbedingung verletzt):
+  Q_fail1  this._balance == this._balance_alt    (Quellkonto unveraendert)
+  Q_fail2  target._balance == target._balance_alt (Zielkonto unveraendert)
+  -> Atomaritaet: entweder beide Aenderungen oder keine.
+
+
+Muss die Invariante noch geprueft werden, obwohl die Vorbedingungen
+eine Verletzung verhindern?
+--------------------------------------------------------------------
+ANTWORT: Ja, die Invariante MUSS nach der Methode weiterhin geprueft werden.
+
+Argumentation am Beispiel der Invariante "_balance >= 0":
+
+  Auch wenn die Vorbedingung P4 (this._balance >= amount) sicherstellt,
+  dass der Quellkontostand VOR der Abbuchung ausreicht, koennte ein
+  Programmierfehler in der Methode selbst dazu fuehren, dass die
+  Abbuchung falsch berechnet wird (z.B. _balance = _balance + amount
+  statt _balance = _balance - amount). Ohne die Pruefung am Ende der
+  Methode wuerde ein solcher Fehler unbemerkt bleiben.
+
+  Ein zweiter Grund: Invarianten werden in CheckInvariants() zentral
+  fuer ALLE oeffentlichen Mutationen (Deposit, Withdraw, UpdateName,
+  TransferTo) geprueft. Das ist konsistent und defensiv - jede
+  Mutation muss beweisen, dass das Ergebnis ein gueltiger Objekt-
+  zustand ist. Andernfalls verletzt man das Designprinzip der
+  Selbst-Verantwortung der Klasse (Kapselung, Information Hiding):
+  Die Klasse garantiert ihre Korrektheit, nicht der Aufrufer.
+
+  Drittens: Wenn spaetere Refactorings oder zusaetzliche Felder
+  hinzukommen, koennen sich neue Invarianten ergeben, die durch die
+  bisherigen Vorbedingungen nicht abgedeckt sind. CheckInvariants()
+  ist die zentrale Sicherheitsleine.
+
+
+Pseudocode (transferTo)
+-----------------------
+  def TransferTo(target : Sparkonto, amount : decimal) -> void:
+      // Vorbedingungen pruefen
+      if target is null:
+          throw new ArgumentNullException("target")
+      if ReferenceEquals(target, this):
+          throw new SelfTransferException(...)
+      if amount <= 0m:
+          throw new InvalidAmountException(...)
+      if this._balance < amount:
+          throw new InsufficientFundsException(amount, this._balance)
+
+      // Mutation - Reihenfolge so gewaehlt, dass ein Fehler bei der
+      // Gutschrift (was bei target nicht passieren sollte) den Quell-
+      // zustand bereits konsistent hinterlaesst. Im aktuellen Design
+      // koennen beide Operationen nicht fehlschlagen, daher ist die
+      // Reihenfolge fachlich irrelevant - nur die Atomaritaet zaehlt.
+      this._balance  = this._balance - amount
+      target._balance = target._balance + amount
+
+      // Invariante pruefen (fuer beide Konten)
+      this.CheckInvariants()
+      target.CheckInvariants()
+
+
+Tests (siehe SparkontoTests.cs - neue Testmethoden)
+---------------------------------------------------
+Happy Path:
+  - TransferTo_HappyPath_DebitsSourceAndCreditsTarget
+  - TransferTo_HappyPath_PreservesTotalBalance         (postcondition Q5)
+  - TransferTo_ExactBalance_Succeeds
+
+Fehlschlag Faelle:
+  - TransferTo_NullTarget_Throws
+  - TransferTo_SelfTransfer_Throws
+  - TransferTo_NonPositiveAmount_Throws
+  - TransferTo_InsufficientFunds_Throws
+  - TransferTo_FailedStart_LeavesBothBalancesUnchanged (Atomaritaet)
+
+Invariante:
+  - TransferTo_DoesNotViolateInvariants (NEG-Saldo nie erreicht)

@@ -1,5 +1,12 @@
 namespace Fbs.Lg2;
 
+public enum OrderStatus
+{
+    Offen,
+    Versendet,
+    Storniert
+}
+
 public abstract class DomainException : Exception
 {
     protected DomainException(string message) : base(message) { }
@@ -21,19 +28,24 @@ public sealed class InvalidPriceException : DomainException
     public InvalidPriceException(string message) : base(message) { }
 }
 
-public sealed class InvalidStarsException : DomainException
+public sealed class InvalidStockException : DomainException
 {
-    public InvalidStarsException(string message) : base(message) { }
+    public InvalidStockException(string message) : base(message) { }
 }
 
-public sealed class InvalidCommentException : DomainException
+public sealed class InvalidQuantityException : DomainException
 {
-    public InvalidCommentException(string message) : base(message) { }
+    public InvalidQuantityException(string message) : base(message) { }
 }
 
-public sealed class ReviewAlreadyRepliedException : DomainException
+public sealed class OrderNotCancellableException : DomainException
 {
-    public ReviewAlreadyRepliedException(string message) : base(message) { }
+    public OrderNotCancellableException(string message) : base(message) { }
+}
+
+public sealed class OrderNotModifiableException : DomainException
+{
+    public OrderNotModifiableException(string message) : base(message) { }
 }
 
 public sealed class InvariantViolationException : DomainException

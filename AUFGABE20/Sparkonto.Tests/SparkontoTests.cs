@@ -370,4 +370,112 @@ public class SparkontoTests
         typeof(SparkontoException).IsAssignableFrom(typeof(InsufficientFundsException)).ShouldBeTrue();
         typeof(SparkontoException).IsAssignableFrom(typeof(InvariantViolationException)).ShouldBeTrue();
     }
+
+    [Fact]
+    public void TransferTo_HappyPath_DebitsSourceAndCreditsTarget()
+    {
+        var source = new Sparkonto("Anna", 200m);
+        var target = new Sparkonto("Bob", 50m);
+
+        source.TransferTo(target, 75m);
+
+        source.Balance.ShouldBe(125m);
+        target.Balance.ShouldBe(125m);
+    }
+
+    [Fact]
+    public void TransferTo_HappyPath_PreservesTotalBalance()
+    {
+        var source = new Sparkonto("Anna", 200m);
+        var target = new Sparkonto("Bob", 50m);
+        decimal totalBefore = source.Balance + target.Balance;
+
+        source.TransferTo(target, 75m);
+
+        decimal totalAfter = source.Balance + target.Balance;
+        totalAfter.ShouldBe(totalBefore);
+    }
+
+    [Fact]
+    public void TransferTo_ExactBalance_Succeeds()
+    {
+        var source = new Sparkonto("Anna", 100m);
+        var target = new Sparkonto("Bob", 0m);
+
+        source.TransferTo(target, 100m);
+
+        source.Balance.ShouldBe(0m);
+        target.Balance.ShouldBe(100m);
+    }
+
+    [Fact]
+    public void TransferTo_NullTarget_Throws()
+    {
+        var source = new Sparkonto("Anna", 100m);
+
+        Should.Throw<ArgumentNullException>(() => source.TransferTo(null!, 10m));
+        source.Balance.ShouldBe(100m);
+    }
+
+    [Fact]
+    public void TransferTo_SelfTransfer_Throws()
+    {
+        var source = new Sparkonto("Anna", 100m);
+
+        Should.Throw<SelfTransferException>(() => source.TransferTo(source, 10m));
+        source.Balance.ShouldBe(100m);
+    }
+
+    [Theory]
+    [InlineData(0)]
+    [InlineData(-1)]
+    [InlineData(-100)]
+    public void TransferTo_NonPositiveAmount_Throws(decimal amount)
+    {
+        var source = new Sparkonto("Anna", 100m);
+        var target = new Sparkonto("Bob", 50m);
+
+        Should.Throw<InvalidAmountException>(() => source.TransferTo(target, amount));
+        source.Balance.ShouldBe(100m);
+        target.Balance.ShouldBe(50m);
+    }
+
+    [Fact]
+    public void TransferTo_InsufficientFunds_Throws()
+    {
+        var source = new Sparkonto("Anna", 50m);
+        var target = new Sparkonto("Bob", 100m);
+
+        Should.Throw<InsufficientFundsException>(() => source.TransferTo(target, 100m));
+        source.Balance.ShouldBe(50m);
+        target.Balance.ShouldBe(100m);
+    }
+
+    [Fact]
+    public void TransferTo_FailedStart_LeavesBothBalancesUnchanged()
+    {
+        var source = new Sparkonto("Anna", 50m);
+        var target = new Sparkonto("Bob", 100m);
+
+        Should.Throw<InsufficientFundsException>(() => source.TransferTo(target, 200m));
+        source.Balance.ShouldBe(50m);
+        target.Balance.ShouldBe(100m);
+    }
+
+    [Fact]
+    public void TransferTo_DoesNotViolateInvariants_AfterMultipleTransfers()
+    {
+        var a = new Sparkonto("Anna", 100m);
+        var b = new Sparkonto("Bob", 100m);
+        var c = new Sparkonto("Clara", 100m);
+
+        a.TransferTo(b, 30m);
+        b.TransferTo(c, 50m);
+        c.TransferTo(a, 20m);
+
+        (a.Balance >= 0m).ShouldBeTrue();
+        (b.Balance >= 0m).ShouldBeTrue();
+        (c.Balance >= 0m).ShouldBeTrue();
+        (a.Balance + b.Balance + c.Balance).ShouldBe(300m);
+    }
 }

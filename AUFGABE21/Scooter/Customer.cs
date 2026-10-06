@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace Fbs.Lg2;
@@ -18,7 +19,9 @@ public sealed class Customer
     private bool _isBlocked;
     private bool _hasOpenDunning;
     private Scooter? _currentRental;
+    private DateTime? _currentRentalStartTime;
     private readonly List<string> _sentDunningEmails = new();
+    private readonly List<RentalHistoryEntry> _rentalHistory = new();
 
     public int CustomerId => _id;
     public string Name => _name;
@@ -28,16 +31,23 @@ public sealed class Customer
     public bool HasOpenDunning => _hasOpenDunning;
     public Scooter? CurrentRental => _currentRental;
     public IReadOnlyList<string> SentDunningEmails => _sentDunningEmails;
+    public IReadOnlyList<RentalHistoryEntry> RentalHistory => _rentalHistory;
 
     public Customer(string name, string email, decimal initialBalance)
     {
         if (string.IsNullOrWhiteSpace(name))
+        {
             throw new InvalidNameException("Customer name must not be null, empty, or whitespace.");
+        }
         if (string.IsNullOrWhiteSpace(email) || !email.Contains('@'))
+        {
             throw new InvalidEmailException($"Customer email ('{email}') is not a valid address.");
+        }
         if (initialBalance < MinInitialBalance)
+        {
             throw new InvalidBalanceException(
                 $"Initial balance ({initialBalance:C}) must be at least {MinInitialBalance:C}.");
+        }
 
         _id = _nextId++;
         _name = name.Trim();
@@ -49,48 +59,81 @@ public sealed class Customer
         CheckInvariants();
     }
 
-    public void StartRental(Scooter scooter)
+    public void StartRental(Scooter scooter, DateTime startTime)
     {
         ArgumentNullException.ThrowIfNull(scooter);
 
         if (_currentRental is not null)
+        {
             throw new CustomerAlreadyRentingException(
                 $"Customer {_id} already has scooter {_currentRental.ScooterId} rented.");
+        }
         if (!scooter.IsLocked)
+        {
             throw new ScooterNotAvailableException(
                 $"Scooter {scooter.ScooterId} is not available (already unlocked).");
+        }
         if (scooter.BatteryLevel <= MinBatteryPercent)
+        {
             throw new InsufficientBatteryException(
                 $"Scooter {scooter.ScooterId} battery ({scooter.BatteryLevel}%) must be above {MinBatteryPercent}%.");
+        }
         if (_isBlocked)
+        {
             throw new CustomerBlockedException(
                 $"Customer {_id} is blocked and cannot start a new rental.");
+        }
         if (_balance < MinStartBalance)
+        {
             throw new InsufficientBalanceException(
                 $"Customer {_id} balance ({_balance:C}) must be at least {MinStartBalance:C} to start a rental.");
+        }
 
         scooter.Unlock();
         _currentRental = scooter;
+        _currentRentalStartTime = startTime;
 
         CheckInvariants();
     }
 
-    public void EndRental(int minutes)
+    public void StartRental(Scooter scooter)
     {
-        if (minutes <= 0)
-            throw new InvalidRentalDurationException(
-                $"Rental duration must be greater than 0 (received: {minutes}).");
-        if (_currentRental is null)
+        StartRental(scooter, DateTime.UtcNow);
+    }
+
+    public void EndRental(DateTime endTime)
+    {
+        if (_currentRental is null || _currentRentalStartTime is null)
+        {
             throw new NoActiveRentalException(
                 $"Customer {_id} has no active rental to end.");
+        }
+        if (endTime < _currentRentalStartTime)
+        {
+            throw new InvalidRentalDurationException(
+                $"End time ({endTime:O}) must not be before start time ({_currentRentalStartTime:O}).");
+        }
 
         Scooter scooter = _currentRental;
+        DateTime startTime = _currentRentalStartTime.Value;
+        TimeSpan duration = endTime - startTime;
+        int minutes = (int)Math.Ceiling(duration.TotalMinutes);
+        if (minutes <= 0)
+        {
+            minutes = 1;
+        }
         decimal cost = CostPerMinute * minutes;
 
         _balance -= cost;
         scooter.DrainBattery(minutes);
         scooter.Lock();
+
+        var entry = new RentalHistoryEntry(this, scooter, startTime, endTime, cost);
+        _rentalHistory.Add(entry);
+        scooter.AttachRentalEntry(entry);
+
         _currentRental = null;
+        _currentRentalStartTime = null;
 
         if (_balance < 0m)
         {
@@ -106,8 +149,10 @@ public sealed class Customer
     public void TopUp(decimal amount)
     {
         if (amount <= 0m)
+        {
             throw new InvalidBalanceException(
                 $"Top-up amount must be greater than 0 (received: {amount}).");
+        }
 
         _balance += amount;
 
@@ -123,13 +168,19 @@ public sealed class Customer
     private void CheckInvariants()
     {
         if (_id <= 0)
+        {
             throw new CustomerInvariantViolationException(
                 $"Invariant violated: customer id ({_id}) must be positive.");
+        }
         if (string.IsNullOrWhiteSpace(_name))
+        {
             throw new CustomerInvariantViolationException(
                 "Invariant violated: customer name must not be empty.");
+        }
         if (string.IsNullOrWhiteSpace(_email))
+        {
             throw new CustomerInvariantViolationException(
                 "Invariant violated: customer email must not be empty.");
+        }
     }
 }

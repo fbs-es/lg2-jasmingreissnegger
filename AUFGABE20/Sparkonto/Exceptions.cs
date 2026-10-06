@@ -33,3 +33,8 @@ public sealed class InvariantViolationException : SparkontoException
 {
     public InvariantViolationException(string message) : base(message) { }
 }
+
+public sealed class SelfTransferException : SparkontoException
+{
+    public SelfTransferException(string message) : base(message) { }
+}

@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using Fbs.Lg2;
 using Shouldly;
@@ -11,6 +12,8 @@ public class CustomerTests
 
     private static Scooter NewScooter() => new();
 
+    private static DateTime Now => new DateTime(2026, 1, 15, 10, 0, 0, DateTimeKind.Utc);
+
     [Fact]
     public void Ctor_ValidInputs_CreatesCustomer()
     {
@@ -23,6 +26,7 @@ public class CustomerTests
         c.HasOpenDunning.ShouldBeFalse();
         c.CurrentRental.ShouldBeNull();
         c.SentDunningEmails.ShouldBeEmpty();
+        c.RentalHistory.ShouldBeEmpty();
         c.CustomerId.ShouldBeGreaterThan(0);
     }
 
@@ -85,7 +89,7 @@ public class CustomerTests
         var c = NewCustomer();
         var s = NewScooter();
 
-        c.StartRental(s);
+        c.StartRental(s, Now);
 
         c.CurrentRental.ShouldBeSameAs(s);
         s.IsLocked.ShouldBeFalse();
@@ -97,9 +101,9 @@ public class CustomerTests
         var c = NewCustomer();
         var s1 = NewScooter();
         var s2 = NewScooter();
-        c.StartRental(s1);
+        c.StartRental(s1, Now);
 
-        Should.Throw<CustomerAlreadyRentingException>(() => c.StartRental(s2));
+        Should.Throw<CustomerAlreadyRentingException>(() => c.StartRental(s2, Now));
     }
 
     [Fact]
@@ -108,10 +112,10 @@ public class CustomerTests
         var c = NewCustomer();
         var s = NewScooter();
         var c2 = NewCustomer();
-        c2.StartRental(s);
+        c2.StartRental(s, Now);
         s.IsLocked.ShouldBeFalse();
 
-        Should.Throw<ScooterNotAvailableException>(() => c.StartRental(s));
+        Should.Throw<ScooterNotAvailableException>(() => c.StartRental(s, Now));
     }
 
     [Theory]
@@ -123,10 +127,10 @@ public class CustomerTests
         var c = NewCustomer();
         var s = NewScooter();
         var c2 = NewCustomer(100m);
-        c2.StartRental(s);
-        c2.EndRental(100 - battery);
+        c2.StartRental(s, Now);
+        c2.EndRental(Now.AddMinutes(100 - battery));
 
-        Should.Throw<InsufficientBatteryException>(() => c.StartRental(s));
+        Should.Throw<InsufficientBatteryException>(() => c.StartRental(s, Now));
     }
 
     [Fact]
@@ -134,12 +138,12 @@ public class CustomerTests
     {
         var c = new Customer("Bob", "bob@x.com", 10.00m);
         var s = NewScooter();
-        c.StartRental(s);
-        c.EndRental(46);
+        c.StartRental(s, Now);
+        c.EndRental(Now.AddMinutes(46));
 
         c.Balance.ShouldBe(0.80m);
         var s2 = NewScooter();
-        Should.Throw<InsufficientBalanceException>(() => c.StartRental(s2));
+        Should.Throw<InsufficientBalanceException>(() => c.StartRental(s2, Now));
     }
 
     [Fact]
@@ -147,12 +151,12 @@ public class CustomerTests
     {
         var c = new Customer("Bob", "bob@x.com", 10.00m);
         var s = NewScooter();
-        c.StartRental(s);
-        c.EndRental(60);
+        c.StartRental(s, Now);
+        c.EndRental(Now.AddMinutes(60));
 
         c.IsBlocked.ShouldBeTrue();
         var s2 = NewScooter();
-        Should.Throw<CustomerBlockedException>(() => c.StartRental(s2));
+        Should.Throw<CustomerBlockedException>(() => c.StartRental(s2, Now));
     }
 
     [Fact]
@@ -160,11 +164,11 @@ public class CustomerTests
     {
         var c = NewCustomer(10m);
         var s = NewScooter();
-        c.StartRental(s);
-        c.EndRental(46);
+        c.StartRental(s, Now);
+        c.EndRental(Now.AddMinutes(46));
 
         var s2 = NewScooter();
-        Should.Throw<InsufficientBalanceException>(() => c.StartRental(s2));
+        Should.Throw<InsufficientBalanceException>(() => c.StartRental(s2, Now));
 
         c.CurrentRental.ShouldBeNull();
         s2.IsLocked.ShouldBeTrue();
@@ -176,9 +180,9 @@ public class CustomerTests
     {
         var c = NewCustomer(20m);
         var s = NewScooter();
-        c.StartRental(s);
+        c.StartRental(s, Now);
 
-        c.EndRental(30);
+        c.EndRental(Now.AddMinutes(30));
 
         c.Balance.ShouldBe(20m - 6m);
         s.BatteryLevel.ShouldBe(70);
@@ -186,21 +190,11 @@ public class CustomerTests
         c.CurrentRental.ShouldBeNull();
     }
 
-    [Theory]
-    [InlineData(0)]
-    [InlineData(-1)]
-    [InlineData(-100)]
-    public void EndRental_NonPositiveDuration_Throws(int minutes)
-    {
-        var c = NewCustomer();
-        Should.Throw<InvalidRentalDurationException>(() => c.EndRental(minutes));
-    }
-
     [Fact]
     public void EndRental_NoActiveRental_Throws()
     {
         var c = NewCustomer();
-        Should.Throw<NoActiveRentalException>(() => c.EndRental(10));
+        Should.Throw<NoActiveRentalException>(() => c.EndRental(Now.AddMinutes(10)));
     }
 
     [Fact]
@@ -208,11 +202,11 @@ public class CustomerTests
     {
         var c = NewCustomer();
         var s = NewScooter();
-        c.StartRental(s);
+        c.StartRental(s, Now);
         decimal balanceBefore = c.Balance;
         int batteryBefore = s.BatteryLevel;
 
-        Should.Throw<InvalidRentalDurationException>(() => c.EndRental(0));
+        Should.Throw<InvalidRentalDurationException>(() => c.EndRental(Now.AddSeconds(-1)));
 
         c.Balance.ShouldBe(balanceBefore);
         s.BatteryLevel.ShouldBe(batteryBefore);
@@ -225,9 +219,9 @@ public class CustomerTests
     {
         var c = new Customer("Bob", "bob@x.com", 10.00m);
         var s = NewScooter();
-        c.StartRental(s);
+        c.StartRental(s, Now);
 
-        c.EndRental(60);
+        c.EndRental(Now.AddMinutes(60));
 
         c.Balance.ShouldBe(-2.00m);
         c.IsBlocked.ShouldBeTrue();
@@ -241,11 +235,11 @@ public class CustomerTests
     {
         var c = new Customer("Bob", "bob@x.com", 10.00m);
         var s = NewScooter();
-        c.StartRental(s);
-        c.EndRental(60);
+        c.StartRental(s, Now);
+        c.EndRental(Now.AddMinutes(60));
 
         var s2 = NewScooter();
-        Should.Throw<CustomerBlockedException>(() => c.StartRental(s2));
+        Should.Throw<CustomerBlockedException>(() => c.StartRental(s2, Now));
     }
 
     [Fact]
@@ -271,8 +265,8 @@ public class CustomerTests
     {
         var c = new Customer("Bob", "bob@x.com", 10.00m);
         var s = NewScooter();
-        c.StartRental(s);
-        c.EndRental(60);
+        c.StartRental(s, Now);
+        c.EndRental(Now.AddMinutes(60));
         c.IsBlocked.ShouldBeTrue();
         c.HasOpenDunning.ShouldBeTrue();
 
@@ -288,8 +282,8 @@ public class CustomerTests
     {
         var c = new Customer("Bob", "bob@x.com", 10.00m);
         var s = NewScooter();
-        c.StartRental(s);
-        c.EndRental(60);
+        c.StartRental(s, Now);
+        c.EndRental(Now.AddMinutes(60));
 
         c.TopUp(1m);
 
@@ -303,13 +297,13 @@ public class CustomerTests
     {
         var c = new Customer("Bob", "bob@x.com", 10.00m);
         var s1 = NewScooter();
-        c.StartRental(s1);
-        c.EndRental(60);
+        c.StartRental(s1, Now);
+        c.EndRental(Now.AddMinutes(60));
 
         c.TopUp(5m);
 
         var s2 = NewScooter();
-        c.StartRental(s2);
+        c.StartRental(s2, Now);
 
         c.CurrentRental.ShouldBeSameAs(s2);
         s2.IsLocked.ShouldBeFalse();
@@ -320,8 +314,8 @@ public class CustomerTests
     {
         var c = new Customer("Bob", "bob@x.com", 10.00m);
         var s = NewScooter();
-        c.StartRental(s);
-        c.EndRental(60);
+        c.StartRental(s, Now);
+        c.EndRental(Now.AddMinutes(60));
 
         for (var i = 0; i < 10; i++)
         {
@@ -333,12 +327,14 @@ public class CustomerTests
             _ = c.HasOpenDunning;
             _ = c.CurrentRental;
             _ = c.SentDunningEmails;
+            _ = c.RentalHistory;
         }
 
         c.Balance.ShouldBe(-2m);
         c.IsBlocked.ShouldBeTrue();
         c.HasOpenDunning.ShouldBeTrue();
         c.SentDunningEmails.Count.ShouldBe(1);
+        c.RentalHistory.Count.ShouldBe(1);
     }
 
     [Fact]
@@ -346,11 +342,107 @@ public class CustomerTests
     {
         var c = NewCustomer(1000m);
         var s = NewScooter();
-        c.StartRental(s);
+        c.StartRental(s, Now);
 
-        c.EndRental(500);
+        c.EndRental(Now.AddMinutes(500));
 
         s.BatteryLevel.ShouldBe(0);
         s.IsLocked.ShouldBeTrue();
+    }
+
+    [Fact]
+    public void EndRental_RecordsHistoryEntry_WithRealTimestamps()
+    {
+        var c = NewCustomer(100m);
+        var s = NewScooter();
+        DateTime start = Now;
+        DateTime end = start.AddMinutes(45);
+
+        c.StartRental(s, start);
+        c.EndRental(end);
+
+        c.RentalHistory.Count.ShouldBe(1);
+        var entry = c.RentalHistory[0];
+        entry.StartTime.ShouldBe(start);
+        entry.EndTime.ShouldBe(end);
+        entry.Duration.ShouldBe(TimeSpan.FromMinutes(45));
+        entry.Cost.ShouldBe(9m);
+        entry.Customer.ShouldBeSameAs(c);
+        entry.Scooter.ShouldBeSameAs(s);
+    }
+
+    [Fact]
+    public void EndRental_AppendsEntryToScooterHistory()
+    {
+        var c = NewCustomer(100m);
+        var s = NewScooter();
+
+        c.StartRental(s, Now);
+        c.EndRental(Now.AddMinutes(20));
+
+        s.RentalHistory.Count.ShouldBe(1);
+        s.RentalHistory[0].Scooter.ShouldBeSameAs(s);
+        s.RentalHistory[0].Customer.ShouldBeSameAs(c);
+    }
+
+    [Fact]
+    public void EndRental_MultipleRentals_BuildCompleteHistory()
+    {
+        var c = NewCustomer(1000m);
+        var s1 = NewScooter();
+        var s2 = NewScooter();
+        var s3 = NewScooter();
+
+        c.StartRental(s1, Now);
+        c.EndRental(Now.AddMinutes(10));
+
+        c.StartRental(s2, Now.AddHours(1));
+        c.EndRental(Now.AddHours(1).AddMinutes(20));
+
+        c.StartRental(s3, Now.AddHours(2));
+        c.EndRental(Now.AddHours(2).AddMinutes(5));
+
+        c.RentalHistory.Count.ShouldBe(3);
+        c.RentalHistory[0].Scooter.ShouldBeSameAs(s1);
+        c.RentalHistory[1].Scooter.ShouldBeSameAs(s2);
+        c.RentalHistory[2].Scooter.ShouldBeSameAs(s3);
+        s1.RentalHistory.Count.ShouldBe(1);
+        s2.RentalHistory.Count.ShouldBe(1);
+        s3.RentalHistory.Count.ShouldBe(1);
+    }
+
+    [Fact]
+    public void EndRental_EndBeforeStart_Throws()
+    {
+        var c = NewCustomer();
+        var s = NewScooter();
+        c.StartRental(s, Now);
+
+        Should.Throw<InvalidRentalDurationException>(() => c.EndRental(Now.AddSeconds(-1)));
+    }
+
+    [Fact]
+    public void EndRental_ZeroDuration_RoundsUpToOneMinute()
+    {
+        var c = NewCustomer(100m);
+        var s = NewScooter();
+
+        c.StartRental(s, Now);
+        c.EndRental(Now);
+
+        c.Balance.ShouldBe(100m - 0.20m);
+        c.RentalHistory[0].Cost.ShouldBe(0.20m);
+    }
+
+    [Fact]
+    public void StartRental_NoTimestamp_UsesUtcNow()
+    {
+        var c = NewCustomer();
+        var s = NewScooter();
+
+        c.StartRental(s);
+
+        c.CurrentRental.ShouldBeSameAs(s);
+        s.IsLocked.ShouldBeFalse();
     }
 }

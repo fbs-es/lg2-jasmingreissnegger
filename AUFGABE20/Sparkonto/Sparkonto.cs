@@ -21,7 +21,9 @@ public sealed class Sparkonto
     public Sparkonto(string accountHolder, decimal initialBalance)
     {
         if (string.IsNullOrWhiteSpace(accountHolder))
+        {
             throw new InvalidNameException("Account holder name must not be null, empty, or whitespace.");
+        }
 
         int number;
         lock (_lock)
@@ -40,7 +42,9 @@ public sealed class Sparkonto
     public void Deposit(decimal amount)
     {
         if (amount <= 0m)
+        {
             throw new InvalidAmountException($"Deposit amount must be greater than 0 (received: {amount}).");
+        }
 
         _balance += amount;
         CheckInvariants();
@@ -64,10 +68,14 @@ public sealed class Sparkonto
     public void Withdraw(decimal amount)
     {
         if (amount <= 0m)
+        {
             throw new InvalidAmountException($"Withdrawal amount must be greater than 0 (received: {amount}).");
+        }
 
         if (amount > _balance)
+        {
             throw new InsufficientFundsException(amount, _balance);
+        }
 
         _balance -= amount;
         CheckInvariants();
@@ -91,7 +99,9 @@ public sealed class Sparkonto
     public void UpdateName(string newName)
     {
         if (string.IsNullOrWhiteSpace(newName))
+        {
             throw new InvalidNameException("New name must not be null, empty, or whitespace.");
+        }
 
         _accountHolder = newName.Trim();
         CheckInvariants();
@@ -112,16 +122,50 @@ public sealed class Sparkonto
         }
     }
 
+    public void TransferTo(Sparkonto target, decimal amount)
+    {
+        ArgumentNullException.ThrowIfNull(target);
+
+        if (ReferenceEquals(target, this))
+        {
+            throw new SelfTransferException($"Account {_accountNumber} cannot transfer to itself.");
+        }
+
+        if (amount <= 0m)
+        {
+            throw new InvalidAmountException($"Transfer amount must be greater than 0 (received: {amount}).");
+        }
+
+        if (_balance < amount)
+        {
+            throw new InsufficientFundsException(amount, _balance);
+        }
+
+        _balance -= amount;
+        target._balance += amount;
+
+        CheckInvariants();
+        target.CheckInvariants();
+    }
+
     private void CheckInvariants()
     {
         if (_balance < 0m)
+        {
             throw new InvariantViolationException($"Invariant violated: balance ({_balance}) must not be negative.");
+        }
         if (string.IsNullOrWhiteSpace(_accountHolder))
+        {
             throw new InvariantViolationException("Invariant violated: account holder must not be empty.");
+        }
         if (string.IsNullOrWhiteSpace(_accountNumber))
+        {
             throw new InvariantViolationException("Invariant violated: account number must not be empty.");
+        }
         if (string.IsNullOrWhiteSpace(_iban))
+        {
             throw new InvariantViolationException("Invariant violated: IBAN must not be empty.");
+        }
     }
 
     private static string GenerateIBAN(int accountNumber)
