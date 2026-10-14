@@ -12,7 +12,20 @@ public sealed class Customer
 
     public int CustomerId => _id;
     public string Name => _name;
-    public IReadOnlyList<Review> Reviews => _reviews;
+    public int ReviewCount => _reviews.Count;
+
+    public bool HasReviewFor(Product product)
+    {
+        ArgumentNullException.ThrowIfNull(product);
+        foreach (var r in _reviews)
+        {
+            if (r.Product.ProductId == product.ProductId)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 
     public Customer(string name)
     {

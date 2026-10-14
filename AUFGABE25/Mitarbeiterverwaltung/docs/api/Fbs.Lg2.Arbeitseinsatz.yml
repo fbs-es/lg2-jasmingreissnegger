@@ -1,0 +1,488 @@
+### YamlMime:ManagedReference
+items:
+- uid: Fbs.Lg2.Arbeitseinsatz
+  commentId: T:Fbs.Lg2.Arbeitseinsatz
+  id: Arbeitseinsatz
+  parent: Fbs.Lg2
+  children:
+  - Fbs.Lg2.Arbeitseinsatz.#ctor(System.DateTime,System.Int32)
+  - Fbs.Lg2.Arbeitseinsatz.Billed
+  - Fbs.Lg2.Arbeitseinsatz.Date
+  - Fbs.Lg2.Arbeitseinsatz.MarkAsBilled
+  - Fbs.Lg2.Arbeitseinsatz.Minutes
+  langs:
+  - csharp
+  - vb
+  name: Arbeitseinsatz
+  nameWithType: Arbeitseinsatz
+  fullName: Fbs.Lg2.Arbeitseinsatz
+  type: Class
+  source:
+    remote:
+      path: AUFGABE25/Mitarbeiterverwaltung/Arbeitseinsatz.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: Arbeitseinsatz
+    path: ../Arbeitseinsatz.cs
+    startLine: 5
+  assemblies:
+  - Mitarbeiterverwaltung
+  namespace: Fbs.Lg2
+  summary: A single recorded work session for a temporary employee (Aushilfe).
+  example: []
+  syntax:
+    content: public sealed class Arbeitseinsatz
+    content.vb: Public NotInheritable Class Arbeitseinsatz
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Fbs.Lg2.Arbeitseinsatz.Date
+  commentId: P:Fbs.Lg2.Arbeitseinsatz.Date
+  id: Date
+  parent: Fbs.Lg2.Arbeitseinsatz
+  langs:
+  - csharp
+  - vb
+  name: Date
+  nameWithType: Arbeitseinsatz.Date
+  fullName: Fbs.Lg2.Arbeitseinsatz.Date
+  type: Property
+  source:
+    remote:
+      path: AUFGABE25/Mitarbeiterverwaltung/Arbeitseinsatz.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: Date
+    path: ../Arbeitseinsatz.cs
+    startLine: 11
+  assemblies:
+  - Mitarbeiterverwaltung
+  namespace: Fbs.Lg2
+  syntax:
+    content: public DateTime Date { get; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public ReadOnly Property [Date] As Date
+  overload: Fbs.Lg2.Arbeitseinsatz.Date*
+- uid: Fbs.Lg2.Arbeitseinsatz.Minutes
+  commentId: P:Fbs.Lg2.Arbeitseinsatz.Minutes
+  id: Minutes
+  parent: Fbs.Lg2.Arbeitseinsatz
+  langs:
+  - csharp
+  - vb
+  name: Minutes
+  nameWithType: Arbeitseinsatz.Minutes
+  fullName: Fbs.Lg2.Arbeitseinsatz.Minutes
+  type: Property
+  source:
+    remote:
+      path: AUFGABE25/Mitarbeiterverwaltung/Arbeitseinsatz.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: Minutes
+    path: ../Arbeitseinsatz.cs
+    startLine: 12
+  assemblies:
+  - Mitarbeiterverwaltung
+  namespace: Fbs.Lg2
+  syntax:
+    content: public int Minutes { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Minutes As Integer
+  overload: Fbs.Lg2.Arbeitseinsatz.Minutes*
+- uid: Fbs.Lg2.Arbeitseinsatz.Billed
+  commentId: P:Fbs.Lg2.Arbeitseinsatz.Billed
+  id: Billed
+  parent: Fbs.Lg2.Arbeitseinsatz
+  langs:
+  - csharp
+  - vb
+  name: Billed
+  nameWithType: Arbeitseinsatz.Billed
+  fullName: Fbs.Lg2.Arbeitseinsatz.Billed
+  type: Property
+  source:
+    remote:
+      path: AUFGABE25/Mitarbeiterverwaltung/Arbeitseinsatz.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: Billed
+    path: ../Arbeitseinsatz.cs
+    startLine: 13
+  assemblies:
+  - Mitarbeiterverwaltung
+  namespace: Fbs.Lg2
+  syntax:
+    content: public bool Billed { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property Billed As Boolean
+  overload: Fbs.Lg2.Arbeitseinsatz.Billed*
+- uid: Fbs.Lg2.Arbeitseinsatz.#ctor(System.DateTime,System.Int32)
+  commentId: M:Fbs.Lg2.Arbeitseinsatz.#ctor(System.DateTime,System.Int32)
+  id: '#ctor(System.DateTime,System.Int32)'
+  parent: Fbs.Lg2.Arbeitseinsatz
+  langs:
+  - csharp
+  - vb
+  name: Arbeitseinsatz(DateTime, int)
+  nameWithType: Arbeitseinsatz.Arbeitseinsatz(DateTime, int)
+  fullName: Fbs.Lg2.Arbeitseinsatz.Arbeitseinsatz(System.DateTime, int)
+  type: Constructor
+  source:
+    remote:
+      path: AUFGABE25/Mitarbeiterverwaltung/Arbeitseinsatz.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: .ctor
+    path: ../Arbeitseinsatz.cs
+    startLine: 15
+  assemblies:
+  - Mitarbeiterverwaltung
+  namespace: Fbs.Lg2
+  syntax:
+    content: public Arbeitseinsatz(DateTime date, int minutes)
+    parameters:
+    - id: date
+      type: System.DateTime
+    - id: minutes
+      type: System.Int32
+    content.vb: Public Sub New([date] As Date, minutes As Integer)
+  overload: Fbs.Lg2.Arbeitseinsatz.#ctor*
+  nameWithType.vb: Arbeitseinsatz.New(Date, Integer)
+  fullName.vb: Fbs.Lg2.Arbeitseinsatz.New(Date, Integer)
+  name.vb: New(Date, Integer)
+- uid: Fbs.Lg2.Arbeitseinsatz.MarkAsBilled
+  commentId: M:Fbs.Lg2.Arbeitseinsatz.MarkAsBilled
+  id: MarkAsBilled
+  parent: Fbs.Lg2.Arbeitseinsatz
+  langs:
+  - csharp
+  - vb
+  name: MarkAsBilled()
+  nameWithType: Arbeitseinsatz.MarkAsBilled()
+  fullName: Fbs.Lg2.Arbeitseinsatz.MarkAsBilled()
+  type: Method
+  source:
+    remote:
+      path: AUFGABE25/Mitarbeiterverwaltung/Arbeitseinsatz.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: MarkAsBilled
+    path: ../Arbeitseinsatz.cs
+    startLine: 31
+  assemblies:
+  - Mitarbeiterverwaltung
+  namespace: Fbs.Lg2
+  syntax:
+    content: public void MarkAsBilled()
+    content.vb: Public Sub MarkAsBilled()
+  overload: Fbs.Lg2.Arbeitseinsatz.MarkAsBilled*
+references:
+- uid: Fbs.Lg2
+  commentId: N:Fbs.Lg2
+  name: Fbs.Lg2
+  nameWithType: Fbs.Lg2
+  fullName: Fbs.Lg2
+  spec.csharp:
+  - uid: Fbs
+    name: Fbs
+  - name: .
+  - uid: Fbs.Lg2
+    name: Lg2
+  spec.vb:
+  - uid: Fbs
+    name: Fbs
+  - name: .
+  - uid: Fbs.Lg2
+    name: Lg2
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Fbs.Lg2.Arbeitseinsatz.Date*
+  commentId: Overload:Fbs.Lg2.Arbeitseinsatz.Date
+  href: Fbs.Lg2.Arbeitseinsatz.html#Fbs_Lg2_Arbeitseinsatz_Date
+  name: Date
+  nameWithType: Arbeitseinsatz.Date
+  fullName: Fbs.Lg2.Arbeitseinsatz.Date
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
+- uid: Fbs.Lg2.Arbeitseinsatz.Minutes*
+  commentId: Overload:Fbs.Lg2.Arbeitseinsatz.Minutes
+  href: Fbs.Lg2.Arbeitseinsatz.html#Fbs_Lg2_Arbeitseinsatz_Minutes
+  name: Minutes
+  nameWithType: Arbeitseinsatz.Minutes
+  fullName: Fbs.Lg2.Arbeitseinsatz.Minutes
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Fbs.Lg2.Arbeitseinsatz.Billed*
+  commentId: Overload:Fbs.Lg2.Arbeitseinsatz.Billed
+  href: Fbs.Lg2.Arbeitseinsatz.html#Fbs_Lg2_Arbeitseinsatz_Billed
+  name: Billed
+  nameWithType: Arbeitseinsatz.Billed
+  fullName: Fbs.Lg2.Arbeitseinsatz.Billed
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Fbs.Lg2.Arbeitseinsatz.#ctor*
+  commentId: Overload:Fbs.Lg2.Arbeitseinsatz.#ctor
+  href: Fbs.Lg2.Arbeitseinsatz.html#Fbs_Lg2_Arbeitseinsatz__ctor_System_DateTime_System_Int32_
+  name: Arbeitseinsatz
+  nameWithType: Arbeitseinsatz.Arbeitseinsatz
+  fullName: Fbs.Lg2.Arbeitseinsatz.Arbeitseinsatz
+  nameWithType.vb: Arbeitseinsatz.New
+  fullName.vb: Fbs.Lg2.Arbeitseinsatz.New
+  name.vb: New
+- uid: Fbs.Lg2.Arbeitseinsatz.MarkAsBilled*
+  commentId: Overload:Fbs.Lg2.Arbeitseinsatz.MarkAsBilled
+  href: Fbs.Lg2.Arbeitseinsatz.html#Fbs_Lg2_Arbeitseinsatz_MarkAsBilled
+  name: MarkAsBilled
+  nameWithType: Arbeitseinsatz.MarkAsBilled
+  fullName: Fbs.Lg2.Arbeitseinsatz.MarkAsBilled

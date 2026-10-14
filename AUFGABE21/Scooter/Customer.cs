@@ -30,8 +30,31 @@ public sealed class Customer
     public bool IsBlocked => _isBlocked;
     public bool HasOpenDunning => _hasOpenDunning;
     public Scooter? CurrentRental => _currentRental;
-    public IReadOnlyList<string> SentDunningEmails => _sentDunningEmails;
-    public IReadOnlyList<RentalHistoryEntry> RentalHistory => _rentalHistory;
+    public int SentDunningEmailCount => _sentDunningEmails.Count;
+    public int RentalCount => _rentalHistory.Count;
+
+    internal string? GetLastDunningEmail()
+    {
+        return _sentDunningEmails.Count == 0 ? null : _sentDunningEmails[^1];
+    }
+
+    internal RentalHistoryEntry? GetLastEntry()
+    {
+        return _rentalHistory.Count == 0 ? null : _rentalHistory[^1];
+    }
+
+    public bool WasRented(Scooter scooter)
+    {
+        ArgumentNullException.ThrowIfNull(scooter);
+        foreach (var entry in _rentalHistory)
+        {
+            if (entry.Scooter.ScooterId == scooter.ScooterId)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 
     public Customer(string name, string email, decimal initialBalance)
     {

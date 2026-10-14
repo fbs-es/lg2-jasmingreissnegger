@@ -14,8 +14,33 @@ public sealed class Supplier
 
     public int SupplierId => _id;
     public string Name => _name;
-    public IReadOnlyList<Product> Products => _products;
-    public IReadOnlyList<SupplierOrder> SupplierOrders => _supplierOrders;
+    public int ProductCount => _products.Count;
+    public int SupplierOrderCount => _supplierOrders.Count;
+    public int TotalSuppliedQuantity
+    {
+        get
+        {
+            int n = 0;
+            foreach (var so in _supplierOrders)
+            {
+                n += so.Quantity;
+            }
+            return n;
+        }
+    }
+
+    public bool SuppliesProduct(Product product)
+    {
+        ArgumentNullException.ThrowIfNull(product);
+        foreach (var p in _products)
+        {
+            if (p.ProductId == product.ProductId)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 
     public Supplier(string name)
     {

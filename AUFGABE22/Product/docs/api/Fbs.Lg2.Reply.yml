@@ -1,0 +1,493 @@
+### YamlMime:ManagedReference
+items:
+- uid: Fbs.Lg2.Reply
+  commentId: T:Fbs.Lg2.Reply
+  id: Reply
+  parent: Fbs.Lg2
+  children:
+  - Fbs.Lg2.Reply.ReplyDate
+  - Fbs.Lg2.Reply.ReplyId
+  - Fbs.Lg2.Reply.Review
+  - Fbs.Lg2.Reply.Text
+  - Fbs.Lg2.Reply.UpdateText(System.String)
+  langs:
+  - csharp
+  - vb
+  name: Reply
+  nameWithType: Reply
+  fullName: Fbs.Lg2.Reply
+  type: Class
+  source:
+    remote:
+      path: AUFGABE22/Product/Reply.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: Reply
+    path: ../Reply.cs
+    startLine: 5
+  assemblies:
+  - Product
+  namespace: Fbs.Lg2
+  summary: A vendor's reply to a single review. Belongs to exactly one review (1:1).
+  example: []
+  syntax:
+    content: public sealed class Reply
+    content.vb: Public NotInheritable Class Reply
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Fbs.Lg2.Reply.ReplyId
+  commentId: P:Fbs.Lg2.Reply.ReplyId
+  id: ReplyId
+  parent: Fbs.Lg2.Reply
+  langs:
+  - csharp
+  - vb
+  name: ReplyId
+  nameWithType: Reply.ReplyId
+  fullName: Fbs.Lg2.Reply.ReplyId
+  type: Property
+  source:
+    remote:
+      path: AUFGABE22/Product/Reply.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: ReplyId
+    path: ../Reply.cs
+    startLine: 14
+  assemblies:
+  - Product
+  namespace: Fbs.Lg2
+  syntax:
+    content: public int ReplyId { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property ReplyId As Integer
+  overload: Fbs.Lg2.Reply.ReplyId*
+- uid: Fbs.Lg2.Reply.Text
+  commentId: P:Fbs.Lg2.Reply.Text
+  id: Text
+  parent: Fbs.Lg2.Reply
+  langs:
+  - csharp
+  - vb
+  name: Text
+  nameWithType: Reply.Text
+  fullName: Fbs.Lg2.Reply.Text
+  type: Property
+  source:
+    remote:
+      path: AUFGABE22/Product/Reply.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: Text
+    path: ../Reply.cs
+    startLine: 15
+  assemblies:
+  - Product
+  namespace: Fbs.Lg2
+  syntax:
+    content: public string Text { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Text As String
+  overload: Fbs.Lg2.Reply.Text*
+- uid: Fbs.Lg2.Reply.ReplyDate
+  commentId: P:Fbs.Lg2.Reply.ReplyDate
+  id: ReplyDate
+  parent: Fbs.Lg2.Reply
+  langs:
+  - csharp
+  - vb
+  name: ReplyDate
+  nameWithType: Reply.ReplyDate
+  fullName: Fbs.Lg2.Reply.ReplyDate
+  type: Property
+  source:
+    remote:
+      path: AUFGABE22/Product/Reply.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: ReplyDate
+    path: ../Reply.cs
+    startLine: 16
+  assemblies:
+  - Product
+  namespace: Fbs.Lg2
+  syntax:
+    content: public DateTime ReplyDate { get; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public ReadOnly Property ReplyDate As Date
+  overload: Fbs.Lg2.Reply.ReplyDate*
+- uid: Fbs.Lg2.Reply.Review
+  commentId: P:Fbs.Lg2.Reply.Review
+  id: Review
+  parent: Fbs.Lg2.Reply
+  langs:
+  - csharp
+  - vb
+  name: Review
+  nameWithType: Reply.Review
+  fullName: Fbs.Lg2.Reply.Review
+  type: Property
+  source:
+    remote:
+      path: AUFGABE22/Product/Reply.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: Review
+    path: ../Reply.cs
+    startLine: 17
+  assemblies:
+  - Product
+  namespace: Fbs.Lg2
+  syntax:
+    content: public Review Review { get; }
+    parameters: []
+    return:
+      type: Fbs.Lg2.Review
+    content.vb: Public ReadOnly Property Review As Review
+  overload: Fbs.Lg2.Reply.Review*
+- uid: Fbs.Lg2.Reply.UpdateText(System.String)
+  commentId: M:Fbs.Lg2.Reply.UpdateText(System.String)
+  id: UpdateText(System.String)
+  parent: Fbs.Lg2.Reply
+  langs:
+  - csharp
+  - vb
+  name: UpdateText(string)
+  nameWithType: Reply.UpdateText(string)
+  fullName: Fbs.Lg2.Reply.UpdateText(string)
+  type: Method
+  source:
+    remote:
+      path: AUFGABE22/Product/Reply.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: UpdateText
+    path: ../Reply.cs
+    startLine: 34
+  assemblies:
+  - Product
+  namespace: Fbs.Lg2
+  syntax:
+    content: public void UpdateText(string newText)
+    parameters:
+    - id: newText
+      type: System.String
+    content.vb: Public Sub UpdateText(newText As String)
+  overload: Fbs.Lg2.Reply.UpdateText*
+  nameWithType.vb: Reply.UpdateText(String)
+  fullName.vb: Fbs.Lg2.Reply.UpdateText(String)
+  name.vb: UpdateText(String)
+references:
+- uid: Fbs.Lg2
+  commentId: N:Fbs.Lg2
+  name: Fbs.Lg2
+  nameWithType: Fbs.Lg2
+  fullName: Fbs.Lg2
+  spec.csharp:
+  - uid: Fbs
+    name: Fbs
+  - name: .
+  - uid: Fbs.Lg2
+    name: Lg2
+  spec.vb:
+  - uid: Fbs
+    name: Fbs
+  - name: .
+  - uid: Fbs.Lg2
+    name: Lg2
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Fbs.Lg2.Reply.ReplyId*
+  commentId: Overload:Fbs.Lg2.Reply.ReplyId
+  href: Fbs.Lg2.Reply.html#Fbs_Lg2_Reply_ReplyId
+  name: ReplyId
+  nameWithType: Reply.ReplyId
+  fullName: Fbs.Lg2.Reply.ReplyId
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Fbs.Lg2.Reply.Text*
+  commentId: Overload:Fbs.Lg2.Reply.Text
+  href: Fbs.Lg2.Reply.html#Fbs_Lg2_Reply_Text
+  name: Text
+  nameWithType: Reply.Text
+  fullName: Fbs.Lg2.Reply.Text
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Fbs.Lg2.Reply.ReplyDate*
+  commentId: Overload:Fbs.Lg2.Reply.ReplyDate
+  href: Fbs.Lg2.Reply.html#Fbs_Lg2_Reply_ReplyDate
+  name: ReplyDate
+  nameWithType: Reply.ReplyDate
+  fullName: Fbs.Lg2.Reply.ReplyDate
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
+- uid: Fbs.Lg2.Reply.Review*
+  commentId: Overload:Fbs.Lg2.Reply.Review
+  href: Fbs.Lg2.Reply.html#Fbs_Lg2_Reply_Review
+  name: Review
+  nameWithType: Reply.Review
+  fullName: Fbs.Lg2.Reply.Review
+- uid: Fbs.Lg2.Review
+  commentId: T:Fbs.Lg2.Review
+  parent: Fbs.Lg2
+  href: Fbs.Lg2.Review.html
+  name: Review
+  nameWithType: Review
+  fullName: Fbs.Lg2.Review
+- uid: Fbs.Lg2.Reply.UpdateText*
+  commentId: Overload:Fbs.Lg2.Reply.UpdateText
+  href: Fbs.Lg2.Reply.html#Fbs_Lg2_Reply_UpdateText_System_String_
+  name: UpdateText
+  nameWithType: Reply.UpdateText
+  fullName: Fbs.Lg2.Reply.UpdateText

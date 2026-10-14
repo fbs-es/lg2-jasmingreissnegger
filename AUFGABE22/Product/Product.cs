@@ -17,7 +17,20 @@ public sealed class Product
     public string Name => _name;
     public decimal Price => _price;
     public Manufacturer Manufacturer => _manufacturer;
-    public IReadOnlyList<Review> Reviews => _reviews;
+    public int ReviewCount => _reviews.Count;
+
+    public bool HasReviewFrom(Customer customer)
+    {
+        ArgumentNullException.ThrowIfNull(customer);
+        foreach (var r in _reviews)
+        {
+            if (r.Customer.CustomerId == customer.CustomerId)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 
     public Product(string name, decimal price, Manufacturer manufacturer)
     {

@@ -23,8 +23,19 @@ public sealed class Product
     public int Stock => _stock;
     public int MinStock => _minStock;
     public Supplier Supplier => _supplier;
-    public IReadOnlyList<OrderPosition> OrderPositions => _orderPositions;
-    public IReadOnlyList<SupplierOrder> SupplierOrders => _supplierOrders;
+    public int SupplierOrderCount => _supplierOrders.Count;
+    public int TotalRestockQuantity
+    {
+        get
+        {
+            int n = 0;
+            foreach (var so in _supplierOrders)
+            {
+                n += so.Quantity;
+            }
+            return n;
+        }
+    }
 
     public Product(string name, decimal price, int initialStock, int minStock, Supplier supplier)
     {
@@ -128,6 +139,21 @@ public sealed class Product
         var supplierOrder = new SupplierOrder(this, DateTime.UtcNow, reorderQuantity);
         _supplierOrders.Add(supplierOrder);
         _supplier.AttachSupplierOrder(supplierOrder);
+    }
+
+    internal int GetLastSupplierOrderId()
+    {
+        return _supplierOrders.Count == 0 ? 0 : _supplierOrders[^1].SupplierOrderId;
+    }
+
+    internal int GetLastSupplierOrderQuantity()
+    {
+        return _supplierOrders.Count == 0 ? 0 : _supplierOrders[^1].Quantity;
+    }
+
+    internal DateTime GetLastSupplierOrderDate()
+    {
+        return _supplierOrders.Count == 0 ? DateTime.MinValue : _supplierOrders[^1].OrderDate;
     }
 
     internal void AttachOrderPosition(OrderPosition position)

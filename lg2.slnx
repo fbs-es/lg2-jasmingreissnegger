@@ -19,4 +19,8 @@
     <Project Path="AUFGABE24/Bibliothek.Tests/Bibliothek.Tests.csproj" />
     <Project Path="AUFGABE24/Bibliothek/Bibliothek.csproj" />
   </Folder>
+  <Folder Name="/AUFGABE25/">
+    <Project Path="AUFGABE25/Mitarbeiterverwaltung.Tests/Mitarbeiterverwaltung.Tests.csproj" />
+    <Project Path="AUFGABE25/Mitarbeiterverwaltung/Mitarbeiterverwaltung.csproj" />
+  </Folder>
 </Solution>

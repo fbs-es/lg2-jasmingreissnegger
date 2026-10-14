@@ -15,7 +15,34 @@ public sealed class Customer
     public int CustomerId => _id;
     public string Name => _name;
     public string Email => _email;
-    public IReadOnlyList<Order> Orders => _orders;
+    public int OrderCount => _orders.Count;
+    public int OpenOrderCount
+    {
+        get
+        {
+            int n = 0;
+            foreach (var o in _orders)
+            {
+                if (o.Status == OrderStatus.Offen)
+                {
+                    n++;
+                }
+            }
+            return n;
+        }
+    }
+
+    public bool HasOpenOrder()
+    {
+        foreach (var o in _orders)
+        {
+            if (o.Status == OrderStatus.Offen)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 
     public Customer(string name, string email)
     {
@@ -50,6 +77,8 @@ public sealed class Customer
         ArgumentNullException.ThrowIfNull(order);
         _orders.Add(order);
     }
+
+    internal DateTime? GetLastOrderDate() => _orders.Count == 0 ? null : _orders[^1].OrderDate;
 
     private void CheckInvariants()
     {

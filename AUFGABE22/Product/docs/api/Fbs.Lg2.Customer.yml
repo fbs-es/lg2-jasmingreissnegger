@@ -1,0 +1,537 @@
+### YamlMime:ManagedReference
+items:
+- uid: Fbs.Lg2.Customer
+  commentId: T:Fbs.Lg2.Customer
+  id: Customer
+  parent: Fbs.Lg2
+  children:
+  - Fbs.Lg2.Customer.#ctor(System.String)
+  - Fbs.Lg2.Customer.CustomerId
+  - Fbs.Lg2.Customer.HasReviewFor(Fbs.Lg2.Product)
+  - Fbs.Lg2.Customer.Name
+  - Fbs.Lg2.Customer.ReviewCount
+  - Fbs.Lg2.Customer.UpdateName(System.String)
+  langs:
+  - csharp
+  - vb
+  name: Customer
+  nameWithType: Customer
+  fullName: Fbs.Lg2.Customer
+  type: Class
+  source:
+    remote:
+      path: AUFGABE22/Product/Customer.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: Customer
+    path: ../Customer.cs
+    startLine: 5
+  assemblies:
+  - Product
+  namespace: Fbs.Lg2
+  summary: A buyer who can submit reviews for products.
+  example: []
+  syntax:
+    content: public sealed class Customer
+    content.vb: Public NotInheritable Class Customer
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Fbs.Lg2.Customer.CustomerId
+  commentId: P:Fbs.Lg2.Customer.CustomerId
+  id: CustomerId
+  parent: Fbs.Lg2.Customer
+  langs:
+  - csharp
+  - vb
+  name: CustomerId
+  nameWithType: Customer.CustomerId
+  fullName: Fbs.Lg2.Customer.CustomerId
+  type: Property
+  source:
+    remote:
+      path: AUFGABE22/Product/Customer.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: CustomerId
+    path: ../Customer.cs
+    startLine: 12
+  assemblies:
+  - Product
+  namespace: Fbs.Lg2
+  syntax:
+    content: public int CustomerId { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property CustomerId As Integer
+  overload: Fbs.Lg2.Customer.CustomerId*
+- uid: Fbs.Lg2.Customer.Name
+  commentId: P:Fbs.Lg2.Customer.Name
+  id: Name
+  parent: Fbs.Lg2.Customer
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: Customer.Name
+  fullName: Fbs.Lg2.Customer.Name
+  type: Property
+  source:
+    remote:
+      path: AUFGABE22/Product/Customer.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: Name
+    path: ../Customer.cs
+    startLine: 13
+  assemblies:
+  - Product
+  namespace: Fbs.Lg2
+  syntax:
+    content: public string Name { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Name As String
+  overload: Fbs.Lg2.Customer.Name*
+- uid: Fbs.Lg2.Customer.ReviewCount
+  commentId: P:Fbs.Lg2.Customer.ReviewCount
+  id: ReviewCount
+  parent: Fbs.Lg2.Customer
+  langs:
+  - csharp
+  - vb
+  name: ReviewCount
+  nameWithType: Customer.ReviewCount
+  fullName: Fbs.Lg2.Customer.ReviewCount
+  type: Property
+  source:
+    remote:
+      path: AUFGABE22/Product/Customer.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: ReviewCount
+    path: ../Customer.cs
+    startLine: 14
+  assemblies:
+  - Product
+  namespace: Fbs.Lg2
+  syntax:
+    content: public int ReviewCount { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property ReviewCount As Integer
+  overload: Fbs.Lg2.Customer.ReviewCount*
+- uid: Fbs.Lg2.Customer.HasReviewFor(Fbs.Lg2.Product)
+  commentId: M:Fbs.Lg2.Customer.HasReviewFor(Fbs.Lg2.Product)
+  id: HasReviewFor(Fbs.Lg2.Product)
+  parent: Fbs.Lg2.Customer
+  langs:
+  - csharp
+  - vb
+  name: HasReviewFor(Product)
+  nameWithType: Customer.HasReviewFor(Product)
+  fullName: Fbs.Lg2.Customer.HasReviewFor(Fbs.Lg2.Product)
+  type: Method
+  source:
+    remote:
+      path: AUFGABE22/Product/Customer.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: HasReviewFor
+    path: ../Customer.cs
+    startLine: 16
+  assemblies:
+  - Product
+  namespace: Fbs.Lg2
+  syntax:
+    content: public bool HasReviewFor(Product product)
+    parameters:
+    - id: product
+      type: Fbs.Lg2.Product
+    return:
+      type: System.Boolean
+    content.vb: Public Function HasReviewFor(product As Product) As Boolean
+  overload: Fbs.Lg2.Customer.HasReviewFor*
+- uid: Fbs.Lg2.Customer.#ctor(System.String)
+  commentId: M:Fbs.Lg2.Customer.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: Fbs.Lg2.Customer
+  langs:
+  - csharp
+  - vb
+  name: Customer(string)
+  nameWithType: Customer.Customer(string)
+  fullName: Fbs.Lg2.Customer.Customer(string)
+  type: Constructor
+  source:
+    remote:
+      path: AUFGABE22/Product/Customer.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: .ctor
+    path: ../Customer.cs
+    startLine: 29
+  assemblies:
+  - Product
+  namespace: Fbs.Lg2
+  syntax:
+    content: public Customer(string name)
+    parameters:
+    - id: name
+      type: System.String
+    content.vb: Public Sub New(name As String)
+  overload: Fbs.Lg2.Customer.#ctor*
+  nameWithType.vb: Customer.New(String)
+  fullName.vb: Fbs.Lg2.Customer.New(String)
+  name.vb: New(String)
+- uid: Fbs.Lg2.Customer.UpdateName(System.String)
+  commentId: M:Fbs.Lg2.Customer.UpdateName(System.String)
+  id: UpdateName(System.String)
+  parent: Fbs.Lg2.Customer
+  langs:
+  - csharp
+  - vb
+  name: UpdateName(string)
+  nameWithType: Customer.UpdateName(string)
+  fullName: Fbs.Lg2.Customer.UpdateName(string)
+  type: Method
+  source:
+    remote:
+      path: AUFGABE22/Product/Customer.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: UpdateName
+    path: ../Customer.cs
+    startLine: 42
+  assemblies:
+  - Product
+  namespace: Fbs.Lg2
+  syntax:
+    content: public void UpdateName(string newName)
+    parameters:
+    - id: newName
+      type: System.String
+    content.vb: Public Sub UpdateName(newName As String)
+  overload: Fbs.Lg2.Customer.UpdateName*
+  nameWithType.vb: Customer.UpdateName(String)
+  fullName.vb: Fbs.Lg2.Customer.UpdateName(String)
+  name.vb: UpdateName(String)
+references:
+- uid: Fbs.Lg2
+  commentId: N:Fbs.Lg2
+  name: Fbs.Lg2
+  nameWithType: Fbs.Lg2
+  fullName: Fbs.Lg2
+  spec.csharp:
+  - uid: Fbs
+    name: Fbs
+  - name: .
+  - uid: Fbs.Lg2
+    name: Lg2
+  spec.vb:
+  - uid: Fbs
+    name: Fbs
+  - name: .
+  - uid: Fbs.Lg2
+    name: Lg2
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Fbs.Lg2.Customer.CustomerId*
+  commentId: Overload:Fbs.Lg2.Customer.CustomerId
+  href: Fbs.Lg2.Customer.html#Fbs_Lg2_Customer_CustomerId
+  name: CustomerId
+  nameWithType: Customer.CustomerId
+  fullName: Fbs.Lg2.Customer.CustomerId
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Fbs.Lg2.Customer.Name*
+  commentId: Overload:Fbs.Lg2.Customer.Name
+  href: Fbs.Lg2.Customer.html#Fbs_Lg2_Customer_Name
+  name: Name
+  nameWithType: Customer.Name
+  fullName: Fbs.Lg2.Customer.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Fbs.Lg2.Customer.ReviewCount*
+  commentId: Overload:Fbs.Lg2.Customer.ReviewCount
+  href: Fbs.Lg2.Customer.html#Fbs_Lg2_Customer_ReviewCount
+  name: ReviewCount
+  nameWithType: Customer.ReviewCount
+  fullName: Fbs.Lg2.Customer.ReviewCount
+- uid: Fbs.Lg2.Customer.HasReviewFor*
+  commentId: Overload:Fbs.Lg2.Customer.HasReviewFor
+  href: Fbs.Lg2.Customer.html#Fbs_Lg2_Customer_HasReviewFor_Fbs_Lg2_Product_
+  name: HasReviewFor
+  nameWithType: Customer.HasReviewFor
+  fullName: Fbs.Lg2.Customer.HasReviewFor
+- uid: Fbs.Lg2.Product
+  commentId: T:Fbs.Lg2.Product
+  parent: Fbs.Lg2
+  href: Fbs.Lg2.Product.html
+  name: Product
+  nameWithType: Product
+  fullName: Fbs.Lg2.Product
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Fbs.Lg2.Customer.#ctor*
+  commentId: Overload:Fbs.Lg2.Customer.#ctor
+  href: Fbs.Lg2.Customer.html#Fbs_Lg2_Customer__ctor_System_String_
+  name: Customer
+  nameWithType: Customer.Customer
+  fullName: Fbs.Lg2.Customer.Customer
+  nameWithType.vb: Customer.New
+  fullName.vb: Fbs.Lg2.Customer.New
+  name.vb: New
+- uid: Fbs.Lg2.Customer.UpdateName*
+  commentId: Overload:Fbs.Lg2.Customer.UpdateName
+  href: Fbs.Lg2.Customer.html#Fbs_Lg2_Customer_UpdateName_System_String_
+  name: UpdateName
+  nameWithType: Customer.UpdateName
+  fullName: Fbs.Lg2.Customer.UpdateName

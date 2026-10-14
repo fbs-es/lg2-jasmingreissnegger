@@ -1,0 +1,43 @@
+### YamlMime:TableOfContent
+items:
+- uid: Fbs.Lg2
+  name: Fbs.Lg2
+  type: Namespace
+  items:
+  - uid: Fbs.Lg2.Arbeitseinsatz
+    name: Arbeitseinsatz
+    type: Class
+  - uid: Fbs.Lg2.Aushilfe
+    name: Aushilfe
+    type: Class
+  - uid: Fbs.Lg2.Auszubildender
+    name: Auszubildender
+    type: Class
+  - uid: Fbs.Lg2.DomainException
+    name: DomainException
+    type: Class
+  - uid: Fbs.Lg2.Festangestellter
+    name: Festangestellter
+    type: Class
+  - uid: Fbs.Lg2.InvalidDateException
+    name: InvalidDateException
+    type: Class
+  - uid: Fbs.Lg2.InvalidNameException
+    name: InvalidNameException
+    type: Class
+  - uid: Fbs.Lg2.InvalidRangeException
+    name: InvalidRangeException
+    type: Class
+  - uid: Fbs.Lg2.InvalidSalaryException
+    name: InvalidSalaryException
+    type: Class
+  - uid: Fbs.Lg2.InvalidYearException
+    name: InvalidYearException
+    type: Class
+  - uid: Fbs.Lg2.InvariantViolationException
+    name: InvariantViolationException
+    type: Class
+  - uid: Fbs.Lg2.Mitarbeiter
+    name: Mitarbeiter
+    type: Class
+memberLayout: SamePage

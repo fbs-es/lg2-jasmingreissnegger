@@ -14,8 +14,8 @@ public class SupplierTests
 
         s.Name.ShouldBe("Acme GmbH");
         s.SupplierId.ShouldBeGreaterThan(0);
-        s.Products.ShouldBeEmpty();
-        s.SupplierOrders.ShouldBeEmpty();
+        s.ProductCount.ShouldBe(0);
+        s.SupplierOrderCount.ShouldBe(0);
     }
 
     [Theory]
@@ -36,12 +36,14 @@ public class SupplierTests
     }
 
     [Fact]
-    public void Products_AreAttachedViaNewProduct()
+    public void SuppliesProduct_TracksManufacturedProducts()
     {
         var s = new Supplier("Acme");
-        _ = new Product("Phone", 100m, 10, 3, s);
+        var p = new Product("Phone", 100m, 10, 3, s);
 
-        s.Products.Count.ShouldBe(1);
+        s.ProductCount.ShouldBe(1);
+        s.SuppliesProduct(p).ShouldBeTrue();
+        s.TotalSuppliedQuantity.ShouldBe(0);
     }
 }
 
@@ -55,7 +57,8 @@ public class CustomerTests
         c.Name.ShouldBe("Anna");
         c.Email.ShouldBe("anna@example.com");
         c.CustomerId.ShouldBeGreaterThan(0);
-        c.Orders.ShouldBeEmpty();
+        c.OrderCount.ShouldBe(0);
+        c.OpenOrderCount.ShouldBe(0);
     }
 
     [Fact]
@@ -90,7 +93,20 @@ public class CustomerTests
         var c = new Customer("Alice", "a@b.com");
         _ = new Order(c, new DateTime(2026, 1, 1, 0, 0, 0, DateTimeKind.Utc));
 
-        c.Orders.Count.ShouldBe(1);
+        c.OrderCount.ShouldBe(1);
+    }
+
+    [Fact]
+    public void HasOpenOrder_True_WhenOpenExists()
+    {
+        var c = new Customer("A", "a@b.com");
+        var o = new Order(c, new DateTime(2026, 1, 1, 0, 0, 0, DateTimeKind.Utc));
+        o.MarkShipped();
+        var o2 = new Order(c, new DateTime(2026, 1, 2, 0, 0, 0, DateTimeKind.Utc));
+
+        c.HasOpenOrder().ShouldBeTrue();
+        c.OpenOrderCount.ShouldBe(1);
+        c.OrderCount.ShouldBe(2);
     }
 }
 
@@ -156,33 +172,33 @@ public class ProductTests
     }
 
     [Fact]
-    public void DecreaseStock_GoesBelowMin_TriggersZeroAutoReorder()
+    public void DecreaseStock_GoesBelowMin_TriggersReorder()
     {
         var p = NewProduct(10, 5);
         p.DecreaseStock(6);
         p.Stock.ShouldBe(4);
         p.NeedsReorder().ShouldBeTrue();
-        p.SupplierOrders.Count.ShouldBe(1);
+        p.SupplierOrderCount.ShouldBe(1);
     }
 
     [Fact]
-    public void DecreaseStock_HitsMinExactly_TriggersZeroAutoReorder()
+    public void DecreaseStock_HitsMinExactly_TriggersReorder()
     {
         var p = NewProduct(10, 5);
         p.DecreaseStock(5);
         p.Stock.ShouldBe(5);
         p.NeedsReorder().ShouldBeTrue();
-        p.SupplierOrders.Count.ShouldBe(1);
+        p.SupplierOrderCount.ShouldBe(1);
     }
 
     [Fact]
-    public void DecreaseStock_StaysAboveMin_DoesZeroReorderTrigger()
+    public void DecreaseStock_StaysAboveMin_NoReorder()
     {
         var p = NewProduct(50, 5);
         p.DecreaseStock(10);
         p.Stock.ShouldBe(40);
         p.NeedsReorder().ShouldBeFalse();
-        p.SupplierOrders.Count.ShouldBe(0);
+        p.SupplierOrderCount.ShouldBe(0);
     }
 
     [Fact]
@@ -191,7 +207,7 @@ public class ProductTests
         var p = NewProduct(5, 1);
         Should.Throw<InvalidStockException>(() => p.DecreaseStock(10));
         p.Stock.ShouldBe(5);
-        p.SupplierOrders.Count.ShouldBe(0);
+        p.SupplierOrderCount.ShouldBe(0);
     }
 
     [Theory]
@@ -228,21 +244,21 @@ public class ProductTests
     }
 
     [Fact]
-    public void NeedsReorder_ReturnsTrueWhenStockAtMin()
+    public void NeedsReorder_AtMin_ReturnsTrue()
     {
         var p = NewProduct(5, 5);
         p.NeedsReorder().ShouldBeTrue();
     }
 
     [Fact]
-    public void NeedsReorder_ReturnsTrueWhenStockBelowMin()
+    public void NeedsReorder_BelowMin_ReturnsTrue()
     {
         var p = NewProduct(3, 5);
         p.NeedsReorder().ShouldBeTrue();
     }
 
     [Fact]
-    public void NeedsReorder_ReturnsFalseWhenStockAboveMin()
+    public void NeedsReorder_AboveMin_ReturnsFalse()
     {
         var p = NewProduct(10, 5);
         p.NeedsReorder().ShouldBeFalse();
@@ -266,7 +282,7 @@ public class OrderTests
         o.Customer.ShouldBeSameAs(c);
         o.OrderDate.ShouldBe(Now);
         o.Status.ShouldBe(OrderStatus.Offen);
-        o.Positions.ShouldBeEmpty();
+        o.PositionCount.ShouldBe(0);
         o.TotalAmount.ShouldBe(0m);
     }
 
@@ -284,7 +300,7 @@ public class OrderTests
         pos.Product.ShouldBeSameAs(p);
         pos.HistoricalUnitPrice.ShouldBe(100m);
         pos.Order.ShouldBeSameAs(o);
-        o.Positions.Count.ShouldBe(1);
+        o.PositionCount.ShouldBe(1);
         p.Stock.ShouldBe(47);
     }
 
@@ -327,7 +343,7 @@ public class OrderTests
         var o = new Order(c, Now);
 
         Should.Throw<InvalidStockException>(() => o.AddPosition(p, 10));
-        o.Positions.ShouldBeEmpty();
+        o.PositionCount.ShouldBe(0);
         p.Stock.ShouldBe(2);
     }
 
@@ -365,6 +381,20 @@ public class OrderTests
         o.AddPosition(p, 3);
 
         o.TotalAmount.ShouldBe(500m);
+    }
+
+    [Fact]
+    public void ContainsProduct_TracksAllPositions()
+    {
+        var c = NewCustomer();
+        var s = NewSupplier();
+        var p1 = NewProduct(50, 5);
+        var p2 = new Product("Case", 50m, 50, 5, s);
+        var o = new Order(c, Now);
+        o.AddPosition(p1, 1);
+
+        o.ContainsProduct(p1).ShouldBeTrue();
+        o.ContainsProduct(p2).ShouldBeFalse();
     }
 
     [Fact]
@@ -434,7 +464,7 @@ public class OrderTests
         var o = new Order(c, Now);
         o.Cancel();
         o.Status.ShouldBe(OrderStatus.Storniert);
-        o.Positions.ShouldBeEmpty();
+        o.PositionCount.ShouldBe(0);
     }
 
     [Fact]
@@ -449,7 +479,7 @@ public class OrderTests
         o.Cancel();
 
         p.Stock.ShouldBe(10);
-        p.SupplierOrders.Count.ShouldBe(1);
+        p.SupplierOrderCount.ShouldBe(1);
     }
 
     [Fact]
@@ -472,11 +502,10 @@ public class SupplierOrderTests
 
         p.DecreaseStock(7);
 
-        p.SupplierOrders.Count.ShouldBe(1);
-        var so = p.SupplierOrders[0];
-        so.Product.ShouldBeSameAs(p);
-        so.Quantity.ShouldBeGreaterThan(0);
-        so.OrderDate.ShouldBeGreaterThan(DateTime.MinValue);
+        p.SupplierOrderCount.ShouldBe(1);
+        p.TotalRestockQuantity.ShouldBeGreaterThan(0);
+        p.GetLastSupplierOrderId().ShouldBeGreaterThan(0);
+        p.GetLastSupplierOrderDate().ShouldBeGreaterThan(DateTime.MinValue);
     }
 
     [Fact]
@@ -489,7 +518,7 @@ public class SupplierOrderTests
         p.IncreaseStock(1);
         p.DecreaseStock(2);
 
-        p.SupplierOrders.Count.ShouldBeGreaterThanOrEqualTo(1);
+        p.SupplierOrderCount.ShouldBeGreaterThanOrEqualTo(1);
     }
 
     [Fact]
@@ -500,7 +529,7 @@ public class SupplierOrderTests
 
         p.DecreaseStock(8);
 
-        s.SupplierOrders.Count.ShouldBe(1);
-        s.SupplierOrders[0].Product.ShouldBeSameAs(p);
+        s.SupplierOrderCount.ShouldBe(1);
+        s.TotalSuppliedQuantity.ShouldBeGreaterThan(0);
     }
 }

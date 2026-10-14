@@ -1,0 +1,668 @@
+### YamlMime:ManagedReference
+items:
+- uid: Fbs.Lg2.Mitarbeiter
+  commentId: T:Fbs.Lg2.Mitarbeiter
+  id: Mitarbeiter
+  parent: Fbs.Lg2
+  children:
+  - Fbs.Lg2.Mitarbeiter.#ctor(System.String,System.String,System.Decimal)
+  - Fbs.Lg2.Mitarbeiter.BerechneGehalt
+  - Fbs.Lg2.Mitarbeiter.Grundgehalt
+  - Fbs.Lg2.Mitarbeiter.Kategorie
+  - Fbs.Lg2.Mitarbeiter.MitarbeiterId
+  - Fbs.Lg2.Mitarbeiter.Nachname
+  - Fbs.Lg2.Mitarbeiter.SetzeGehalt(System.Decimal)
+  - Fbs.Lg2.Mitarbeiter.VollerName
+  - Fbs.Lg2.Mitarbeiter.Vorname
+  langs:
+  - csharp
+  - vb
+  name: Mitarbeiter
+  nameWithType: Mitarbeiter
+  fullName: Fbs.Lg2.Mitarbeiter
+  type: Class
+  source:
+    remote:
+      path: AUFGABE25/Mitarbeiterverwaltung/Mitarbeiter.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: Mitarbeiter
+    path: ../Mitarbeiter.cs
+    startLine: 3
+  assemblies:
+  - Mitarbeiterverwaltung
+  namespace: Fbs.Lg2
+  summary: Base class for every employee in the company. Cannot be instantiated directly.
+  example: []
+  syntax:
+    content: public abstract class Mitarbeiter
+    content.vb: Public MustInherit Class Mitarbeiter
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - Fbs.Lg2.Aushilfe
+  - Fbs.Lg2.Auszubildender
+  - Fbs.Lg2.Festangestellter
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Fbs.Lg2.Mitarbeiter.MitarbeiterId
+  commentId: P:Fbs.Lg2.Mitarbeiter.MitarbeiterId
+  id: MitarbeiterId
+  parent: Fbs.Lg2.Mitarbeiter
+  langs:
+  - csharp
+  - vb
+  name: MitarbeiterId
+  nameWithType: Mitarbeiter.MitarbeiterId
+  fullName: Fbs.Lg2.Mitarbeiter.MitarbeiterId
+  type: Property
+  source:
+    remote:
+      path: AUFGABE25/Mitarbeiterverwaltung/Mitarbeiter.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: MitarbeiterId
+    path: ../Mitarbeiter.cs
+    startLine: 12
+  assemblies:
+  - Mitarbeiterverwaltung
+  namespace: Fbs.Lg2
+  syntax:
+    content: public int MitarbeiterId { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property MitarbeiterId As Integer
+  overload: Fbs.Lg2.Mitarbeiter.MitarbeiterId*
+- uid: Fbs.Lg2.Mitarbeiter.Vorname
+  commentId: P:Fbs.Lg2.Mitarbeiter.Vorname
+  id: Vorname
+  parent: Fbs.Lg2.Mitarbeiter
+  langs:
+  - csharp
+  - vb
+  name: Vorname
+  nameWithType: Mitarbeiter.Vorname
+  fullName: Fbs.Lg2.Mitarbeiter.Vorname
+  type: Property
+  source:
+    remote:
+      path: AUFGABE25/Mitarbeiterverwaltung/Mitarbeiter.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: Vorname
+    path: ../Mitarbeiter.cs
+    startLine: 13
+  assemblies:
+  - Mitarbeiterverwaltung
+  namespace: Fbs.Lg2
+  syntax:
+    content: public string Vorname { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Vorname As String
+  overload: Fbs.Lg2.Mitarbeiter.Vorname*
+- uid: Fbs.Lg2.Mitarbeiter.Nachname
+  commentId: P:Fbs.Lg2.Mitarbeiter.Nachname
+  id: Nachname
+  parent: Fbs.Lg2.Mitarbeiter
+  langs:
+  - csharp
+  - vb
+  name: Nachname
+  nameWithType: Mitarbeiter.Nachname
+  fullName: Fbs.Lg2.Mitarbeiter.Nachname
+  type: Property
+  source:
+    remote:
+      path: AUFGABE25/Mitarbeiterverwaltung/Mitarbeiter.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: Nachname
+    path: ../Mitarbeiter.cs
+    startLine: 14
+  assemblies:
+  - Mitarbeiterverwaltung
+  namespace: Fbs.Lg2
+  syntax:
+    content: public string Nachname { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Nachname As String
+  overload: Fbs.Lg2.Mitarbeiter.Nachname*
+- uid: Fbs.Lg2.Mitarbeiter.Grundgehalt
+  commentId: P:Fbs.Lg2.Mitarbeiter.Grundgehalt
+  id: Grundgehalt
+  parent: Fbs.Lg2.Mitarbeiter
+  langs:
+  - csharp
+  - vb
+  name: Grundgehalt
+  nameWithType: Mitarbeiter.Grundgehalt
+  fullName: Fbs.Lg2.Mitarbeiter.Grundgehalt
+  type: Property
+  source:
+    remote:
+      path: AUFGABE25/Mitarbeiterverwaltung/Mitarbeiter.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: Grundgehalt
+    path: ../Mitarbeiter.cs
+    startLine: 15
+  assemblies:
+  - Mitarbeiterverwaltung
+  namespace: Fbs.Lg2
+  syntax:
+    content: public decimal Grundgehalt { get; }
+    parameters: []
+    return:
+      type: System.Decimal
+    content.vb: Public ReadOnly Property Grundgehalt As Decimal
+  overload: Fbs.Lg2.Mitarbeiter.Grundgehalt*
+- uid: Fbs.Lg2.Mitarbeiter.VollerName
+  commentId: P:Fbs.Lg2.Mitarbeiter.VollerName
+  id: VollerName
+  parent: Fbs.Lg2.Mitarbeiter
+  langs:
+  - csharp
+  - vb
+  name: VollerName
+  nameWithType: Mitarbeiter.VollerName
+  fullName: Fbs.Lg2.Mitarbeiter.VollerName
+  type: Property
+  source:
+    remote:
+      path: AUFGABE25/Mitarbeiterverwaltung/Mitarbeiter.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: VollerName
+    path: ../Mitarbeiter.cs
+    startLine: 17
+  assemblies:
+  - Mitarbeiterverwaltung
+  namespace: Fbs.Lg2
+  syntax:
+    content: public string VollerName { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property VollerName As String
+  overload: Fbs.Lg2.Mitarbeiter.VollerName*
+- uid: Fbs.Lg2.Mitarbeiter.Kategorie
+  commentId: P:Fbs.Lg2.Mitarbeiter.Kategorie
+  id: Kategorie
+  parent: Fbs.Lg2.Mitarbeiter
+  langs:
+  - csharp
+  - vb
+  name: Kategorie
+  nameWithType: Mitarbeiter.Kategorie
+  fullName: Fbs.Lg2.Mitarbeiter.Kategorie
+  type: Property
+  source:
+    remote:
+      path: AUFGABE25/Mitarbeiterverwaltung/Mitarbeiter.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: Kategorie
+    path: ../Mitarbeiter.cs
+    startLine: 19
+  assemblies:
+  - Mitarbeiterverwaltung
+  namespace: Fbs.Lg2
+  syntax:
+    content: public abstract string Kategorie { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public MustOverride ReadOnly Property Kategorie As String
+  overload: Fbs.Lg2.Mitarbeiter.Kategorie*
+- uid: Fbs.Lg2.Mitarbeiter.BerechneGehalt
+  commentId: M:Fbs.Lg2.Mitarbeiter.BerechneGehalt
+  id: BerechneGehalt
+  parent: Fbs.Lg2.Mitarbeiter
+  langs:
+  - csharp
+  - vb
+  name: BerechneGehalt()
+  nameWithType: Mitarbeiter.BerechneGehalt()
+  fullName: Fbs.Lg2.Mitarbeiter.BerechneGehalt()
+  type: Method
+  source:
+    remote:
+      path: AUFGABE25/Mitarbeiterverwaltung/Mitarbeiter.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: BerechneGehalt
+    path: ../Mitarbeiter.cs
+    startLine: 20
+  assemblies:
+  - Mitarbeiterverwaltung
+  namespace: Fbs.Lg2
+  syntax:
+    content: public abstract decimal BerechneGehalt()
+    return:
+      type: System.Decimal
+    content.vb: Public MustOverride Function BerechneGehalt() As Decimal
+  overload: Fbs.Lg2.Mitarbeiter.BerechneGehalt*
+- uid: Fbs.Lg2.Mitarbeiter.#ctor(System.String,System.String,System.Decimal)
+  commentId: M:Fbs.Lg2.Mitarbeiter.#ctor(System.String,System.String,System.Decimal)
+  id: '#ctor(System.String,System.String,System.Decimal)'
+  parent: Fbs.Lg2.Mitarbeiter
+  langs:
+  - csharp
+  - vb
+  name: Mitarbeiter(string, string, decimal)
+  nameWithType: Mitarbeiter.Mitarbeiter(string, string, decimal)
+  fullName: Fbs.Lg2.Mitarbeiter.Mitarbeiter(string, string, decimal)
+  type: Constructor
+  source:
+    remote:
+      path: AUFGABE25/Mitarbeiterverwaltung/Mitarbeiter.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: .ctor
+    path: ../Mitarbeiter.cs
+    startLine: 22
+  assemblies:
+  - Mitarbeiterverwaltung
+  namespace: Fbs.Lg2
+  syntax:
+    content: protected Mitarbeiter(string vorname, string nachname, decimal grundgehalt)
+    parameters:
+    - id: vorname
+      type: System.String
+    - id: nachname
+      type: System.String
+    - id: grundgehalt
+      type: System.Decimal
+    content.vb: Protected Sub New(vorname As String, nachname As String, grundgehalt As Decimal)
+  overload: Fbs.Lg2.Mitarbeiter.#ctor*
+  nameWithType.vb: Mitarbeiter.New(String, String, Decimal)
+  fullName.vb: Fbs.Lg2.Mitarbeiter.New(String, String, Decimal)
+  name.vb: New(String, String, Decimal)
+- uid: Fbs.Lg2.Mitarbeiter.SetzeGehalt(System.Decimal)
+  commentId: M:Fbs.Lg2.Mitarbeiter.SetzeGehalt(System.Decimal)
+  id: SetzeGehalt(System.Decimal)
+  parent: Fbs.Lg2.Mitarbeiter
+  langs:
+  - csharp
+  - vb
+  name: SetzeGehalt(decimal)
+  nameWithType: Mitarbeiter.SetzeGehalt(decimal)
+  fullName: Fbs.Lg2.Mitarbeiter.SetzeGehalt(decimal)
+  type: Method
+  source:
+    remote:
+      path: AUFGABE25/Mitarbeiterverwaltung/Mitarbeiter.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: SetzeGehalt
+    path: ../Mitarbeiter.cs
+    startLine: 45
+  assemblies:
+  - Mitarbeiterverwaltung
+  namespace: Fbs.Lg2
+  syntax:
+    content: public void SetzeGehalt(decimal neuesGehalt)
+    parameters:
+    - id: neuesGehalt
+      type: System.Decimal
+    content.vb: Public Sub SetzeGehalt(neuesGehalt As Decimal)
+  overload: Fbs.Lg2.Mitarbeiter.SetzeGehalt*
+  nameWithType.vb: Mitarbeiter.SetzeGehalt(Decimal)
+  fullName.vb: Fbs.Lg2.Mitarbeiter.SetzeGehalt(Decimal)
+  name.vb: SetzeGehalt(Decimal)
+references:
+- uid: Fbs.Lg2
+  commentId: N:Fbs.Lg2
+  name: Fbs.Lg2
+  nameWithType: Fbs.Lg2
+  fullName: Fbs.Lg2
+  spec.csharp:
+  - uid: Fbs
+    name: Fbs
+  - name: .
+  - uid: Fbs.Lg2
+    name: Lg2
+  spec.vb:
+  - uid: Fbs
+    name: Fbs
+  - name: .
+  - uid: Fbs.Lg2
+    name: Lg2
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Fbs.Lg2.Mitarbeiter.MitarbeiterId*
+  commentId: Overload:Fbs.Lg2.Mitarbeiter.MitarbeiterId
+  href: Fbs.Lg2.Mitarbeiter.html#Fbs_Lg2_Mitarbeiter_MitarbeiterId
+  name: MitarbeiterId
+  nameWithType: Mitarbeiter.MitarbeiterId
+  fullName: Fbs.Lg2.Mitarbeiter.MitarbeiterId
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Fbs.Lg2.Mitarbeiter.Vorname*
+  commentId: Overload:Fbs.Lg2.Mitarbeiter.Vorname
+  href: Fbs.Lg2.Mitarbeiter.html#Fbs_Lg2_Mitarbeiter_Vorname
+  name: Vorname
+  nameWithType: Mitarbeiter.Vorname
+  fullName: Fbs.Lg2.Mitarbeiter.Vorname
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Fbs.Lg2.Mitarbeiter.Nachname*
+  commentId: Overload:Fbs.Lg2.Mitarbeiter.Nachname
+  href: Fbs.Lg2.Mitarbeiter.html#Fbs_Lg2_Mitarbeiter_Nachname
+  name: Nachname
+  nameWithType: Mitarbeiter.Nachname
+  fullName: Fbs.Lg2.Mitarbeiter.Nachname
+- uid: Fbs.Lg2.Mitarbeiter.Grundgehalt*
+  commentId: Overload:Fbs.Lg2.Mitarbeiter.Grundgehalt
+  href: Fbs.Lg2.Mitarbeiter.html#Fbs_Lg2_Mitarbeiter_Grundgehalt
+  name: Grundgehalt
+  nameWithType: Mitarbeiter.Grundgehalt
+  fullName: Fbs.Lg2.Mitarbeiter.Grundgehalt
+- uid: System.Decimal
+  commentId: T:System.Decimal
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.decimal
+  name: decimal
+  nameWithType: decimal
+  fullName: decimal
+  nameWithType.vb: Decimal
+  fullName.vb: Decimal
+  name.vb: Decimal
+- uid: Fbs.Lg2.Mitarbeiter.VollerName*
+  commentId: Overload:Fbs.Lg2.Mitarbeiter.VollerName
+  href: Fbs.Lg2.Mitarbeiter.html#Fbs_Lg2_Mitarbeiter_VollerName
+  name: VollerName
+  nameWithType: Mitarbeiter.VollerName
+  fullName: Fbs.Lg2.Mitarbeiter.VollerName
+- uid: Fbs.Lg2.Mitarbeiter.Kategorie*
+  commentId: Overload:Fbs.Lg2.Mitarbeiter.Kategorie
+  href: Fbs.Lg2.Mitarbeiter.html#Fbs_Lg2_Mitarbeiter_Kategorie
+  name: Kategorie
+  nameWithType: Mitarbeiter.Kategorie
+  fullName: Fbs.Lg2.Mitarbeiter.Kategorie
+- uid: Fbs.Lg2.Mitarbeiter.BerechneGehalt*
+  commentId: Overload:Fbs.Lg2.Mitarbeiter.BerechneGehalt
+  href: Fbs.Lg2.Mitarbeiter.html#Fbs_Lg2_Mitarbeiter_BerechneGehalt
+  name: BerechneGehalt
+  nameWithType: Mitarbeiter.BerechneGehalt
+  fullName: Fbs.Lg2.Mitarbeiter.BerechneGehalt
+- uid: Fbs.Lg2.Mitarbeiter.#ctor*
+  commentId: Overload:Fbs.Lg2.Mitarbeiter.#ctor
+  href: Fbs.Lg2.Mitarbeiter.html#Fbs_Lg2_Mitarbeiter__ctor_System_String_System_String_System_Decimal_
+  name: Mitarbeiter
+  nameWithType: Mitarbeiter.Mitarbeiter
+  fullName: Fbs.Lg2.Mitarbeiter.Mitarbeiter
+  nameWithType.vb: Mitarbeiter.New
+  fullName.vb: Fbs.Lg2.Mitarbeiter.New
+  name.vb: New
+- uid: Fbs.Lg2.Mitarbeiter.SetzeGehalt*
+  commentId: Overload:Fbs.Lg2.Mitarbeiter.SetzeGehalt
+  href: Fbs.Lg2.Mitarbeiter.html#Fbs_Lg2_Mitarbeiter_SetzeGehalt_System_Decimal_
+  name: SetzeGehalt
+  nameWithType: Mitarbeiter.SetzeGehalt
+  fullName: Fbs.Lg2.Mitarbeiter.SetzeGehalt

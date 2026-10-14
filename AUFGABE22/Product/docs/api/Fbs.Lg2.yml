@@ -1,0 +1,130 @@
+### YamlMime:ManagedReference
+items:
+- uid: Fbs.Lg2
+  commentId: N:Fbs.Lg2
+  id: Fbs.Lg2
+  children:
+  - Fbs.Lg2.Customer
+  - Fbs.Lg2.DomainException
+  - Fbs.Lg2.InvalidCommentException
+  - Fbs.Lg2.InvalidEmailException
+  - Fbs.Lg2.InvalidNameException
+  - Fbs.Lg2.InvalidPriceException
+  - Fbs.Lg2.InvalidStarsException
+  - Fbs.Lg2.InvariantViolationException
+  - Fbs.Lg2.Manufacturer
+  - Fbs.Lg2.Product
+  - Fbs.Lg2.Reply
+  - Fbs.Lg2.Review
+  - Fbs.Lg2.ReviewAlreadyRepliedException
+  langs:
+  - csharp
+  - vb
+  name: Fbs.Lg2
+  nameWithType: Fbs.Lg2
+  fullName: Fbs.Lg2
+  type: Namespace
+  assemblies:
+  - Product
+references:
+- uid: Fbs.Lg2.Customer
+  commentId: T:Fbs.Lg2.Customer
+  parent: Fbs.Lg2
+  href: Fbs.Lg2.Customer.html
+  name: Customer
+  nameWithType: Customer
+  fullName: Fbs.Lg2.Customer
+- uid: Fbs.Lg2.DomainException
+  commentId: T:Fbs.Lg2.DomainException
+  parent: Fbs.Lg2
+  href: Fbs.Lg2.DomainException.html
+  name: DomainException
+  nameWithType: DomainException
+  fullName: Fbs.Lg2.DomainException
+- uid: Fbs.Lg2.InvalidNameException
+  commentId: T:Fbs.Lg2.InvalidNameException
+  href: Fbs.Lg2.InvalidNameException.html
+  name: InvalidNameException
+  nameWithType: InvalidNameException
+  fullName: Fbs.Lg2.InvalidNameException
+- uid: Fbs.Lg2.InvalidEmailException
+  commentId: T:Fbs.Lg2.InvalidEmailException
+  href: Fbs.Lg2.InvalidEmailException.html
+  name: InvalidEmailException
+  nameWithType: InvalidEmailException
+  fullName: Fbs.Lg2.InvalidEmailException
+- uid: Fbs.Lg2.InvalidPriceException
+  commentId: T:Fbs.Lg2.InvalidPriceException
+  href: Fbs.Lg2.InvalidPriceException.html
+  name: InvalidPriceException
+  nameWithType: InvalidPriceException
+  fullName: Fbs.Lg2.InvalidPriceException
+- uid: Fbs.Lg2.InvalidStarsException
+  commentId: T:Fbs.Lg2.InvalidStarsException
+  href: Fbs.Lg2.InvalidStarsException.html
+  name: InvalidStarsException
+  nameWithType: InvalidStarsException
+  fullName: Fbs.Lg2.InvalidStarsException
+- uid: Fbs.Lg2.InvalidCommentException
+  commentId: T:Fbs.Lg2.InvalidCommentException
+  href: Fbs.Lg2.InvalidCommentException.html
+  name: InvalidCommentException
+  nameWithType: InvalidCommentException
+  fullName: Fbs.Lg2.InvalidCommentException
+- uid: Fbs.Lg2.ReviewAlreadyRepliedException
+  commentId: T:Fbs.Lg2.ReviewAlreadyRepliedException
+  href: Fbs.Lg2.ReviewAlreadyRepliedException.html
+  name: ReviewAlreadyRepliedException
+  nameWithType: ReviewAlreadyRepliedException
+  fullName: Fbs.Lg2.ReviewAlreadyRepliedException
+- uid: Fbs.Lg2.InvariantViolationException
+  commentId: T:Fbs.Lg2.InvariantViolationException
+  href: Fbs.Lg2.InvariantViolationException.html
+  name: InvariantViolationException
+  nameWithType: InvariantViolationException
+  fullName: Fbs.Lg2.InvariantViolationException
+- uid: Fbs.Lg2.Manufacturer
+  commentId: T:Fbs.Lg2.Manufacturer
+  parent: Fbs.Lg2
+  href: Fbs.Lg2.Manufacturer.html
+  name: Manufacturer
+  nameWithType: Manufacturer
+  fullName: Fbs.Lg2.Manufacturer
+- uid: Fbs.Lg2.Product
+  commentId: T:Fbs.Lg2.Product
+  parent: Fbs.Lg2
+  href: Fbs.Lg2.Product.html
+  name: Product
+  nameWithType: Product
+  fullName: Fbs.Lg2.Product
+- uid: Fbs.Lg2.Reply
+  commentId: T:Fbs.Lg2.Reply
+  parent: Fbs.Lg2
+  href: Fbs.Lg2.Reply.html
+  name: Reply
+  nameWithType: Reply
+  fullName: Fbs.Lg2.Reply
+- uid: Fbs.Lg2.Review
+  commentId: T:Fbs.Lg2.Review
+  parent: Fbs.Lg2
+  href: Fbs.Lg2.Review.html
+  name: Review
+  nameWithType: Review
+  fullName: Fbs.Lg2.Review
+- uid: Fbs.Lg2
+  commentId: N:Fbs.Lg2
+  name: Fbs.Lg2
+  nameWithType: Fbs.Lg2
+  fullName: Fbs.Lg2
+  spec.csharp:
+  - uid: Fbs
+    name: Fbs
+  - name: .
+  - uid: Fbs.Lg2
+    name: Lg2
+  spec.vb:
+  - uid: Fbs
+    name: Fbs
+  - name: .
+  - uid: Fbs.Lg2
+    name: Lg2

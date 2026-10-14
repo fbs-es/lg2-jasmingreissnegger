@@ -1,0 +1,120 @@
+### YamlMime:ManagedReference
+items:
+- uid: Fbs.Lg2
+  commentId: N:Fbs.Lg2
+  id: Fbs.Lg2
+  children:
+  - Fbs.Lg2.Arbeitseinsatz
+  - Fbs.Lg2.Aushilfe
+  - Fbs.Lg2.Auszubildender
+  - Fbs.Lg2.DomainException
+  - Fbs.Lg2.Festangestellter
+  - Fbs.Lg2.InvalidDateException
+  - Fbs.Lg2.InvalidNameException
+  - Fbs.Lg2.InvalidRangeException
+  - Fbs.Lg2.InvalidSalaryException
+  - Fbs.Lg2.InvalidYearException
+  - Fbs.Lg2.InvariantViolationException
+  - Fbs.Lg2.Mitarbeiter
+  langs:
+  - csharp
+  - vb
+  name: Fbs.Lg2
+  nameWithType: Fbs.Lg2
+  fullName: Fbs.Lg2
+  type: Namespace
+  assemblies:
+  - Mitarbeiterverwaltung
+references:
+- uid: Fbs.Lg2.Arbeitseinsatz
+  commentId: T:Fbs.Lg2.Arbeitseinsatz
+  parent: Fbs.Lg2
+  href: Fbs.Lg2.Arbeitseinsatz.html
+  name: Arbeitseinsatz
+  nameWithType: Arbeitseinsatz
+  fullName: Fbs.Lg2.Arbeitseinsatz
+- uid: Fbs.Lg2.Aushilfe
+  commentId: T:Fbs.Lg2.Aushilfe
+  href: Fbs.Lg2.Aushilfe.html
+  name: Aushilfe
+  nameWithType: Aushilfe
+  fullName: Fbs.Lg2.Aushilfe
+- uid: Fbs.Lg2.Auszubildender
+  commentId: T:Fbs.Lg2.Auszubildender
+  href: Fbs.Lg2.Auszubildender.html
+  name: Auszubildender
+  nameWithType: Auszubildender
+  fullName: Fbs.Lg2.Auszubildender
+- uid: Fbs.Lg2.DomainException
+  commentId: T:Fbs.Lg2.DomainException
+  parent: Fbs.Lg2
+  href: Fbs.Lg2.DomainException.html
+  name: DomainException
+  nameWithType: DomainException
+  fullName: Fbs.Lg2.DomainException
+- uid: Fbs.Lg2.InvalidNameException
+  commentId: T:Fbs.Lg2.InvalidNameException
+  href: Fbs.Lg2.InvalidNameException.html
+  name: InvalidNameException
+  nameWithType: InvalidNameException
+  fullName: Fbs.Lg2.InvalidNameException
+- uid: Fbs.Lg2.InvalidSalaryException
+  commentId: T:Fbs.Lg2.InvalidSalaryException
+  href: Fbs.Lg2.InvalidSalaryException.html
+  name: InvalidSalaryException
+  nameWithType: InvalidSalaryException
+  fullName: Fbs.Lg2.InvalidSalaryException
+- uid: Fbs.Lg2.InvalidYearException
+  commentId: T:Fbs.Lg2.InvalidYearException
+  href: Fbs.Lg2.InvalidYearException.html
+  name: InvalidYearException
+  nameWithType: InvalidYearException
+  fullName: Fbs.Lg2.InvalidYearException
+- uid: Fbs.Lg2.InvalidRangeException
+  commentId: T:Fbs.Lg2.InvalidRangeException
+  href: Fbs.Lg2.InvalidRangeException.html
+  name: InvalidRangeException
+  nameWithType: InvalidRangeException
+  fullName: Fbs.Lg2.InvalidRangeException
+- uid: Fbs.Lg2.InvalidDateException
+  commentId: T:Fbs.Lg2.InvalidDateException
+  href: Fbs.Lg2.InvalidDateException.html
+  name: InvalidDateException
+  nameWithType: InvalidDateException
+  fullName: Fbs.Lg2.InvalidDateException
+- uid: Fbs.Lg2.InvariantViolationException
+  commentId: T:Fbs.Lg2.InvariantViolationException
+  href: Fbs.Lg2.InvariantViolationException.html
+  name: InvariantViolationException
+  nameWithType: InvariantViolationException
+  fullName: Fbs.Lg2.InvariantViolationException
+- uid: Fbs.Lg2.Festangestellter
+  commentId: T:Fbs.Lg2.Festangestellter
+  href: Fbs.Lg2.Festangestellter.html
+  name: Festangestellter
+  nameWithType: Festangestellter
+  fullName: Fbs.Lg2.Festangestellter
+- uid: Fbs.Lg2.Mitarbeiter
+  commentId: T:Fbs.Lg2.Mitarbeiter
+  parent: Fbs.Lg2
+  href: Fbs.Lg2.Mitarbeiter.html
+  name: Mitarbeiter
+  nameWithType: Mitarbeiter
+  fullName: Fbs.Lg2.Mitarbeiter
+- uid: Fbs.Lg2
+  commentId: N:Fbs.Lg2
+  name: Fbs.Lg2
+  nameWithType: Fbs.Lg2
+  fullName: Fbs.Lg2
+  spec.csharp:
+  - uid: Fbs
+    name: Fbs
+  - name: .
+  - uid: Fbs.Lg2
+    name: Lg2
+  spec.vb:
+  - uid: Fbs
+    name: Fbs
+  - name: .
+  - uid: Fbs.Lg2
+    name: Lg2

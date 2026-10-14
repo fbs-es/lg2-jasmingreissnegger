@@ -1,0 +1,241 @@
+{
+  "docfx_version": "2.81.0+ba844df625370a6bd7c1ecab0d0ec4d1d9128ac4",
+  "source_base_path": "C:/Repositories/lg2-jasmingreissnegger/AUFGABE22/Product/docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fbs.Lg2.Customer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fbs.Lg2.Customer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fbs.Lg2.Customer",
+      "Summary": "<p sourcefile=\"api/Fbs.Lg2.Customer.yml\" sourcestartlinenumber=\"1\">A buyer who can submit reviews for products.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fbs.Lg2.DomainException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fbs.Lg2.DomainException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fbs.Lg2.DomainException",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fbs.Lg2.InvalidCommentException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fbs.Lg2.InvalidCommentException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fbs.Lg2.InvalidCommentException",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fbs.Lg2.InvalidEmailException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fbs.Lg2.InvalidEmailException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fbs.Lg2.InvalidEmailException",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fbs.Lg2.InvalidNameException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fbs.Lg2.InvalidNameException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fbs.Lg2.InvalidNameException",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fbs.Lg2.InvalidPriceException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fbs.Lg2.InvalidPriceException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fbs.Lg2.InvalidPriceException",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fbs.Lg2.InvalidStarsException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fbs.Lg2.InvalidStarsException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fbs.Lg2.InvalidStarsException",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fbs.Lg2.InvariantViolationException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fbs.Lg2.InvariantViolationException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fbs.Lg2.InvariantViolationException",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fbs.Lg2.Manufacturer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fbs.Lg2.Manufacturer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fbs.Lg2.Manufacturer",
+      "Summary": "<p sourcefile=\"api/Fbs.Lg2.Manufacturer.yml\" sourcestartlinenumber=\"1\">A manufacturer that produces one or more products.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fbs.Lg2.Product.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fbs.Lg2.Product.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fbs.Lg2.Product",
+      "Summary": "<p sourcefile=\"api/Fbs.Lg2.Product.yml\" sourcestartlinenumber=\"1\">A product sold through the e-commerce portal.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fbs.Lg2.Reply.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fbs.Lg2.Reply.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fbs.Lg2.Reply",
+      "Summary": "<p sourcefile=\"api/Fbs.Lg2.Reply.yml\" sourcestartlinenumber=\"1\">A vendor's reply to a single review. Belongs to exactly one review (1:1).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fbs.Lg2.Review.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fbs.Lg2.Review.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fbs.Lg2.Review",
+      "Summary": "<p sourcefile=\"api/Fbs.Lg2.Review.yml\" sourcestartlinenumber=\"1\">A review submitted by a customer for a product, optionally with a vendor reply.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fbs.Lg2.ReviewAlreadyRepliedException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fbs.Lg2.ReviewAlreadyRepliedException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fbs.Lg2.ReviewAlreadyRepliedException",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fbs.Lg2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fbs.Lg2.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fbs.Lg2",
+      "Summary": null
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

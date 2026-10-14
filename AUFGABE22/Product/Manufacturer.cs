@@ -15,7 +15,20 @@ public sealed class Manufacturer
     public int ManufacturerId => _id;
     public string Name => _name;
     public string SupportEmail => _supportEmail;
-    public IReadOnlyList<Product> Products => _products;
+    public int ProductCount => _products.Count;
+
+    public bool ManufacturesProduct(Product product)
+    {
+        ArgumentNullException.ThrowIfNull(product);
+        foreach (var p in _products)
+        {
+            if (p.ProductId == product.ProductId)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 
     public Manufacturer(string name, string supportEmail)
     {

@@ -1,0 +1,227 @@
+{
+  "docfx_version": "2.81.0+ba844df625370a6bd7c1ecab0d0ec4d1d9128ac4",
+  "source_base_path": "C:/Repositories/lg2-jasmingreissnegger/AUFGABE25/Mitarbeiterverwaltung/docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fbs.Lg2.Arbeitseinsatz.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fbs.Lg2.Arbeitseinsatz.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fbs.Lg2.Arbeitseinsatz",
+      "Summary": "<p sourcefile=\"api/Fbs.Lg2.Arbeitseinsatz.yml\" sourcestartlinenumber=\"1\">A single recorded work session for a temporary employee (Aushilfe).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fbs.Lg2.Aushilfe.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fbs.Lg2.Aushilfe.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fbs.Lg2.Aushilfe",
+      "Summary": "<p sourcefile=\"api/Fbs.Lg2.Aushilfe.yml\" sourcestartlinenumber=\"1\">Flexible temporary worker: paid by the hour, only for hours that have not yet been billed.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fbs.Lg2.Auszubildender.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fbs.Lg2.Auszubildender.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fbs.Lg2.Auszubildender",
+      "Summary": "<p sourcefile=\"api/Fbs.Lg2.Auszubildender.yml\" sourcestartlinenumber=\"1\">Apprentice: salary scales with the current training year.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fbs.Lg2.DomainException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fbs.Lg2.DomainException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fbs.Lg2.DomainException",
+      "Summary": "<p sourcefile=\"api/Fbs.Lg2.DomainException.yml\" sourcestartlinenumber=\"1\">Base type for every domain-specific exception thrown by the employee management model.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fbs.Lg2.Festangestellter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fbs.Lg2.Festangestellter.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fbs.Lg2.Festangestellter",
+      "Summary": "<p sourcefile=\"api/Fbs.Lg2.Festangestellter.yml\" sourcestartlinenumber=\"1\">Permanent employee: receives a fixed monthly salary plus vacation entitlement.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fbs.Lg2.InvalidDateException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fbs.Lg2.InvalidDateException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fbs.Lg2.InvalidDateException",
+      "Summary": "<p sourcefile=\"api/Fbs.Lg2.InvalidDateException.yml\" sourcestartlinenumber=\"1\">Thrown when the document's date is in the future.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fbs.Lg2.InvalidNameException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fbs.Lg2.InvalidNameException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fbs.Lg2.InvalidNameException",
+      "Summary": "<p sourcefile=\"api/Fbs.Lg2.InvalidNameException.yml\" sourcestartlinenumber=\"1\">Thrown when a name is null, empty, or whitespace.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fbs.Lg2.InvalidRangeException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fbs.Lg2.InvalidRangeException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fbs.Lg2.InvalidRangeException",
+      "Summary": "<p sourcefile=\"api/Fbs.Lg2.InvalidRangeException.yml\" sourcestartlinenumber=\"1\">Thrown when vacation days, training year, or hours are out of range.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fbs.Lg2.InvalidSalaryException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fbs.Lg2.InvalidSalaryException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fbs.Lg2.InvalidSalaryException",
+      "Summary": "<p sourcefile=\"api/Fbs.Lg2.InvalidSalaryException.yml\" sourcestartlinenumber=\"1\">Thrown when a salary is negative.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fbs.Lg2.InvalidYearException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fbs.Lg2.InvalidYearException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fbs.Lg2.InvalidYearException",
+      "Summary": "<p sourcefile=\"api/Fbs.Lg2.InvalidYearException.yml\" sourcestartlinenumber=\"1\">Thrown when a year value is outside the plausible employment range.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fbs.Lg2.InvariantViolationException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fbs.Lg2.InvariantViolationException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fbs.Lg2.InvariantViolationException",
+      "Summary": "<p sourcefile=\"api/Fbs.Lg2.InvariantViolationException.yml\" sourcestartlinenumber=\"1\">Thrown when an internal invariant has been violated - indicates a programming error.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fbs.Lg2.Mitarbeiter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fbs.Lg2.Mitarbeiter.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fbs.Lg2.Mitarbeiter",
+      "Summary": "<p sourcefile=\"api/Fbs.Lg2.Mitarbeiter.yml\" sourcestartlinenumber=\"1\">Base class for every employee in the company. Cannot be instantiated directly.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fbs.Lg2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fbs.Lg2.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fbs.Lg2",
+      "Summary": null
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

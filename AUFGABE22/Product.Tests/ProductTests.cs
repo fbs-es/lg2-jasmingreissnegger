@@ -16,7 +16,7 @@ public class CustomerTests
 
         c.Name.ShouldBe("Anna Mueller");
         c.CustomerId.ShouldBeGreaterThan(0);
-        c.Reviews.ShouldBeEmpty();
+        c.ReviewCount.ShouldBe(0);
     }
 
     [Fact]
@@ -63,7 +63,7 @@ public class CustomerTests
 
         _ = new Review(c, p, 5, "great", DateTime.UtcNow, true);
 
-        c.Reviews.Count.ShouldBe(1);
+        c.ReviewCount.ShouldBe(1);
     }
 
     [Fact]
@@ -86,7 +86,7 @@ public class ManufacturerTests
         var m = new Manufacturer("Acme", "support@acme.example");
         m.Name.ShouldBe("Acme");
         m.SupportEmail.ShouldBe("support@acme.example");
-        m.Products.ShouldBeEmpty();
+        m.ProductCount.ShouldBe(0);
     }
 
     [Theory]
@@ -119,9 +119,11 @@ public class ManufacturerTests
     public void Products_AreAttachedViaNewProduct()
     {
         var m = NewManu();
-        _ = new Product("Phone", 100m, m);
-        _ = new Product("Tablet", 200m, m);
-        m.Products.Count.ShouldBe(2);
+        var p1 = new Product("Phone", 100m, m);
+        var p2 = new Product("Tablet", 200m, m);
+        m.ProductCount.ShouldBe(2);
+        m.ManufacturesProduct(p1).ShouldBeTrue();
+        m.ManufacturesProduct(p2).ShouldBeTrue();
     }
 }
 
@@ -138,7 +140,7 @@ public class ProductTests
         p.Name.ShouldBe("Phone");
         p.Price.ShouldBe(599m);
         p.Manufacturer.ShouldBeSameAs(m);
-        p.Reviews.ShouldBeEmpty();
+        p.ReviewCount.ShouldBe(0);
     }
 
     [Theory]
@@ -208,7 +210,20 @@ public class ProductTests
         var p = new Product("Phone", 100m, NewManu());
         var c = new Customer("Alice");
         _ = new Review(c, p, 5, "great", DateTime.UtcNow, true);
-        p.Reviews.Count.ShouldBe(1);
+        p.ReviewCount.ShouldBe(1);
+        p.HasReviewFrom(c).ShouldBeTrue();
+    }
+
+    [Fact]
+    public void HasReviewFrom_NonReviewer_ReturnsFalse()
+    {
+        var p = new Product("Phone", 100m, NewManu());
+        var alice = new Customer("Alice");
+        var bob = new Customer("Bob");
+        _ = new Review(alice, p, 5, "great", DateTime.UtcNow, true);
+
+        p.HasReviewFrom(bob).ShouldBeFalse();
+        p.HasReviewFrom(alice).ShouldBeTrue();
     }
 
     [Fact]

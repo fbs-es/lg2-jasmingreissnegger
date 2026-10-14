@@ -19,7 +19,7 @@ public sealed class Order
     public DateTime OrderDate => _orderDate;
     public OrderStatus Status => _status;
     public Customer Customer => _customer;
-    public IReadOnlyList<OrderPosition> Positions => _positions;
+    public int PositionCount => _positions.Count;
     public DateTime? CancelledAt => _cancelledAt;
     public decimal TotalAmount
     {
@@ -32,6 +32,19 @@ public sealed class Order
             }
             return total;
         }
+    }
+
+    public bool ContainsProduct(Product product)
+    {
+        ArgumentNullException.ThrowIfNull(product);
+        foreach (var p in _positions)
+        {
+            if (p.Product.ProductId == product.ProductId)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     public Order(Customer customer, DateTime orderDate)
@@ -107,6 +120,18 @@ public sealed class Order
         // For our model, the refund is implicit: the stock has been returned
         // and the order is marked Storniert. A separate payment service
         // (out of scope) would observe the status change and refund the customer.
+    }
+
+    internal OrderPosition? GetPosition(int positionNumber)
+    {
+        foreach (var p in _positions)
+        {
+            if (p.PositionNumber == positionNumber)
+            {
+                return p;
+            }
+        }
+        return null;
     }
 
     private void CheckInvariants()

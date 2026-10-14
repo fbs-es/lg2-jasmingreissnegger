@@ -25,8 +25,8 @@ public class CustomerTests
         c.IsBlocked.ShouldBeFalse();
         c.HasOpenDunning.ShouldBeFalse();
         c.CurrentRental.ShouldBeNull();
-        c.SentDunningEmails.ShouldBeEmpty();
-        c.RentalHistory.ShouldBeEmpty();
+        c.SentDunningEmailCount.ShouldBe(0);
+        c.RentalCount.ShouldBe(0);
         c.CustomerId.ShouldBeGreaterThan(0);
     }
 
@@ -226,8 +226,8 @@ public class CustomerTests
         c.Balance.ShouldBe(-2.00m);
         c.IsBlocked.ShouldBeTrue();
         c.HasOpenDunning.ShouldBeTrue();
-        c.SentDunningEmails.Count.ShouldBe(1);
-        c.SentDunningEmails[0].ShouldContain("bob@x.com");
+        c.SentDunningEmailCount.ShouldBe(1);
+        c.GetLastDunningEmail()!.ShouldContain("bob@x.com");
     }
 
     [Fact]
@@ -326,15 +326,16 @@ public class CustomerTests
             _ = c.IsBlocked;
             _ = c.HasOpenDunning;
             _ = c.CurrentRental;
-            _ = c.SentDunningEmails;
-            _ = c.RentalHistory;
+            _ = c.SentDunningEmailCount;
+            _ = c.RentalCount;
+            _ = c.WasRented(s);
         }
 
         c.Balance.ShouldBe(-2m);
         c.IsBlocked.ShouldBeTrue();
         c.HasOpenDunning.ShouldBeTrue();
-        c.SentDunningEmails.Count.ShouldBe(1);
-        c.RentalHistory.Count.ShouldBe(1);
+        c.SentDunningEmailCount.ShouldBe(1);
+        c.RentalCount.ShouldBe(1);
     }
 
     [Fact]
@@ -361,28 +362,23 @@ public class CustomerTests
         c.StartRental(s, start);
         c.EndRental(end);
 
-        c.RentalHistory.Count.ShouldBe(1);
-        var entry = c.RentalHistory[0];
-        entry.StartTime.ShouldBe(start);
-        entry.EndTime.ShouldBe(end);
-        entry.Duration.ShouldBe(TimeSpan.FromMinutes(45));
-        entry.Cost.ShouldBe(9m);
-        entry.Customer.ShouldBeSameAs(c);
-        entry.Scooter.ShouldBeSameAs(s);
-    }
+        c.RentalCount.ShouldBe(1);
+        s.RentalCount.ShouldBe(1);
+        s.WasRentedBy(c).ShouldBeTrue();
+        c.WasRented(s).ShouldBeTrue();
 
-    [Fact]
-    public void EndRental_AppendsEntryToScooterHistory()
-    {
-        var c = NewCustomer(100m);
-        var s = NewScooter();
+        var customerEntry = c.GetLastEntry();
+        customerEntry.ShouldNotBeNull();
+        customerEntry!.StartTime.ShouldBe(start);
+        customerEntry.EndTime.ShouldBe(end);
+        customerEntry.Duration.ShouldBe(TimeSpan.FromMinutes(45));
+        customerEntry.Cost.ShouldBe(9m);
+        customerEntry.Customer.ShouldBeSameAs(c);
+        customerEntry.Scooter.ShouldBeSameAs(s);
 
-        c.StartRental(s, Now);
-        c.EndRental(Now.AddMinutes(20));
-
-        s.RentalHistory.Count.ShouldBe(1);
-        s.RentalHistory[0].Scooter.ShouldBeSameAs(s);
-        s.RentalHistory[0].Customer.ShouldBeSameAs(c);
+        var scooterEntry = s.GetLastEntry();
+        scooterEntry.ShouldNotBeNull();
+        scooterEntry!.ShouldBeSameAs(customerEntry);
     }
 
     [Fact]
@@ -402,13 +398,16 @@ public class CustomerTests
         c.StartRental(s3, Now.AddHours(2));
         c.EndRental(Now.AddHours(2).AddMinutes(5));
 
-        c.RentalHistory.Count.ShouldBe(3);
-        c.RentalHistory[0].Scooter.ShouldBeSameAs(s1);
-        c.RentalHistory[1].Scooter.ShouldBeSameAs(s2);
-        c.RentalHistory[2].Scooter.ShouldBeSameAs(s3);
-        s1.RentalHistory.Count.ShouldBe(1);
-        s2.RentalHistory.Count.ShouldBe(1);
-        s3.RentalHistory.Count.ShouldBe(1);
+        c.RentalCount.ShouldBe(3);
+        s1.RentalCount.ShouldBe(1);
+        s2.RentalCount.ShouldBe(1);
+        s3.RentalCount.ShouldBe(1);
+        c.WasRented(s1).ShouldBeTrue();
+        c.WasRented(s2).ShouldBeTrue();
+        c.WasRented(s3).ShouldBeTrue();
+        s1.WasRentedBy(c).ShouldBeTrue();
+        s2.WasRentedBy(c).ShouldBeTrue();
+        s3.WasRentedBy(c).ShouldBeTrue();
     }
 
     [Fact]
@@ -431,7 +430,7 @@ public class CustomerTests
         c.EndRental(Now);
 
         c.Balance.ShouldBe(100m - 0.20m);
-        c.RentalHistory[0].Cost.ShouldBe(0.20m);
+        c.GetLastEntry()!.Cost.ShouldBe(0.20m);
     }
 
     [Fact]
@@ -444,5 +443,22 @@ public class CustomerTests
 
         c.CurrentRental.ShouldBeSameAs(s);
         s.IsLocked.ShouldBeFalse();
+    }
+
+    [Fact]
+    public void Scooter_TotalRevenue_SumsAllRentalCosts()
+    {
+        var c = NewCustomer(100m);
+        var s = NewScooter();
+
+        c.StartRental(s, Now);
+        c.EndRental(Now.AddMinutes(15));
+
+        s.TotalRevenue.ShouldBe(3.00m);
+
+        c.StartRental(s, Now.AddHours(1));
+        c.EndRental(Now.AddHours(1).AddMinutes(10));
+
+        s.TotalRevenue.ShouldBe(3.00m + 2.00m);
     }
 }

@@ -15,12 +15,14 @@ DateTime now = new DateTime(2026, 1, 15, 10, 0, 0, DateTimeKind.Utc);
 Review r1 = new(alice, product, 5, "Top!", now, verifiedPurchase: true);
 Review r2 = new(bob, product, 3, "Ok, but battery life is short", now.AddDays(1), verifiedPurchase: false);
 
-Console.WriteLine($"Reviews so far: {product.Reviews.Count}");
+Console.WriteLine($"Reviews so far: {product.ReviewCount}");
 Console.WriteLine($"  Alice: {r1.Stars}* - {r1.Comment} (verified={r1.VerifiedPurchase})");
 Console.WriteLine($"  Bob:   {r2.Stars}* - {r2.Comment} (verified={r2.VerifiedPurchase})");
-Console.WriteLine($"Average stars: {product.AverageStars():0.00}\n");
+Console.WriteLine($"Average stars: {product.AverageStars():0.00}");
+Console.WriteLine($"Has Alice reviewed this product? {product.HasReviewFrom(alice)}");
+Console.WriteLine($"Has manufacturer made this product? {manu.ManufacturesProduct(product)}\n");
 
-Reply reply = product.Reviews[0].AddReply("Thanks for the kind words!", now.AddDays(2));
+Reply reply = r1.AddReply("Thanks for the kind words!", now.AddDays(2));
 Console.WriteLine($"Vendor reply to review #{r1.ReviewId}: \"{reply.Text}\"");
 
 try

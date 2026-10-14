@@ -14,7 +14,32 @@ public sealed class Scooter
     public int ScooterId => _id;
     public int BatteryLevel => _batteryLevel;
     public bool IsLocked => _isLocked;
-    public IReadOnlyList<RentalHistoryEntry> RentalHistory => _rentalHistory;
+    public int RentalCount => _rentalHistory.Count;
+    public decimal TotalRevenue
+    {
+        get
+        {
+            decimal total = 0m;
+            foreach (var entry in _rentalHistory)
+            {
+                total += entry.Cost;
+            }
+            return total;
+        }
+    }
+
+    public bool WasRentedBy(Customer customer)
+    {
+        ArgumentNullException.ThrowIfNull(customer);
+        foreach (var entry in _rentalHistory)
+        {
+            if (entry.Customer.CustomerId == customer.CustomerId)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 
     public Scooter()
     {
@@ -50,6 +75,11 @@ public sealed class Scooter
         }
 
         CheckInvariants();
+    }
+
+    internal RentalHistoryEntry? GetLastEntry()
+    {
+        return _rentalHistory.Count == 0 ? null : _rentalHistory[^1];
     }
 
     internal void AttachRentalEntry(RentalHistoryEntry entry)
