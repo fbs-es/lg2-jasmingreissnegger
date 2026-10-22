@@ -1,0 +1,511 @@
+### YamlMime:ManagedReference
+items:
+- uid: Fbs.Lg2.Eilmeldung
+  commentId: T:Fbs.Lg2.Eilmeldung
+  id: Eilmeldung
+  parent: Fbs.Lg2
+  children:
+  - Fbs.Lg2.Eilmeldung.#ctor(System.String,System.Int32,System.String,System.String,System.String)
+  - Fbs.Lg2.Eilmeldung.Kategorie
+  langs:
+  - csharp
+  - vb
+  name: Eilmeldung
+  nameWithType: Eilmeldung
+  fullName: Fbs.Lg2.Eilmeldung
+  type: Class
+  source:
+    remote:
+      path: AUFGABE26/Radiosendung/Eilmeldung.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: Eilmeldung
+    path: ../Eilmeldung.cs
+    startLine: 3
+  assemblies:
+  - Radiosendung
+  namespace: Fbs.Lg2
+  summary: 'Emergency announcement: a high-urgency Werbung that must be inserted into the running show immediately.'
+  example: []
+  syntax:
+    content: 'public sealed class Eilmeldung : Werbung'
+    content.vb: Public NotInheritable Class Eilmeldung Inherits Werbung
+  inheritance:
+  - System.Object
+  - Fbs.Lg2.Beitrag
+  - Fbs.Lg2.Werbung
+  inheritedMembers:
+  - Fbs.Lg2.Werbung.Kundenname
+  - Fbs.Lg2.Werbung.Budget
+  - Fbs.Lg2.Werbung.Dringlichkeit
+  - Fbs.Lg2.Werbung.BetroffeneRegion
+  - Fbs.Lg2.Werbung.GesprochenerText
+  - Fbs.Lg2.Werbung.DetailBeschreibung
+  - Fbs.Lg2.Beitrag.Titel
+  - Fbs.Lg2.Beitrag.DauerSekunden
+  - Fbs.Lg2.Beitrag.AendereDauer(System.Int32)
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Fbs.Lg2.Eilmeldung.Kategorie
+  commentId: P:Fbs.Lg2.Eilmeldung.Kategorie
+  id: Kategorie
+  parent: Fbs.Lg2.Eilmeldung
+  langs:
+  - csharp
+  - vb
+  name: Kategorie
+  nameWithType: Eilmeldung.Kategorie
+  fullName: Fbs.Lg2.Eilmeldung.Kategorie
+  type: Property
+  source:
+    remote:
+      path: AUFGABE26/Radiosendung/Eilmeldung.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: Kategorie
+    path: ../Eilmeldung.cs
+    startLine: 5
+  assemblies:
+  - Radiosendung
+  namespace: Fbs.Lg2
+  example: []
+  syntax:
+    content: public override string Kategorie { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Overrides ReadOnly Property Kategorie As String
+  overridden: Fbs.Lg2.Werbung.Kategorie
+  overload: Fbs.Lg2.Eilmeldung.Kategorie*
+- uid: Fbs.Lg2.Eilmeldung.#ctor(System.String,System.Int32,System.String,System.String,System.String)
+  commentId: M:Fbs.Lg2.Eilmeldung.#ctor(System.String,System.Int32,System.String,System.String,System.String)
+  id: '#ctor(System.String,System.Int32,System.String,System.String,System.String)'
+  parent: Fbs.Lg2.Eilmeldung
+  langs:
+  - csharp
+  - vb
+  name: Eilmeldung(string, int, string, string, string)
+  nameWithType: Eilmeldung.Eilmeldung(string, int, string, string, string)
+  fullName: Fbs.Lg2.Eilmeldung.Eilmeldung(string, int, string, string, string)
+  type: Constructor
+  source:
+    remote:
+      path: AUFGABE26/Radiosendung/Eilmeldung.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: .ctor
+    path: ../Eilmeldung.cs
+    startLine: 7
+  assemblies:
+  - Radiosendung
+  namespace: Fbs.Lg2
+  syntax:
+    content: public Eilmeldung(string titel, int dauerSekunden, string kundenname, string betroffeneRegion, string gesprochenerText)
+    parameters:
+    - id: titel
+      type: System.String
+    - id: dauerSekunden
+      type: System.Int32
+    - id: kundenname
+      type: System.String
+    - id: betroffeneRegion
+      type: System.String
+    - id: gesprochenerText
+      type: System.String
+    content.vb: Public Sub New(titel As String, dauerSekunden As Integer, kundenname As String, betroffeneRegion As String, gesprochenerText As String)
+  overload: Fbs.Lg2.Eilmeldung.#ctor*
+  nameWithType.vb: Eilmeldung.New(String, Integer, String, String, String)
+  fullName.vb: Fbs.Lg2.Eilmeldung.New(String, Integer, String, String, String)
+  name.vb: New(String, Integer, String, String, String)
+references:
+- uid: Fbs.Lg2
+  commentId: N:Fbs.Lg2
+  name: Fbs.Lg2
+  nameWithType: Fbs.Lg2
+  fullName: Fbs.Lg2
+  spec.csharp:
+  - uid: Fbs
+    name: Fbs
+  - name: .
+  - uid: Fbs.Lg2
+    name: Lg2
+  spec.vb:
+  - uid: Fbs
+    name: Fbs
+  - name: .
+  - uid: Fbs.Lg2
+    name: Lg2
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Fbs.Lg2.Beitrag
+  commentId: T:Fbs.Lg2.Beitrag
+  parent: Fbs.Lg2
+  href: Fbs.Lg2.Beitrag.html
+  name: Beitrag
+  nameWithType: Beitrag
+  fullName: Fbs.Lg2.Beitrag
+- uid: Fbs.Lg2.Werbung
+  commentId: T:Fbs.Lg2.Werbung
+  parent: Fbs.Lg2
+  href: Fbs.Lg2.Werbung.html
+  name: Werbung
+  nameWithType: Werbung
+  fullName: Fbs.Lg2.Werbung
+- uid: Fbs.Lg2.Werbung.Kundenname
+  commentId: P:Fbs.Lg2.Werbung.Kundenname
+  parent: Fbs.Lg2.Werbung
+  href: Fbs.Lg2.Werbung.html#Fbs_Lg2_Werbung_Kundenname
+  name: Kundenname
+  nameWithType: Werbung.Kundenname
+  fullName: Fbs.Lg2.Werbung.Kundenname
+- uid: Fbs.Lg2.Werbung.Budget
+  commentId: P:Fbs.Lg2.Werbung.Budget
+  parent: Fbs.Lg2.Werbung
+  href: Fbs.Lg2.Werbung.html#Fbs_Lg2_Werbung_Budget
+  name: Budget
+  nameWithType: Werbung.Budget
+  fullName: Fbs.Lg2.Werbung.Budget
+- uid: Fbs.Lg2.Werbung.Dringlichkeit
+  commentId: P:Fbs.Lg2.Werbung.Dringlichkeit
+  parent: Fbs.Lg2.Werbung
+  href: Fbs.Lg2.Werbung.html#Fbs_Lg2_Werbung_Dringlichkeit
+  name: Dringlichkeit
+  nameWithType: Werbung.Dringlichkeit
+  fullName: Fbs.Lg2.Werbung.Dringlichkeit
+- uid: Fbs.Lg2.Werbung.BetroffeneRegion
+  commentId: P:Fbs.Lg2.Werbung.BetroffeneRegion
+  parent: Fbs.Lg2.Werbung
+  href: Fbs.Lg2.Werbung.html#Fbs_Lg2_Werbung_BetroffeneRegion
+  name: BetroffeneRegion
+  nameWithType: Werbung.BetroffeneRegion
+  fullName: Fbs.Lg2.Werbung.BetroffeneRegion
+- uid: Fbs.Lg2.Werbung.GesprochenerText
+  commentId: P:Fbs.Lg2.Werbung.GesprochenerText
+  parent: Fbs.Lg2.Werbung
+  href: Fbs.Lg2.Werbung.html#Fbs_Lg2_Werbung_GesprochenerText
+  name: GesprochenerText
+  nameWithType: Werbung.GesprochenerText
+  fullName: Fbs.Lg2.Werbung.GesprochenerText
+- uid: Fbs.Lg2.Werbung.DetailBeschreibung
+  commentId: M:Fbs.Lg2.Werbung.DetailBeschreibung
+  parent: Fbs.Lg2.Werbung
+  href: Fbs.Lg2.Werbung.html#Fbs_Lg2_Werbung_DetailBeschreibung
+  name: DetailBeschreibung()
+  nameWithType: Werbung.DetailBeschreibung()
+  fullName: Fbs.Lg2.Werbung.DetailBeschreibung()
+  spec.csharp:
+  - uid: Fbs.Lg2.Werbung.DetailBeschreibung
+    name: DetailBeschreibung
+    href: Fbs.Lg2.Werbung.html#Fbs_Lg2_Werbung_DetailBeschreibung
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Fbs.Lg2.Werbung.DetailBeschreibung
+    name: DetailBeschreibung
+    href: Fbs.Lg2.Werbung.html#Fbs_Lg2_Werbung_DetailBeschreibung
+  - name: (
+  - name: )
+- uid: Fbs.Lg2.Beitrag.Titel
+  commentId: P:Fbs.Lg2.Beitrag.Titel
+  parent: Fbs.Lg2.Beitrag
+  href: Fbs.Lg2.Beitrag.html#Fbs_Lg2_Beitrag_Titel
+  name: Titel
+  nameWithType: Beitrag.Titel
+  fullName: Fbs.Lg2.Beitrag.Titel
+- uid: Fbs.Lg2.Beitrag.DauerSekunden
+  commentId: P:Fbs.Lg2.Beitrag.DauerSekunden
+  parent: Fbs.Lg2.Beitrag
+  href: Fbs.Lg2.Beitrag.html#Fbs_Lg2_Beitrag_DauerSekunden
+  name: DauerSekunden
+  nameWithType: Beitrag.DauerSekunden
+  fullName: Fbs.Lg2.Beitrag.DauerSekunden
+- uid: Fbs.Lg2.Beitrag.AendereDauer(System.Int32)
+  commentId: M:Fbs.Lg2.Beitrag.AendereDauer(System.Int32)
+  parent: Fbs.Lg2.Beitrag
+  isExternal: true
+  href: Fbs.Lg2.Beitrag.html#Fbs_Lg2_Beitrag_AendereDauer_System_Int32_
+  name: AendereDauer(int)
+  nameWithType: Beitrag.AendereDauer(int)
+  fullName: Fbs.Lg2.Beitrag.AendereDauer(int)
+  nameWithType.vb: Beitrag.AendereDauer(Integer)
+  fullName.vb: Fbs.Lg2.Beitrag.AendereDauer(Integer)
+  name.vb: AendereDauer(Integer)
+  spec.csharp:
+  - uid: Fbs.Lg2.Beitrag.AendereDauer(System.Int32)
+    name: AendereDauer
+    href: Fbs.Lg2.Beitrag.html#Fbs_Lg2_Beitrag_AendereDauer_System_Int32_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: Fbs.Lg2.Beitrag.AendereDauer(System.Int32)
+    name: AendereDauer
+    href: Fbs.Lg2.Beitrag.html#Fbs_Lg2_Beitrag_AendereDauer_System_Int32_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Fbs.Lg2.Werbung.Kategorie
+  commentId: P:Fbs.Lg2.Werbung.Kategorie
+  parent: Fbs.Lg2.Werbung
+  href: Fbs.Lg2.Werbung.html#Fbs_Lg2_Werbung_Kategorie
+  name: Kategorie
+  nameWithType: Werbung.Kategorie
+  fullName: Fbs.Lg2.Werbung.Kategorie
+- uid: Fbs.Lg2.Eilmeldung.Kategorie*
+  commentId: Overload:Fbs.Lg2.Eilmeldung.Kategorie
+  href: Fbs.Lg2.Eilmeldung.html#Fbs_Lg2_Eilmeldung_Kategorie
+  name: Kategorie
+  nameWithType: Eilmeldung.Kategorie
+  fullName: Fbs.Lg2.Eilmeldung.Kategorie
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Fbs.Lg2.Eilmeldung.#ctor*
+  commentId: Overload:Fbs.Lg2.Eilmeldung.#ctor
+  href: Fbs.Lg2.Eilmeldung.html#Fbs_Lg2_Eilmeldung__ctor_System_String_System_Int32_System_String_System_String_System_String_
+  name: Eilmeldung
+  nameWithType: Eilmeldung.Eilmeldung
+  fullName: Fbs.Lg2.Eilmeldung.Eilmeldung
+  nameWithType.vb: Eilmeldung.New
+  fullName.vb: Fbs.Lg2.Eilmeldung.New
+  name.vb: New
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer

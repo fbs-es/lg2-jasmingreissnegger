@@ -1,0 +1,183 @@
+### YamlMime:ManagedReference
+items:
+- uid: Fbs.Lg2.Payment.IPaymentService
+  commentId: T:Fbs.Lg2.Payment.IPaymentService
+  id: IPaymentService
+  parent: Fbs.Lg2.Payment
+  children:
+  - Fbs.Lg2.Payment.IPaymentService.Charge(System.Decimal,System.String)
+  - Fbs.Lg2.Payment.IPaymentService.Refund(System.String,System.Decimal)
+  langs:
+  - csharp
+  - vb
+  name: IPaymentService
+  nameWithType: IPaymentService
+  fullName: Fbs.Lg2.Payment.IPaymentService
+  type: Interface
+  source:
+    remote:
+      path: AUFGABE23a/PaymentService/IPaymentService.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: IPaymentService
+    path: ../IPaymentService.cs
+    startLine: 24
+  assemblies:
+  - PaymentService
+  namespace: Fbs.Lg2.Payment
+  summary: Abstraction over a payment provider. Implementations can be Stripe, PayPal, in-memory test double, etc.
+  example: []
+  syntax:
+    content: public interface IPaymentService
+    content.vb: Public Interface IPaymentService
+  derivedClasses:
+  - Fbs.Lg2.Payment.InMemoryPaymentService
+  - Fbs.Lg2.Payment.NullPaymentService
+- uid: Fbs.Lg2.Payment.IPaymentService.Charge(System.Decimal,System.String)
+  commentId: M:Fbs.Lg2.Payment.IPaymentService.Charge(System.Decimal,System.String)
+  id: Charge(System.Decimal,System.String)
+  parent: Fbs.Lg2.Payment.IPaymentService
+  langs:
+  - csharp
+  - vb
+  name: Charge(decimal, string)
+  nameWithType: IPaymentService.Charge(decimal, string)
+  fullName: Fbs.Lg2.Payment.IPaymentService.Charge(decimal, string)
+  type: Method
+  source:
+    remote:
+      path: AUFGABE23a/PaymentService/IPaymentService.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: Charge
+    path: ../IPaymentService.cs
+    startLine: 27
+  assemblies:
+  - PaymentService
+  namespace: Fbs.Lg2.Payment
+  summary: Charges the given amount to the customer's payment method.
+  example: []
+  syntax:
+    content: PaymentResult Charge(decimal amount, string description)
+    parameters:
+    - id: amount
+      type: System.Decimal
+    - id: description
+      type: System.String
+    return:
+      type: Fbs.Lg2.Payment.PaymentResult
+    content.vb: Function Charge(amount As Decimal, description As String) As PaymentResult
+  overload: Fbs.Lg2.Payment.IPaymentService.Charge*
+  nameWithType.vb: IPaymentService.Charge(Decimal, String)
+  fullName.vb: Fbs.Lg2.Payment.IPaymentService.Charge(Decimal, String)
+  name.vb: Charge(Decimal, String)
+- uid: Fbs.Lg2.Payment.IPaymentService.Refund(System.String,System.Decimal)
+  commentId: M:Fbs.Lg2.Payment.IPaymentService.Refund(System.String,System.Decimal)
+  id: Refund(System.String,System.Decimal)
+  parent: Fbs.Lg2.Payment.IPaymentService
+  langs:
+  - csharp
+  - vb
+  name: Refund(string, decimal)
+  nameWithType: IPaymentService.Refund(string, decimal)
+  fullName: Fbs.Lg2.Payment.IPaymentService.Refund(string, decimal)
+  type: Method
+  source:
+    remote:
+      path: AUFGABE23a/PaymentService/IPaymentService.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: Refund
+    path: ../IPaymentService.cs
+    startLine: 30
+  assemblies:
+  - PaymentService
+  namespace: Fbs.Lg2.Payment
+  summary: Refunds a previously-successful charge, identified by transactionId.
+  example: []
+  syntax:
+    content: PaymentResult Refund(string transactionId, decimal amount)
+    parameters:
+    - id: transactionId
+      type: System.String
+    - id: amount
+      type: System.Decimal
+    return:
+      type: Fbs.Lg2.Payment.PaymentResult
+    content.vb: Function Refund(transactionId As String, amount As Decimal) As PaymentResult
+  overload: Fbs.Lg2.Payment.IPaymentService.Refund*
+  nameWithType.vb: IPaymentService.Refund(String, Decimal)
+  fullName.vb: Fbs.Lg2.Payment.IPaymentService.Refund(String, Decimal)
+  name.vb: Refund(String, Decimal)
+references:
+- uid: Fbs.Lg2.Payment
+  commentId: N:Fbs.Lg2.Payment
+  name: Fbs.Lg2.Payment
+  nameWithType: Fbs.Lg2.Payment
+  fullName: Fbs.Lg2.Payment
+  spec.csharp:
+  - uid: Fbs
+    name: Fbs
+  - name: .
+  - uid: Fbs.Lg2
+    name: Lg2
+  - name: .
+  - uid: Fbs.Lg2.Payment
+    name: Payment
+  spec.vb:
+  - uid: Fbs
+    name: Fbs
+  - name: .
+  - uid: Fbs.Lg2
+    name: Lg2
+  - name: .
+  - uid: Fbs.Lg2.Payment
+    name: Payment
+- uid: Fbs.Lg2.Payment.IPaymentService.Charge*
+  commentId: Overload:Fbs.Lg2.Payment.IPaymentService.Charge
+  href: Fbs.Lg2.Payment.IPaymentService.html#Fbs_Lg2_Payment_IPaymentService_Charge_System_Decimal_System_String_
+  name: Charge
+  nameWithType: IPaymentService.Charge
+  fullName: Fbs.Lg2.Payment.IPaymentService.Charge
+- uid: System.Decimal
+  commentId: T:System.Decimal
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.decimal
+  name: decimal
+  nameWithType: decimal
+  fullName: decimal
+  nameWithType.vb: Decimal
+  fullName.vb: Decimal
+  name.vb: Decimal
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Fbs.Lg2.Payment.PaymentResult
+  commentId: T:Fbs.Lg2.Payment.PaymentResult
+  parent: Fbs.Lg2.Payment
+  href: Fbs.Lg2.Payment.PaymentResult.html
+  name: PaymentResult
+  nameWithType: PaymentResult
+  fullName: Fbs.Lg2.Payment.PaymentResult
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Fbs.Lg2.Payment.IPaymentService.Refund*
+  commentId: Overload:Fbs.Lg2.Payment.IPaymentService.Refund
+  href: Fbs.Lg2.Payment.IPaymentService.html#Fbs_Lg2_Payment_IPaymentService_Refund_System_String_System_Decimal_
+  name: Refund
+  nameWithType: IPaymentService.Refund
+  fullName: Fbs.Lg2.Payment.IPaymentService.Refund

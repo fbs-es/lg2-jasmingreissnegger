@@ -116,6 +116,15 @@ public class ManufacturerTests
     }
 
     [Fact]
+    public void Products_AreReadOnly()
+    {
+        var m = NewManu();
+        var p = new Product("Phone", 100m, m);
+        m.Products.ShouldBe(new[] { p });
+        m.Products.ShouldNotBeAssignableTo<System.Collections.Generic.List<Product>>();
+    }
+
+    [Fact]
     public void Products_AreAttachedViaNewProduct()
     {
         var m = NewManu();
@@ -175,10 +184,32 @@ public class ProductTests
     }
 
     [Fact]
-    public void AverageStars_NoReviews_ReturnsZero()
+    public void AverageStars_NoReviews_ReturnsNull()
     {
         var p = new Product("Phone", 100m, NewManu());
-        p.AverageStars().ShouldBe(0m);
+        p.AverageStars().ShouldBeNull();
+    }
+
+    [Fact]
+    public void AverageStars_NonIntegerMean_IsNotRounded()
+    {
+        var p = new Product("Phone", 100m, NewManu());
+        _ = new Review(new Customer("Alice"), p, 5, "great", DateTime.UtcNow, true);
+        _ = new Review(new Customer("Bob"), p, 4, "good", DateTime.UtcNow, true);
+        p.AverageStars().ShouldBe(4.5m);
+    }
+
+    [Fact]
+    public void Reviews_AreReadOnly()
+    {
+        var p = new Product("Phone", 100m, NewManu());
+        var c = new Customer("Alice");
+        var r = new Review(c, p, 5, "great", DateTime.UtcNow, true);
+
+        p.Reviews.ShouldBe(new[] { r });
+        c.Reviews.ShouldBe(new[] { r });
+        p.Reviews.ShouldNotBeAssignableTo<System.Collections.Generic.List<Review>>();
+        c.Reviews.ShouldNotBeAssignableTo<System.Collections.Generic.List<Review>>();
     }
 
     [Fact]
@@ -321,6 +352,21 @@ public class ReviewTests
         r.AddReply("first", Now);
         Should.Throw<ReviewAlreadyRepliedException>(() => r.AddReply("second", Now.AddDays(1)));
         r.Reply!.Text.ShouldBe("first");
+    }
+
+    [Fact]
+    public void AddReply_DateBeforeReview_Throws_AndNoReplyIsStored()
+    {
+        var r = new Review(C(), P(), 5, "great", Now, true);
+        Should.Throw<InvalidDateException>(() => r.AddReply("thanks", Now.AddSeconds(-1)));
+        r.Reply.ShouldBeNull();
+    }
+
+    [Fact]
+    public void AddReply_SameDateAsReview_IsAllowed()
+    {
+        var r = new Review(C(), P(), 5, "great", Now, true);
+        r.AddReply("thanks", Now).ReplyDate.ShouldBe(Now);
     }
 
     [Fact]

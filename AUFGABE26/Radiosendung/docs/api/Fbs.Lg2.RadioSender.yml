@@ -1,0 +1,487 @@
+### YamlMime:ManagedReference
+items:
+- uid: Fbs.Lg2.RadioSender
+  commentId: T:Fbs.Lg2.RadioSender
+  id: RadioSender
+  parent: Fbs.Lg2
+  children:
+  - Fbs.Lg2.RadioSender.#ctor(System.String,System.String)
+  - Fbs.Lg2.RadioSender.Name
+  - Fbs.Lg2.RadioSender.Program
+  - Fbs.Lg2.RadioSender.SenderId
+  - Fbs.Lg2.RadioSender.UebertragungsFrequenz
+  langs:
+  - csharp
+  - vb
+  name: RadioSender
+  nameWithType: RadioSender
+  fullName: Fbs.Lg2.RadioSender
+  type: Class
+  source:
+    remote:
+      path: AUFGABE26/Radiosendung/RadioSender.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: RadioSender
+    path: ../RadioSender.cs
+    startLine: 3
+  assemblies:
+  - Radiosendung
+  namespace: Fbs.Lg2
+  summary: 'The radio station: name, broadcast frequency, and the daily program.'
+  example: []
+  syntax:
+    content: public sealed class RadioSender
+    content.vb: Public NotInheritable Class RadioSender
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Fbs.Lg2.RadioSender.SenderId
+  commentId: P:Fbs.Lg2.RadioSender.SenderId
+  id: SenderId
+  parent: Fbs.Lg2.RadioSender
+  langs:
+  - csharp
+  - vb
+  name: SenderId
+  nameWithType: RadioSender.SenderId
+  fullName: Fbs.Lg2.RadioSender.SenderId
+  type: Property
+  source:
+    remote:
+      path: AUFGABE26/Radiosendung/RadioSender.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: SenderId
+    path: ../RadioSender.cs
+    startLine: 12
+  assemblies:
+  - Radiosendung
+  namespace: Fbs.Lg2
+  syntax:
+    content: public int SenderId { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property SenderId As Integer
+  overload: Fbs.Lg2.RadioSender.SenderId*
+- uid: Fbs.Lg2.RadioSender.Name
+  commentId: P:Fbs.Lg2.RadioSender.Name
+  id: Name
+  parent: Fbs.Lg2.RadioSender
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: RadioSender.Name
+  fullName: Fbs.Lg2.RadioSender.Name
+  type: Property
+  source:
+    remote:
+      path: AUFGABE26/Radiosendung/RadioSender.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: Name
+    path: ../RadioSender.cs
+    startLine: 13
+  assemblies:
+  - Radiosendung
+  namespace: Fbs.Lg2
+  syntax:
+    content: public string Name { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Name As String
+  overload: Fbs.Lg2.RadioSender.Name*
+- uid: Fbs.Lg2.RadioSender.UebertragungsFrequenz
+  commentId: P:Fbs.Lg2.RadioSender.UebertragungsFrequenz
+  id: UebertragungsFrequenz
+  parent: Fbs.Lg2.RadioSender
+  langs:
+  - csharp
+  - vb
+  name: UebertragungsFrequenz
+  nameWithType: RadioSender.UebertragungsFrequenz
+  fullName: Fbs.Lg2.RadioSender.UebertragungsFrequenz
+  type: Property
+  source:
+    remote:
+      path: AUFGABE26/Radiosendung/RadioSender.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: UebertragungsFrequenz
+    path: ../RadioSender.cs
+    startLine: 14
+  assemblies:
+  - Radiosendung
+  namespace: Fbs.Lg2
+  syntax:
+    content: public string UebertragungsFrequenz { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property UebertragungsFrequenz As String
+  overload: Fbs.Lg2.RadioSender.UebertragungsFrequenz*
+- uid: Fbs.Lg2.RadioSender.Program
+  commentId: P:Fbs.Lg2.RadioSender.Program
+  id: Program
+  parent: Fbs.Lg2.RadioSender
+  langs:
+  - csharp
+  - vb
+  name: Program
+  nameWithType: RadioSender.Program
+  fullName: Fbs.Lg2.RadioSender.Program
+  type: Property
+  source:
+    remote:
+      path: AUFGABE26/Radiosendung/RadioSender.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: Program
+    path: ../RadioSender.cs
+    startLine: 15
+  assemblies:
+  - Radiosendung
+  namespace: Fbs.Lg2
+  syntax:
+    content: public RadioProgram Program { get; }
+    parameters: []
+    return:
+      type: Fbs.Lg2.RadioProgram
+    content.vb: Public ReadOnly Property Program As RadioProgram
+  overload: Fbs.Lg2.RadioSender.Program*
+- uid: Fbs.Lg2.RadioSender.#ctor(System.String,System.String)
+  commentId: M:Fbs.Lg2.RadioSender.#ctor(System.String,System.String)
+  id: '#ctor(System.String,System.String)'
+  parent: Fbs.Lg2.RadioSender
+  langs:
+  - csharp
+  - vb
+  name: RadioSender(string, string)
+  nameWithType: RadioSender.RadioSender(string, string)
+  fullName: Fbs.Lg2.RadioSender.RadioSender(string, string)
+  type: Constructor
+  source:
+    remote:
+      path: AUFGABE26/Radiosendung/RadioSender.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: .ctor
+    path: ../RadioSender.cs
+    startLine: 17
+  assemblies:
+  - Radiosendung
+  namespace: Fbs.Lg2
+  syntax:
+    content: public RadioSender(string name, string uebertraegungsFrequenz)
+    parameters:
+    - id: name
+      type: System.String
+    - id: uebertraegungsFrequenz
+      type: System.String
+    content.vb: Public Sub New(name As String, uebertraegungsFrequenz As String)
+  overload: Fbs.Lg2.RadioSender.#ctor*
+  nameWithType.vb: RadioSender.New(String, String)
+  fullName.vb: Fbs.Lg2.RadioSender.New(String, String)
+  name.vb: New(String, String)
+references:
+- uid: Fbs.Lg2
+  commentId: N:Fbs.Lg2
+  name: Fbs.Lg2
+  nameWithType: Fbs.Lg2
+  fullName: Fbs.Lg2
+  spec.csharp:
+  - uid: Fbs
+    name: Fbs
+  - name: .
+  - uid: Fbs.Lg2
+    name: Lg2
+  spec.vb:
+  - uid: Fbs
+    name: Fbs
+  - name: .
+  - uid: Fbs.Lg2
+    name: Lg2
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Fbs.Lg2.RadioSender.SenderId*
+  commentId: Overload:Fbs.Lg2.RadioSender.SenderId
+  href: Fbs.Lg2.RadioSender.html#Fbs_Lg2_RadioSender_SenderId
+  name: SenderId
+  nameWithType: RadioSender.SenderId
+  fullName: Fbs.Lg2.RadioSender.SenderId
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Fbs.Lg2.RadioSender.Name*
+  commentId: Overload:Fbs.Lg2.RadioSender.Name
+  href: Fbs.Lg2.RadioSender.html#Fbs_Lg2_RadioSender_Name
+  name: Name
+  nameWithType: RadioSender.Name
+  fullName: Fbs.Lg2.RadioSender.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Fbs.Lg2.RadioSender.UebertragungsFrequenz*
+  commentId: Overload:Fbs.Lg2.RadioSender.UebertragungsFrequenz
+  href: Fbs.Lg2.RadioSender.html#Fbs_Lg2_RadioSender_UebertragungsFrequenz
+  name: UebertragungsFrequenz
+  nameWithType: RadioSender.UebertragungsFrequenz
+  fullName: Fbs.Lg2.RadioSender.UebertragungsFrequenz
+- uid: Fbs.Lg2.RadioSender.Program*
+  commentId: Overload:Fbs.Lg2.RadioSender.Program
+  href: Fbs.Lg2.RadioSender.html#Fbs_Lg2_RadioSender_Program
+  name: Program
+  nameWithType: RadioSender.Program
+  fullName: Fbs.Lg2.RadioSender.Program
+- uid: Fbs.Lg2.RadioProgram
+  commentId: T:Fbs.Lg2.RadioProgram
+  parent: Fbs.Lg2
+  href: Fbs.Lg2.RadioProgram.html
+  name: RadioProgram
+  nameWithType: RadioProgram
+  fullName: Fbs.Lg2.RadioProgram
+- uid: Fbs.Lg2.RadioSender.#ctor*
+  commentId: Overload:Fbs.Lg2.RadioSender.#ctor
+  href: Fbs.Lg2.RadioSender.html#Fbs_Lg2_RadioSender__ctor_System_String_System_String_
+  name: RadioSender
+  nameWithType: RadioSender.RadioSender
+  fullName: Fbs.Lg2.RadioSender.RadioSender
+  nameWithType.vb: RadioSender.New
+  fullName.vb: Fbs.Lg2.RadioSender.New
+  name.vb: New

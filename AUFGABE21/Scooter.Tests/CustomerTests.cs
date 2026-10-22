@@ -421,16 +421,106 @@ public class CustomerTests
     }
 
     [Fact]
-    public void EndRental_ZeroDuration_RoundsUpToOneMinute()
+    public void EndRental_ZeroDuration_IsRejected_AndStateUnchanged()
     {
         var c = NewCustomer(100m);
         var s = NewScooter();
 
         c.StartRental(s, Now);
-        c.EndRental(Now);
+        Should.Throw<InvalidRentalDurationException>(() => c.EndRental(Now));
 
-        c.Balance.ShouldBe(100m - 0.20m);
-        c.GetLastEntry()!.Cost.ShouldBe(0.20m);
+        c.Balance.ShouldBe(100m);
+        c.CurrentRental.ShouldBeSameAs(s);
+        s.IsLocked.ShouldBeFalse();
+        c.RentalCount.ShouldBe(0);
+    }
+
+    [Theory]
+    [InlineData(30, 1)]
+    [InlineData(60, 1)]
+    [InlineData(61, 2)]
+    public void EndRental_StartedMinute_IsChargedAsFullMinute(int seconds, int expectedMinutes)
+    {
+        var c = NewCustomer(100m);
+        var s = NewScooter();
+
+        c.StartRental(s, Now);
+        c.EndRental(Now.AddSeconds(seconds));
+
+        c.Balance.ShouldBe(100m - 0.20m * expectedMinutes);
+        s.BatteryLevel.ShouldBe(100 - expectedMinutes);
+    }
+
+    [Fact]
+    public void EndRental_NoTimestamp_UsesUtcNow()
+    {
+        var c = NewCustomer(100m);
+        var s = NewScooter();
+
+        c.StartRental(s, DateTime.UtcNow.AddMinutes(-5));
+        c.EndRental();
+
+        c.CurrentRental.ShouldBeNull();
+        s.IsLocked.ShouldBeTrue();
+        c.RentalCount.ShouldBe(1);
+        c.Balance.ShouldBeInRange(100m - 0.20m * 6, 100m - 0.20m * 5);
+    }
+
+    [Fact]
+    public void StartRental_BatteryJustAboveThreshold_IsAllowed()
+    {
+        var s = NewScooter();
+        var c2 = NewCustomer(100m);
+        c2.StartRental(s, Now);
+        c2.EndRental(Now.AddMinutes(84));
+        s.BatteryLevel.ShouldBe(16);
+
+        var c = NewCustomer();
+        c.StartRental(s, Now.AddHours(2));
+
+        c.CurrentRental.ShouldBeSameAs(s);
+    }
+
+    [Fact]
+    public void StartRental_BalanceExactlyOneEuro_IsAllowed()
+    {
+        var c = new Customer("Bob", "bob@x.com", 10.00m);
+        c.StartRental(NewScooter(), Now);
+        c.EndRental(Now.AddMinutes(45));
+        c.Balance.ShouldBe(1.00m);
+
+        var s2 = NewScooter();
+        c.StartRental(s2, Now.AddHours(1));
+
+        c.CurrentRental.ShouldBeSameAs(s2);
+    }
+
+    [Fact]
+    public void EndRental_BalanceExactlyZero_DoesNotBlock()
+    {
+        var c = new Customer("Bob", "bob@x.com", 10.00m);
+        c.StartRental(NewScooter(), Now);
+        c.EndRental(Now.AddMinutes(50));
+
+        c.Balance.ShouldBe(0m);
+        c.IsBlocked.ShouldBeFalse();
+        c.HasOpenDunning.ShouldBeFalse();
+        c.SentDunningEmailCount.ShouldBe(0);
+    }
+
+    [Fact]
+    public void RentalHistory_IsReadOnly_AndSharedBetweenCustomerAndScooter()
+    {
+        var c = NewCustomer(100m);
+        var s = NewScooter();
+        c.StartRental(s, Now);
+        c.EndRental(Now.AddMinutes(10));
+
+        c.RentalHistory.Count.ShouldBe(1);
+        s.RentalHistory.Count.ShouldBe(1);
+        c.RentalHistory[0].ShouldBeSameAs(s.RentalHistory[0]);
+        c.RentalHistory.ShouldNotBeAssignableTo<System.Collections.Generic.List<RentalHistoryEntry>>();
+        s.RentalHistory.ShouldNotBeAssignableTo<System.Collections.Generic.List<RentalHistoryEntry>>();
     }
 
     [Fact]

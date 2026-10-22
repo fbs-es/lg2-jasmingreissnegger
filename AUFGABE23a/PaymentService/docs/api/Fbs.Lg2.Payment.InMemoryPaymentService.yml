@@ -1,0 +1,494 @@
+### YamlMime:ManagedReference
+items:
+- uid: Fbs.Lg2.Payment.InMemoryPaymentService
+  commentId: T:Fbs.Lg2.Payment.InMemoryPaymentService
+  id: InMemoryPaymentService
+  parent: Fbs.Lg2.Payment
+  children:
+  - Fbs.Lg2.Payment.InMemoryPaymentService.Charge(System.Decimal,System.String)
+  - Fbs.Lg2.Payment.InMemoryPaymentService.Refund(System.String,System.Decimal)
+  langs:
+  - csharp
+  - vb
+  name: InMemoryPaymentService
+  nameWithType: InMemoryPaymentService
+  fullName: Fbs.Lg2.Payment.InMemoryPaymentService
+  type: Class
+  source:
+    remote:
+      path: AUFGABE23a/PaymentService/InMemoryPaymentService.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: InMemoryPaymentService
+    path: ../InMemoryPaymentService.cs
+    startLine: 5
+  assemblies:
+  - PaymentService
+  namespace: Fbs.Lg2.Payment
+  summary: In-memory payment service for development and testing. Not for production use.
+  example: []
+  syntax:
+    content: 'public sealed class InMemoryPaymentService : IPaymentService'
+    content.vb: Public NotInheritable Class InMemoryPaymentService Implements IPaymentService
+  inheritance:
+  - System.Object
+  implements:
+  - Fbs.Lg2.Payment.IPaymentService
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Fbs.Lg2.Payment.InMemoryPaymentService.Charge(System.Decimal,System.String)
+  commentId: M:Fbs.Lg2.Payment.InMemoryPaymentService.Charge(System.Decimal,System.String)
+  id: Charge(System.Decimal,System.String)
+  parent: Fbs.Lg2.Payment.InMemoryPaymentService
+  langs:
+  - csharp
+  - vb
+  name: Charge(decimal, string)
+  nameWithType: InMemoryPaymentService.Charge(decimal, string)
+  fullName: Fbs.Lg2.Payment.InMemoryPaymentService.Charge(decimal, string)
+  type: Method
+  source:
+    remote:
+      path: AUFGABE23a/PaymentService/InMemoryPaymentService.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: Charge
+    path: ../InMemoryPaymentService.cs
+    startLine: 11
+  assemblies:
+  - PaymentService
+  namespace: Fbs.Lg2.Payment
+  summary: Charges the given amount and remembers it for later refund.
+  example: []
+  syntax:
+    content: public PaymentResult Charge(decimal amount, string description)
+    parameters:
+    - id: amount
+      type: System.Decimal
+    - id: description
+      type: System.String
+    return:
+      type: Fbs.Lg2.Payment.PaymentResult
+    content.vb: Public Function Charge(amount As Decimal, description As String) As PaymentResult
+  overload: Fbs.Lg2.Payment.InMemoryPaymentService.Charge*
+  implements:
+  - Fbs.Lg2.Payment.IPaymentService.Charge(System.Decimal,System.String)
+  nameWithType.vb: InMemoryPaymentService.Charge(Decimal, String)
+  fullName.vb: Fbs.Lg2.Payment.InMemoryPaymentService.Charge(Decimal, String)
+  name.vb: Charge(Decimal, String)
+- uid: Fbs.Lg2.Payment.InMemoryPaymentService.Refund(System.String,System.Decimal)
+  commentId: M:Fbs.Lg2.Payment.InMemoryPaymentService.Refund(System.String,System.Decimal)
+  id: Refund(System.String,System.Decimal)
+  parent: Fbs.Lg2.Payment.InMemoryPaymentService
+  langs:
+  - csharp
+  - vb
+  name: Refund(string, decimal)
+  nameWithType: InMemoryPaymentService.Refund(string, decimal)
+  fullName: Fbs.Lg2.Payment.InMemoryPaymentService.Refund(string, decimal)
+  type: Method
+  source:
+    remote:
+      path: AUFGABE23a/PaymentService/InMemoryPaymentService.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: Refund
+    path: ../InMemoryPaymentService.cs
+    startLine: 28
+  assemblies:
+  - PaymentService
+  namespace: Fbs.Lg2.Payment
+  summary: Refunds a previously-charged transaction. Refund amount may not exceed the original charge.
+  example: []
+  syntax:
+    content: public PaymentResult Refund(string transactionId, decimal amount)
+    parameters:
+    - id: transactionId
+      type: System.String
+    - id: amount
+      type: System.Decimal
+    return:
+      type: Fbs.Lg2.Payment.PaymentResult
+    content.vb: Public Function Refund(transactionId As String, amount As Decimal) As PaymentResult
+  overload: Fbs.Lg2.Payment.InMemoryPaymentService.Refund*
+  implements:
+  - Fbs.Lg2.Payment.IPaymentService.Refund(System.String,System.Decimal)
+  nameWithType.vb: InMemoryPaymentService.Refund(String, Decimal)
+  fullName.vb: Fbs.Lg2.Payment.InMemoryPaymentService.Refund(String, Decimal)
+  name.vb: Refund(String, Decimal)
+references:
+- uid: Fbs.Lg2.Payment
+  commentId: N:Fbs.Lg2.Payment
+  name: Fbs.Lg2.Payment
+  nameWithType: Fbs.Lg2.Payment
+  fullName: Fbs.Lg2.Payment
+  spec.csharp:
+  - uid: Fbs
+    name: Fbs
+  - name: .
+  - uid: Fbs.Lg2
+    name: Lg2
+  - name: .
+  - uid: Fbs.Lg2.Payment
+    name: Payment
+  spec.vb:
+  - uid: Fbs
+    name: Fbs
+  - name: .
+  - uid: Fbs.Lg2
+    name: Lg2
+  - name: .
+  - uid: Fbs.Lg2.Payment
+    name: Payment
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Fbs.Lg2.Payment.IPaymentService
+  commentId: T:Fbs.Lg2.Payment.IPaymentService
+  parent: Fbs.Lg2.Payment
+  href: Fbs.Lg2.Payment.IPaymentService.html
+  name: IPaymentService
+  nameWithType: IPaymentService
+  fullName: Fbs.Lg2.Payment.IPaymentService
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Fbs.Lg2.Payment.InMemoryPaymentService.Charge*
+  commentId: Overload:Fbs.Lg2.Payment.InMemoryPaymentService.Charge
+  href: Fbs.Lg2.Payment.InMemoryPaymentService.html#Fbs_Lg2_Payment_InMemoryPaymentService_Charge_System_Decimal_System_String_
+  name: Charge
+  nameWithType: InMemoryPaymentService.Charge
+  fullName: Fbs.Lg2.Payment.InMemoryPaymentService.Charge
+- uid: Fbs.Lg2.Payment.IPaymentService.Charge(System.Decimal,System.String)
+  commentId: M:Fbs.Lg2.Payment.IPaymentService.Charge(System.Decimal,System.String)
+  parent: Fbs.Lg2.Payment.IPaymentService
+  isExternal: true
+  href: Fbs.Lg2.Payment.IPaymentService.html#Fbs_Lg2_Payment_IPaymentService_Charge_System_Decimal_System_String_
+  name: Charge(decimal, string)
+  nameWithType: IPaymentService.Charge(decimal, string)
+  fullName: Fbs.Lg2.Payment.IPaymentService.Charge(decimal, string)
+  nameWithType.vb: IPaymentService.Charge(Decimal, String)
+  fullName.vb: Fbs.Lg2.Payment.IPaymentService.Charge(Decimal, String)
+  name.vb: Charge(Decimal, String)
+  spec.csharp:
+  - uid: Fbs.Lg2.Payment.IPaymentService.Charge(System.Decimal,System.String)
+    name: Charge
+    href: Fbs.Lg2.Payment.IPaymentService.html#Fbs_Lg2_Payment_IPaymentService_Charge_System_Decimal_System_String_
+  - name: (
+  - uid: System.Decimal
+    name: decimal
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.decimal
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: Fbs.Lg2.Payment.IPaymentService.Charge(System.Decimal,System.String)
+    name: Charge
+    href: Fbs.Lg2.Payment.IPaymentService.html#Fbs_Lg2_Payment_IPaymentService_Charge_System_Decimal_System_String_
+  - name: (
+  - uid: System.Decimal
+    name: Decimal
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.decimal
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Decimal
+  commentId: T:System.Decimal
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.decimal
+  name: decimal
+  nameWithType: decimal
+  fullName: decimal
+  nameWithType.vb: Decimal
+  fullName.vb: Decimal
+  name.vb: Decimal
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Fbs.Lg2.Payment.PaymentResult
+  commentId: T:Fbs.Lg2.Payment.PaymentResult
+  parent: Fbs.Lg2.Payment
+  href: Fbs.Lg2.Payment.PaymentResult.html
+  name: PaymentResult
+  nameWithType: PaymentResult
+  fullName: Fbs.Lg2.Payment.PaymentResult
+- uid: Fbs.Lg2.Payment.InMemoryPaymentService.Refund*
+  commentId: Overload:Fbs.Lg2.Payment.InMemoryPaymentService.Refund
+  href: Fbs.Lg2.Payment.InMemoryPaymentService.html#Fbs_Lg2_Payment_InMemoryPaymentService_Refund_System_String_System_Decimal_
+  name: Refund
+  nameWithType: InMemoryPaymentService.Refund
+  fullName: Fbs.Lg2.Payment.InMemoryPaymentService.Refund
+- uid: Fbs.Lg2.Payment.IPaymentService.Refund(System.String,System.Decimal)
+  commentId: M:Fbs.Lg2.Payment.IPaymentService.Refund(System.String,System.Decimal)
+  parent: Fbs.Lg2.Payment.IPaymentService
+  isExternal: true
+  href: Fbs.Lg2.Payment.IPaymentService.html#Fbs_Lg2_Payment_IPaymentService_Refund_System_String_System_Decimal_
+  name: Refund(string, decimal)
+  nameWithType: IPaymentService.Refund(string, decimal)
+  fullName: Fbs.Lg2.Payment.IPaymentService.Refund(string, decimal)
+  nameWithType.vb: IPaymentService.Refund(String, Decimal)
+  fullName.vb: Fbs.Lg2.Payment.IPaymentService.Refund(String, Decimal)
+  name.vb: Refund(String, Decimal)
+  spec.csharp:
+  - uid: Fbs.Lg2.Payment.IPaymentService.Refund(System.String,System.Decimal)
+    name: Refund
+    href: Fbs.Lg2.Payment.IPaymentService.html#Fbs_Lg2_Payment_IPaymentService_Refund_System_String_System_Decimal_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Decimal
+    name: decimal
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.decimal
+  - name: )
+  spec.vb:
+  - uid: Fbs.Lg2.Payment.IPaymentService.Refund(System.String,System.Decimal)
+    name: Refund
+    href: Fbs.Lg2.Payment.IPaymentService.html#Fbs_Lg2_Payment_IPaymentService_Refund_System_String_System_Decimal_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Decimal
+    name: Decimal
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.decimal
+  - name: )

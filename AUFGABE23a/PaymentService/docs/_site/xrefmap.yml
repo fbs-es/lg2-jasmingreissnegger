@@ -1,0 +1,200 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: Fbs.Lg2.Payment
+  name: Fbs.Lg2.Payment
+  href: api/Fbs.Lg2.Payment.html
+  commentId: N:Fbs.Lg2.Payment
+  fullName: Fbs.Lg2.Payment
+  nameWithType: Fbs.Lg2.Payment
+- uid: Fbs.Lg2.Payment.IPaymentService
+  name: IPaymentService
+  href: api/Fbs.Lg2.Payment.IPaymentService.html
+  commentId: T:Fbs.Lg2.Payment.IPaymentService
+  fullName: Fbs.Lg2.Payment.IPaymentService
+  nameWithType: IPaymentService
+- uid: Fbs.Lg2.Payment.IPaymentService.Charge(System.Decimal,System.String)
+  name: Charge(decimal, string)
+  href: api/Fbs.Lg2.Payment.IPaymentService.html#Fbs_Lg2_Payment_IPaymentService_Charge_System_Decimal_System_String_
+  commentId: M:Fbs.Lg2.Payment.IPaymentService.Charge(System.Decimal,System.String)
+  name.vb: Charge(Decimal, String)
+  fullName: Fbs.Lg2.Payment.IPaymentService.Charge(decimal, string)
+  fullName.vb: Fbs.Lg2.Payment.IPaymentService.Charge(Decimal, String)
+  nameWithType: IPaymentService.Charge(decimal, string)
+  nameWithType.vb: IPaymentService.Charge(Decimal, String)
+- uid: Fbs.Lg2.Payment.IPaymentService.Charge*
+  name: Charge
+  href: api/Fbs.Lg2.Payment.IPaymentService.html#Fbs_Lg2_Payment_IPaymentService_Charge_
+  commentId: Overload:Fbs.Lg2.Payment.IPaymentService.Charge
+  isSpec: "True"
+  fullName: Fbs.Lg2.Payment.IPaymentService.Charge
+  nameWithType: IPaymentService.Charge
+- uid: Fbs.Lg2.Payment.IPaymentService.Refund(System.String,System.Decimal)
+  name: Refund(string, decimal)
+  href: api/Fbs.Lg2.Payment.IPaymentService.html#Fbs_Lg2_Payment_IPaymentService_Refund_System_String_System_Decimal_
+  commentId: M:Fbs.Lg2.Payment.IPaymentService.Refund(System.String,System.Decimal)
+  name.vb: Refund(String, Decimal)
+  fullName: Fbs.Lg2.Payment.IPaymentService.Refund(string, decimal)
+  fullName.vb: Fbs.Lg2.Payment.IPaymentService.Refund(String, Decimal)
+  nameWithType: IPaymentService.Refund(string, decimal)
+  nameWithType.vb: IPaymentService.Refund(String, Decimal)
+- uid: Fbs.Lg2.Payment.IPaymentService.Refund*
+  name: Refund
+  href: api/Fbs.Lg2.Payment.IPaymentService.html#Fbs_Lg2_Payment_IPaymentService_Refund_
+  commentId: Overload:Fbs.Lg2.Payment.IPaymentService.Refund
+  isSpec: "True"
+  fullName: Fbs.Lg2.Payment.IPaymentService.Refund
+  nameWithType: IPaymentService.Refund
+- uid: Fbs.Lg2.Payment.InMemoryPaymentService
+  name: InMemoryPaymentService
+  href: api/Fbs.Lg2.Payment.InMemoryPaymentService.html
+  commentId: T:Fbs.Lg2.Payment.InMemoryPaymentService
+  fullName: Fbs.Lg2.Payment.InMemoryPaymentService
+  nameWithType: InMemoryPaymentService
+- uid: Fbs.Lg2.Payment.InMemoryPaymentService.Charge(System.Decimal,System.String)
+  name: Charge(decimal, string)
+  href: api/Fbs.Lg2.Payment.InMemoryPaymentService.html#Fbs_Lg2_Payment_InMemoryPaymentService_Charge_System_Decimal_System_String_
+  commentId: M:Fbs.Lg2.Payment.InMemoryPaymentService.Charge(System.Decimal,System.String)
+  name.vb: Charge(Decimal, String)
+  fullName: Fbs.Lg2.Payment.InMemoryPaymentService.Charge(decimal, string)
+  fullName.vb: Fbs.Lg2.Payment.InMemoryPaymentService.Charge(Decimal, String)
+  nameWithType: InMemoryPaymentService.Charge(decimal, string)
+  nameWithType.vb: InMemoryPaymentService.Charge(Decimal, String)
+- uid: Fbs.Lg2.Payment.InMemoryPaymentService.Charge*
+  name: Charge
+  href: api/Fbs.Lg2.Payment.InMemoryPaymentService.html#Fbs_Lg2_Payment_InMemoryPaymentService_Charge_
+  commentId: Overload:Fbs.Lg2.Payment.InMemoryPaymentService.Charge
+  isSpec: "True"
+  fullName: Fbs.Lg2.Payment.InMemoryPaymentService.Charge
+  nameWithType: InMemoryPaymentService.Charge
+- uid: Fbs.Lg2.Payment.InMemoryPaymentService.Refund(System.String,System.Decimal)
+  name: Refund(string, decimal)
+  href: api/Fbs.Lg2.Payment.InMemoryPaymentService.html#Fbs_Lg2_Payment_InMemoryPaymentService_Refund_System_String_System_Decimal_
+  commentId: M:Fbs.Lg2.Payment.InMemoryPaymentService.Refund(System.String,System.Decimal)
+  name.vb: Refund(String, Decimal)
+  fullName: Fbs.Lg2.Payment.InMemoryPaymentService.Refund(string, decimal)
+  fullName.vb: Fbs.Lg2.Payment.InMemoryPaymentService.Refund(String, Decimal)
+  nameWithType: InMemoryPaymentService.Refund(string, decimal)
+  nameWithType.vb: InMemoryPaymentService.Refund(String, Decimal)
+- uid: Fbs.Lg2.Payment.InMemoryPaymentService.Refund*
+  name: Refund
+  href: api/Fbs.Lg2.Payment.InMemoryPaymentService.html#Fbs_Lg2_Payment_InMemoryPaymentService_Refund_
+  commentId: Overload:Fbs.Lg2.Payment.InMemoryPaymentService.Refund
+  isSpec: "True"
+  fullName: Fbs.Lg2.Payment.InMemoryPaymentService.Refund
+  nameWithType: InMemoryPaymentService.Refund
+- uid: Fbs.Lg2.Payment.NullPaymentService
+  name: NullPaymentService
+  href: api/Fbs.Lg2.Payment.NullPaymentService.html
+  commentId: T:Fbs.Lg2.Payment.NullPaymentService
+  fullName: Fbs.Lg2.Payment.NullPaymentService
+  nameWithType: NullPaymentService
+- uid: Fbs.Lg2.Payment.NullPaymentService.Charge(System.Decimal,System.String)
+  name: Charge(decimal, string)
+  href: api/Fbs.Lg2.Payment.NullPaymentService.html#Fbs_Lg2_Payment_NullPaymentService_Charge_System_Decimal_System_String_
+  commentId: M:Fbs.Lg2.Payment.NullPaymentService.Charge(System.Decimal,System.String)
+  name.vb: Charge(Decimal, String)
+  fullName: Fbs.Lg2.Payment.NullPaymentService.Charge(decimal, string)
+  fullName.vb: Fbs.Lg2.Payment.NullPaymentService.Charge(Decimal, String)
+  nameWithType: NullPaymentService.Charge(decimal, string)
+  nameWithType.vb: NullPaymentService.Charge(Decimal, String)
+- uid: Fbs.Lg2.Payment.NullPaymentService.Charge*
+  name: Charge
+  href: api/Fbs.Lg2.Payment.NullPaymentService.html#Fbs_Lg2_Payment_NullPaymentService_Charge_
+  commentId: Overload:Fbs.Lg2.Payment.NullPaymentService.Charge
+  isSpec: "True"
+  fullName: Fbs.Lg2.Payment.NullPaymentService.Charge
+  nameWithType: NullPaymentService.Charge
+- uid: Fbs.Lg2.Payment.NullPaymentService.Refund(System.String,System.Decimal)
+  name: Refund(string, decimal)
+  href: api/Fbs.Lg2.Payment.NullPaymentService.html#Fbs_Lg2_Payment_NullPaymentService_Refund_System_String_System_Decimal_
+  commentId: M:Fbs.Lg2.Payment.NullPaymentService.Refund(System.String,System.Decimal)
+  name.vb: Refund(String, Decimal)
+  fullName: Fbs.Lg2.Payment.NullPaymentService.Refund(string, decimal)
+  fullName.vb: Fbs.Lg2.Payment.NullPaymentService.Refund(String, Decimal)
+  nameWithType: NullPaymentService.Refund(string, decimal)
+  nameWithType.vb: NullPaymentService.Refund(String, Decimal)
+- uid: Fbs.Lg2.Payment.NullPaymentService.Refund*
+  name: Refund
+  href: api/Fbs.Lg2.Payment.NullPaymentService.html#Fbs_Lg2_Payment_NullPaymentService_Refund_
+  commentId: Overload:Fbs.Lg2.Payment.NullPaymentService.Refund
+  isSpec: "True"
+  fullName: Fbs.Lg2.Payment.NullPaymentService.Refund
+  nameWithType: NullPaymentService.Refund
+- uid: Fbs.Lg2.Payment.PaymentResult
+  name: PaymentResult
+  href: api/Fbs.Lg2.Payment.PaymentResult.html
+  commentId: T:Fbs.Lg2.Payment.PaymentResult
+  fullName: Fbs.Lg2.Payment.PaymentResult
+  nameWithType: PaymentResult
+- uid: Fbs.Lg2.Payment.PaymentResult.Approved(System.String)
+  name: Approved(string)
+  href: api/Fbs.Lg2.Payment.PaymentResult.html#Fbs_Lg2_Payment_PaymentResult_Approved_System_String_
+  commentId: M:Fbs.Lg2.Payment.PaymentResult.Approved(System.String)
+  name.vb: Approved(String)
+  fullName: Fbs.Lg2.Payment.PaymentResult.Approved(string)
+  fullName.vb: Fbs.Lg2.Payment.PaymentResult.Approved(String)
+  nameWithType: PaymentResult.Approved(string)
+  nameWithType.vb: PaymentResult.Approved(String)
+- uid: Fbs.Lg2.Payment.PaymentResult.Approved*
+  name: Approved
+  href: api/Fbs.Lg2.Payment.PaymentResult.html#Fbs_Lg2_Payment_PaymentResult_Approved_
+  commentId: Overload:Fbs.Lg2.Payment.PaymentResult.Approved
+  isSpec: "True"
+  fullName: Fbs.Lg2.Payment.PaymentResult.Approved
+  nameWithType: PaymentResult.Approved
+- uid: Fbs.Lg2.Payment.PaymentResult.Declined(System.String)
+  name: Declined(string)
+  href: api/Fbs.Lg2.Payment.PaymentResult.html#Fbs_Lg2_Payment_PaymentResult_Declined_System_String_
+  commentId: M:Fbs.Lg2.Payment.PaymentResult.Declined(System.String)
+  name.vb: Declined(String)
+  fullName: Fbs.Lg2.Payment.PaymentResult.Declined(string)
+  fullName.vb: Fbs.Lg2.Payment.PaymentResult.Declined(String)
+  nameWithType: PaymentResult.Declined(string)
+  nameWithType.vb: PaymentResult.Declined(String)
+- uid: Fbs.Lg2.Payment.PaymentResult.Declined*
+  name: Declined
+  href: api/Fbs.Lg2.Payment.PaymentResult.html#Fbs_Lg2_Payment_PaymentResult_Declined_
+  commentId: Overload:Fbs.Lg2.Payment.PaymentResult.Declined
+  isSpec: "True"
+  fullName: Fbs.Lg2.Payment.PaymentResult.Declined
+  nameWithType: PaymentResult.Declined
+- uid: Fbs.Lg2.Payment.PaymentResult.FailureReason
+  name: FailureReason
+  href: api/Fbs.Lg2.Payment.PaymentResult.html#Fbs_Lg2_Payment_PaymentResult_FailureReason
+  commentId: P:Fbs.Lg2.Payment.PaymentResult.FailureReason
+  fullName: Fbs.Lg2.Payment.PaymentResult.FailureReason
+  nameWithType: PaymentResult.FailureReason
+- uid: Fbs.Lg2.Payment.PaymentResult.FailureReason*
+  name: FailureReason
+  href: api/Fbs.Lg2.Payment.PaymentResult.html#Fbs_Lg2_Payment_PaymentResult_FailureReason_
+  commentId: Overload:Fbs.Lg2.Payment.PaymentResult.FailureReason
+  isSpec: "True"
+  fullName: Fbs.Lg2.Payment.PaymentResult.FailureReason
+  nameWithType: PaymentResult.FailureReason
+- uid: Fbs.Lg2.Payment.PaymentResult.Success
+  name: Success
+  href: api/Fbs.Lg2.Payment.PaymentResult.html#Fbs_Lg2_Payment_PaymentResult_Success
+  commentId: P:Fbs.Lg2.Payment.PaymentResult.Success
+  fullName: Fbs.Lg2.Payment.PaymentResult.Success
+  nameWithType: PaymentResult.Success
+- uid: Fbs.Lg2.Payment.PaymentResult.Success*
+  name: Success
+  href: api/Fbs.Lg2.Payment.PaymentResult.html#Fbs_Lg2_Payment_PaymentResult_Success_
+  commentId: Overload:Fbs.Lg2.Payment.PaymentResult.Success
+  isSpec: "True"
+  fullName: Fbs.Lg2.Payment.PaymentResult.Success
+  nameWithType: PaymentResult.Success
+- uid: Fbs.Lg2.Payment.PaymentResult.TransactionId
+  name: TransactionId
+  href: api/Fbs.Lg2.Payment.PaymentResult.html#Fbs_Lg2_Payment_PaymentResult_TransactionId
+  commentId: P:Fbs.Lg2.Payment.PaymentResult.TransactionId
+  fullName: Fbs.Lg2.Payment.PaymentResult.TransactionId
+  nameWithType: PaymentResult.TransactionId
+- uid: Fbs.Lg2.Payment.PaymentResult.TransactionId*
+  name: TransactionId
+  href: api/Fbs.Lg2.Payment.PaymentResult.html#Fbs_Lg2_Payment_PaymentResult_TransactionId_
+  commentId: Overload:Fbs.Lg2.Payment.PaymentResult.TransactionId
+  isSpec: "True"
+  fullName: Fbs.Lg2.Payment.PaymentResult.TransactionId
+  nameWithType: PaymentResult.TransactionId

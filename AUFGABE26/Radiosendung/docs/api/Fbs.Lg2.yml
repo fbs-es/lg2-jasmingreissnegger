@@ -1,0 +1,144 @@
+### YamlMime:ManagedReference
+items:
+- uid: Fbs.Lg2
+  commentId: N:Fbs.Lg2
+  id: Fbs.Lg2
+  children:
+  - Fbs.Lg2.Beitrag
+  - Fbs.Lg2.DomainException
+  - Fbs.Lg2.Eilmeldung
+  - Fbs.Lg2.InvalidBudgetException
+  - Fbs.Lg2.InvalidDurationException
+  - Fbs.Lg2.InvalidNameException
+  - Fbs.Lg2.InvalidUrgencyException
+  - Fbs.Lg2.InvariantViolationException
+  - Fbs.Lg2.Musikbeitrag
+  - Fbs.Lg2.RadioProgram
+  - Fbs.Lg2.RadioSender
+  - Fbs.Lg2.Sendung
+  - Fbs.Lg2.ShowOverCapacityException
+  - Fbs.Lg2.ShowTimeLimitExceededException
+  - Fbs.Lg2.Werbung
+  langs:
+  - csharp
+  - vb
+  name: Fbs.Lg2
+  nameWithType: Fbs.Lg2
+  fullName: Fbs.Lg2
+  type: Namespace
+  assemblies:
+  - Radiosendung
+references:
+- uid: Fbs.Lg2.Beitrag
+  commentId: T:Fbs.Lg2.Beitrag
+  parent: Fbs.Lg2
+  href: Fbs.Lg2.Beitrag.html
+  name: Beitrag
+  nameWithType: Beitrag
+  fullName: Fbs.Lg2.Beitrag
+- uid: Fbs.Lg2.Eilmeldung
+  commentId: T:Fbs.Lg2.Eilmeldung
+  parent: Fbs.Lg2
+  href: Fbs.Lg2.Eilmeldung.html
+  name: Eilmeldung
+  nameWithType: Eilmeldung
+  fullName: Fbs.Lg2.Eilmeldung
+- uid: Fbs.Lg2.DomainException
+  commentId: T:Fbs.Lg2.DomainException
+  parent: Fbs.Lg2
+  href: Fbs.Lg2.DomainException.html
+  name: DomainException
+  nameWithType: DomainException
+  fullName: Fbs.Lg2.DomainException
+- uid: Fbs.Lg2.InvalidNameException
+  commentId: T:Fbs.Lg2.InvalidNameException
+  href: Fbs.Lg2.InvalidNameException.html
+  name: InvalidNameException
+  nameWithType: InvalidNameException
+  fullName: Fbs.Lg2.InvalidNameException
+- uid: Fbs.Lg2.InvalidDurationException
+  commentId: T:Fbs.Lg2.InvalidDurationException
+  href: Fbs.Lg2.InvalidDurationException.html
+  name: InvalidDurationException
+  nameWithType: InvalidDurationException
+  fullName: Fbs.Lg2.InvalidDurationException
+- uid: Fbs.Lg2.InvalidBudgetException
+  commentId: T:Fbs.Lg2.InvalidBudgetException
+  href: Fbs.Lg2.InvalidBudgetException.html
+  name: InvalidBudgetException
+  nameWithType: InvalidBudgetException
+  fullName: Fbs.Lg2.InvalidBudgetException
+- uid: Fbs.Lg2.InvalidUrgencyException
+  commentId: T:Fbs.Lg2.InvalidUrgencyException
+  href: Fbs.Lg2.InvalidUrgencyException.html
+  name: InvalidUrgencyException
+  nameWithType: InvalidUrgencyException
+  fullName: Fbs.Lg2.InvalidUrgencyException
+- uid: Fbs.Lg2.ShowOverCapacityException
+  commentId: T:Fbs.Lg2.ShowOverCapacityException
+  href: Fbs.Lg2.ShowOverCapacityException.html
+  name: ShowOverCapacityException
+  nameWithType: ShowOverCapacityException
+  fullName: Fbs.Lg2.ShowOverCapacityException
+- uid: Fbs.Lg2.ShowTimeLimitExceededException
+  commentId: T:Fbs.Lg2.ShowTimeLimitExceededException
+  href: Fbs.Lg2.ShowTimeLimitExceededException.html
+  name: ShowTimeLimitExceededException
+  nameWithType: ShowTimeLimitExceededException
+  fullName: Fbs.Lg2.ShowTimeLimitExceededException
+- uid: Fbs.Lg2.InvariantViolationException
+  commentId: T:Fbs.Lg2.InvariantViolationException
+  href: Fbs.Lg2.InvariantViolationException.html
+  name: InvariantViolationException
+  nameWithType: InvariantViolationException
+  fullName: Fbs.Lg2.InvariantViolationException
+- uid: Fbs.Lg2.Musikbeitrag
+  commentId: T:Fbs.Lg2.Musikbeitrag
+  href: Fbs.Lg2.Musikbeitrag.html
+  name: Musikbeitrag
+  nameWithType: Musikbeitrag
+  fullName: Fbs.Lg2.Musikbeitrag
+- uid: Fbs.Lg2.RadioProgram
+  commentId: T:Fbs.Lg2.RadioProgram
+  parent: Fbs.Lg2
+  href: Fbs.Lg2.RadioProgram.html
+  name: RadioProgram
+  nameWithType: RadioProgram
+  fullName: Fbs.Lg2.RadioProgram
+- uid: Fbs.Lg2.RadioSender
+  commentId: T:Fbs.Lg2.RadioSender
+  href: Fbs.Lg2.RadioSender.html
+  name: RadioSender
+  nameWithType: RadioSender
+  fullName: Fbs.Lg2.RadioSender
+- uid: Fbs.Lg2.Sendung
+  commentId: T:Fbs.Lg2.Sendung
+  parent: Fbs.Lg2
+  href: Fbs.Lg2.Sendung.html
+  name: Sendung
+  nameWithType: Sendung
+  fullName: Fbs.Lg2.Sendung
+- uid: Fbs.Lg2.Werbung
+  commentId: T:Fbs.Lg2.Werbung
+  parent: Fbs.Lg2
+  href: Fbs.Lg2.Werbung.html
+  name: Werbung
+  nameWithType: Werbung
+  fullName: Fbs.Lg2.Werbung
+- uid: Fbs.Lg2
+  commentId: N:Fbs.Lg2
+  name: Fbs.Lg2
+  nameWithType: Fbs.Lg2
+  fullName: Fbs.Lg2
+  spec.csharp:
+  - uid: Fbs
+    name: Fbs
+  - name: .
+  - uid: Fbs.Lg2
+    name: Lg2
+  spec.vb:
+  - uid: Fbs
+    name: Fbs
+  - name: .
+  - uid: Fbs.Lg2
+    name: Lg2

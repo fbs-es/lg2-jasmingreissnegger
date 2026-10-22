@@ -8,19 +8,23 @@ public abstract class Mitarbeiter
     private readonly int _id;
     private string _vorname;
     private string _nachname;
-    private decimal _grundgehalt;
 
     public int MitarbeiterId => _id;
     public string Vorname => _vorname;
     public string Nachname => _nachname;
-    public decimal Grundgehalt => _grundgehalt;
 
     public string VollerName => $"{_vorname} {_nachname}";
 
     public abstract string Kategorie { get; }
     public abstract decimal BerechneGehalt();
 
-    protected Mitarbeiter(string vorname, string nachname, decimal grundgehalt)
+    /// <summary>
+    /// Salary adjustment by a percentage (e.g. 3.5 = +3.5 %).
+    /// Every category implements this differently (polymorphism).
+    /// </summary>
+    public abstract void PasseGehaltAn(decimal prozent);
+
+    protected Mitarbeiter(string vorname, string nachname)
     {
         if (string.IsNullOrWhiteSpace(vorname))
         {
@@ -30,27 +34,25 @@ public abstract class Mitarbeiter
         {
             throw new InvalidNameException("Last name must not be null, empty, or whitespace.");
         }
-        if (grundgehalt < 0m)
-        {
-            throw new InvalidSalaryException($"Base salary ({grundgehalt:C}) must be >= 0.");
-        }
 
         _id = _nextId++;
         _vorname = vorname.Trim();
         _nachname = nachname.Trim();
-        _grundgehalt = grundgehalt;
 
         CheckInvariants();
     }
 
-    public void SetzeGehalt(decimal neuesGehalt)
+    /// <summary>Rounds a money amount to whole cents (commercial rounding).</summary>
+    protected static decimal RundeAufCent(decimal betrag)
+        => Math.Round(betrag, 2, MidpointRounding.AwayFromZero);
+
+    /// <summary>Precondition shared by all salary adjustments: the result must not become negative.</summary>
+    protected static void PruefeProzent(decimal prozent)
     {
-        if (neuesGehalt < 0m)
+        if (prozent <= -100m)
         {
-            throw new InvalidSalaryException($"New salary ({neuesGehalt:C}) must be >= 0.");
+            throw new InvalidSalaryException($"Adjustment ({prozent} %) must be greater than -100 %.");
         }
-        _grundgehalt = neuesGehalt;
-        CheckInvariants();
     }
 
     private void CheckInvariants()
@@ -69,11 +71,6 @@ public abstract class Mitarbeiter
         {
             throw new InvariantViolationException(
                 "Invariant violated: last name must not be empty.");
-        }
-        if (_grundgehalt < 0m)
-        {
-            throw new InvariantViolationException(
-                $"Invariant violated: base salary ({_grundgehalt}) must be >= 0.");
         }
     }
 }

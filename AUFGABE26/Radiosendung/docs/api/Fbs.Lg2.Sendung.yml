@@ -1,0 +1,988 @@
+### YamlMime:ManagedReference
+items:
+- uid: Fbs.Lg2.Sendung
+  commentId: T:Fbs.Lg2.Sendung
+  id: Sendung
+  parent: Fbs.Lg2
+  children:
+  - Fbs.Lg2.Sendung.#ctor(System.String,System.String,System.TimeSpan,System.TimeSpan)
+  - Fbs.Lg2.Sendung.AnzahlBeitraege
+  - Fbs.Lg2.Sendung.Beitraege
+  - Fbs.Lg2.Sendung.BelegeNeuePositionEin(Fbs.Lg2.Beitrag)
+  - Fbs.Lg2.Sendung.EntferneBeitrag(Fbs.Lg2.Beitrag)
+  - Fbs.Lg2.Sendung.FuegeEilmeldungHinzu(Fbs.Lg2.Eilmeldung)
+  - Fbs.Lg2.Sendung.FuegeEilmeldungMittenImProgrammHinzu(Fbs.Lg2.Eilmeldung,System.Int32)
+  - Fbs.Lg2.Sendung.GeplanteGesamtzeit
+  - Fbs.Lg2.Sendung.KuerzeBeitrag(Fbs.Lg2.Beitrag,System.Int32)
+  - Fbs.Lg2.Sendung.MaxDauer
+  - Fbs.Lg2.Sendung.Moderator
+  - Fbs.Lg2.Sendung.Name
+  - Fbs.Lg2.Sendung.StartUhrzeit
+  - Fbs.Lg2.Sendung.StartzeitVon(Fbs.Lg2.Beitrag)
+  - Fbs.Lg2.Sendung.VerbleibendeRestzeit
+  langs:
+  - csharp
+  - vb
+  name: Sendung
+  nameWithType: Sendung
+  fullName: Fbs.Lg2.Sendung
+  type: Class
+  source:
+    remote:
+      path: AUFGABE26/Radiosendung/Sendung.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: Sendung
+    path: ../Sendung.cs
+    startLine: 5
+  assemblies:
+  - Radiosendung
+  namespace: Fbs.Lg2
+  summary: 'A radio show: a fixed time block within a radio program, managed as a schedule of contributions.'
+  example: []
+  syntax:
+    content: public sealed class Sendung
+    content.vb: Public NotInheritable Class Sendung
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Fbs.Lg2.Sendung.Name
+  commentId: P:Fbs.Lg2.Sendung.Name
+  id: Name
+  parent: Fbs.Lg2.Sendung
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: Sendung.Name
+  fullName: Fbs.Lg2.Sendung.Name
+  type: Property
+  source:
+    remote:
+      path: AUFGABE26/Radiosendung/Sendung.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: Name
+    path: ../Sendung.cs
+    startLine: 9
+  assemblies:
+  - Radiosendung
+  namespace: Fbs.Lg2
+  syntax:
+    content: public string Name { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Name As String
+  overload: Fbs.Lg2.Sendung.Name*
+- uid: Fbs.Lg2.Sendung.Moderator
+  commentId: P:Fbs.Lg2.Sendung.Moderator
+  id: Moderator
+  parent: Fbs.Lg2.Sendung
+  langs:
+  - csharp
+  - vb
+  name: Moderator
+  nameWithType: Sendung.Moderator
+  fullName: Fbs.Lg2.Sendung.Moderator
+  type: Property
+  source:
+    remote:
+      path: AUFGABE26/Radiosendung/Sendung.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: Moderator
+    path: ../Sendung.cs
+    startLine: 10
+  assemblies:
+  - Radiosendung
+  namespace: Fbs.Lg2
+  syntax:
+    content: public string Moderator { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Moderator As String
+  overload: Fbs.Lg2.Sendung.Moderator*
+- uid: Fbs.Lg2.Sendung.StartUhrzeit
+  commentId: P:Fbs.Lg2.Sendung.StartUhrzeit
+  id: StartUhrzeit
+  parent: Fbs.Lg2.Sendung
+  langs:
+  - csharp
+  - vb
+  name: StartUhrzeit
+  nameWithType: Sendung.StartUhrzeit
+  fullName: Fbs.Lg2.Sendung.StartUhrzeit
+  type: Property
+  source:
+    remote:
+      path: AUFGABE26/Radiosendung/Sendung.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: StartUhrzeit
+    path: ../Sendung.cs
+    startLine: 11
+  assemblies:
+  - Radiosendung
+  namespace: Fbs.Lg2
+  syntax:
+    content: public TimeSpan StartUhrzeit { get; }
+    parameters: []
+    return:
+      type: System.TimeSpan
+    content.vb: Public ReadOnly Property StartUhrzeit As TimeSpan
+  overload: Fbs.Lg2.Sendung.StartUhrzeit*
+- uid: Fbs.Lg2.Sendung.MaxDauer
+  commentId: P:Fbs.Lg2.Sendung.MaxDauer
+  id: MaxDauer
+  parent: Fbs.Lg2.Sendung
+  langs:
+  - csharp
+  - vb
+  name: MaxDauer
+  nameWithType: Sendung.MaxDauer
+  fullName: Fbs.Lg2.Sendung.MaxDauer
+  type: Property
+  source:
+    remote:
+      path: AUFGABE26/Radiosendung/Sendung.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: MaxDauer
+    path: ../Sendung.cs
+    startLine: 12
+  assemblies:
+  - Radiosendung
+  namespace: Fbs.Lg2
+  syntax:
+    content: public TimeSpan MaxDauer { get; }
+    parameters: []
+    return:
+      type: System.TimeSpan
+    content.vb: Public ReadOnly Property MaxDauer As TimeSpan
+  overload: Fbs.Lg2.Sendung.MaxDauer*
+- uid: Fbs.Lg2.Sendung.Beitraege
+  commentId: P:Fbs.Lg2.Sendung.Beitraege
+  id: Beitraege
+  parent: Fbs.Lg2.Sendung
+  langs:
+  - csharp
+  - vb
+  name: Beitraege
+  nameWithType: Sendung.Beitraege
+  fullName: Fbs.Lg2.Sendung.Beitraege
+  type: Property
+  source:
+    remote:
+      path: AUFGABE26/Radiosendung/Sendung.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: Beitraege
+    path: ../Sendung.cs
+    startLine: 14
+  assemblies:
+  - Radiosendung
+  namespace: Fbs.Lg2
+  syntax:
+    content: public IReadOnlyList<Beitrag> Beitraege { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IReadOnlyList{Fbs.Lg2.Beitrag}
+    content.vb: Public ReadOnly Property Beitraege As IReadOnlyList(Of Beitrag)
+  overload: Fbs.Lg2.Sendung.Beitraege*
+- uid: Fbs.Lg2.Sendung.AnzahlBeitraege
+  commentId: P:Fbs.Lg2.Sendung.AnzahlBeitraege
+  id: AnzahlBeitraege
+  parent: Fbs.Lg2.Sendung
+  langs:
+  - csharp
+  - vb
+  name: AnzahlBeitraege
+  nameWithType: Sendung.AnzahlBeitraege
+  fullName: Fbs.Lg2.Sendung.AnzahlBeitraege
+  type: Property
+  source:
+    remote:
+      path: AUFGABE26/Radiosendung/Sendung.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: AnzahlBeitraege
+    path: ../Sendung.cs
+    startLine: 16
+  assemblies:
+  - Radiosendung
+  namespace: Fbs.Lg2
+  syntax:
+    content: public int AnzahlBeitraege { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property AnzahlBeitraege As Integer
+  overload: Fbs.Lg2.Sendung.AnzahlBeitraege*
+- uid: Fbs.Lg2.Sendung.GeplanteGesamtzeit
+  commentId: P:Fbs.Lg2.Sendung.GeplanteGesamtzeit
+  id: GeplanteGesamtzeit
+  parent: Fbs.Lg2.Sendung
+  langs:
+  - csharp
+  - vb
+  name: GeplanteGesamtzeit
+  nameWithType: Sendung.GeplanteGesamtzeit
+  fullName: Fbs.Lg2.Sendung.GeplanteGesamtzeit
+  type: Property
+  source:
+    remote:
+      path: AUFGABE26/Radiosendung/Sendung.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: GeplanteGesamtzeit
+    path: ../Sendung.cs
+    startLine: 18
+  assemblies:
+  - Radiosendung
+  namespace: Fbs.Lg2
+  syntax:
+    content: public TimeSpan GeplanteGesamtzeit { get; }
+    parameters: []
+    return:
+      type: System.TimeSpan
+    content.vb: Public ReadOnly Property GeplanteGesamtzeit As TimeSpan
+  overload: Fbs.Lg2.Sendung.GeplanteGesamtzeit*
+- uid: Fbs.Lg2.Sendung.VerbleibendeRestzeit
+  commentId: P:Fbs.Lg2.Sendung.VerbleibendeRestzeit
+  id: VerbleibendeRestzeit
+  parent: Fbs.Lg2.Sendung
+  langs:
+  - csharp
+  - vb
+  name: VerbleibendeRestzeit
+  nameWithType: Sendung.VerbleibendeRestzeit
+  fullName: Fbs.Lg2.Sendung.VerbleibendeRestzeit
+  type: Property
+  source:
+    remote:
+      path: AUFGABE26/Radiosendung/Sendung.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: VerbleibendeRestzeit
+    path: ../Sendung.cs
+    startLine: 31
+  assemblies:
+  - Radiosendung
+  namespace: Fbs.Lg2
+  syntax:
+    content: public TimeSpan VerbleibendeRestzeit { get; }
+    parameters: []
+    return:
+      type: System.TimeSpan
+    content.vb: Public ReadOnly Property VerbleibendeRestzeit As TimeSpan
+  overload: Fbs.Lg2.Sendung.VerbleibendeRestzeit*
+- uid: Fbs.Lg2.Sendung.#ctor(System.String,System.String,System.TimeSpan,System.TimeSpan)
+  commentId: M:Fbs.Lg2.Sendung.#ctor(System.String,System.String,System.TimeSpan,System.TimeSpan)
+  id: '#ctor(System.String,System.String,System.TimeSpan,System.TimeSpan)'
+  parent: Fbs.Lg2.Sendung
+  langs:
+  - csharp
+  - vb
+  name: Sendung(string, string, TimeSpan, TimeSpan)
+  nameWithType: Sendung.Sendung(string, string, TimeSpan, TimeSpan)
+  fullName: Fbs.Lg2.Sendung.Sendung(string, string, System.TimeSpan, System.TimeSpan)
+  type: Constructor
+  source:
+    remote:
+      path: AUFGABE26/Radiosendung/Sendung.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: .ctor
+    path: ../Sendung.cs
+    startLine: 33
+  assemblies:
+  - Radiosendung
+  namespace: Fbs.Lg2
+  syntax:
+    content: public Sendung(string name, string moderator, TimeSpan startUhrzeit, TimeSpan maxDauer)
+    parameters:
+    - id: name
+      type: System.String
+    - id: moderator
+      type: System.String
+    - id: startUhrzeit
+      type: System.TimeSpan
+    - id: maxDauer
+      type: System.TimeSpan
+    content.vb: Public Sub New(name As String, moderator As String, startUhrzeit As TimeSpan, maxDauer As TimeSpan)
+  overload: Fbs.Lg2.Sendung.#ctor*
+  nameWithType.vb: Sendung.New(String, String, TimeSpan, TimeSpan)
+  fullName.vb: Fbs.Lg2.Sendung.New(String, String, System.TimeSpan, System.TimeSpan)
+  name.vb: New(String, String, TimeSpan, TimeSpan)
+- uid: Fbs.Lg2.Sendung.StartzeitVon(Fbs.Lg2.Beitrag)
+  commentId: M:Fbs.Lg2.Sendung.StartzeitVon(Fbs.Lg2.Beitrag)
+  id: StartzeitVon(Fbs.Lg2.Beitrag)
+  parent: Fbs.Lg2.Sendung
+  langs:
+  - csharp
+  - vb
+  name: StartzeitVon(Beitrag)
+  nameWithType: Sendung.StartzeitVon(Beitrag)
+  fullName: Fbs.Lg2.Sendung.StartzeitVon(Fbs.Lg2.Beitrag)
+  type: Method
+  source:
+    remote:
+      path: AUFGABE26/Radiosendung/Sendung.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: StartzeitVon
+    path: ../Sendung.cs
+    startLine: 55
+  assemblies:
+  - Radiosendung
+  namespace: Fbs.Lg2
+  syntax:
+    content: public TimeSpan StartzeitVon(Beitrag beitrag)
+    parameters:
+    - id: beitrag
+      type: Fbs.Lg2.Beitrag
+    return:
+      type: System.TimeSpan
+    content.vb: Public Function StartzeitVon(beitrag As Beitrag) As TimeSpan
+  overload: Fbs.Lg2.Sendung.StartzeitVon*
+- uid: Fbs.Lg2.Sendung.BelegeNeuePositionEin(Fbs.Lg2.Beitrag)
+  commentId: M:Fbs.Lg2.Sendung.BelegeNeuePositionEin(Fbs.Lg2.Beitrag)
+  id: BelegeNeuePositionEin(Fbs.Lg2.Beitrag)
+  parent: Fbs.Lg2.Sendung
+  langs:
+  - csharp
+  - vb
+  name: BelegeNeuePositionEin(Beitrag)
+  nameWithType: Sendung.BelegeNeuePositionEin(Beitrag)
+  fullName: Fbs.Lg2.Sendung.BelegeNeuePositionEin(Fbs.Lg2.Beitrag)
+  type: Method
+  source:
+    remote:
+      path: AUFGABE26/Radiosendung/Sendung.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: BelegeNeuePositionEin
+    path: ../Sendung.cs
+    startLine: 71
+  assemblies:
+  - Radiosendung
+  namespace: Fbs.Lg2
+  syntax:
+    content: public void BelegeNeuePositionEin(Beitrag beitrag)
+    parameters:
+    - id: beitrag
+      type: Fbs.Lg2.Beitrag
+    content.vb: Public Sub BelegeNeuePositionEin(beitrag As Beitrag)
+  overload: Fbs.Lg2.Sendung.BelegeNeuePositionEin*
+- uid: Fbs.Lg2.Sendung.EntferneBeitrag(Fbs.Lg2.Beitrag)
+  commentId: M:Fbs.Lg2.Sendung.EntferneBeitrag(Fbs.Lg2.Beitrag)
+  id: EntferneBeitrag(Fbs.Lg2.Beitrag)
+  parent: Fbs.Lg2.Sendung
+  langs:
+  - csharp
+  - vb
+  name: EntferneBeitrag(Beitrag)
+  nameWithType: Sendung.EntferneBeitrag(Beitrag)
+  fullName: Fbs.Lg2.Sendung.EntferneBeitrag(Fbs.Lg2.Beitrag)
+  type: Method
+  source:
+    remote:
+      path: AUFGABE26/Radiosendung/Sendung.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: EntferneBeitrag
+    path: ../Sendung.cs
+    startLine: 83
+  assemblies:
+  - Radiosendung
+  namespace: Fbs.Lg2
+  syntax:
+    content: public void EntferneBeitrag(Beitrag beitrag)
+    parameters:
+    - id: beitrag
+      type: Fbs.Lg2.Beitrag
+    content.vb: Public Sub EntferneBeitrag(beitrag As Beitrag)
+  overload: Fbs.Lg2.Sendung.EntferneBeitrag*
+- uid: Fbs.Lg2.Sendung.KuerzeBeitrag(Fbs.Lg2.Beitrag,System.Int32)
+  commentId: M:Fbs.Lg2.Sendung.KuerzeBeitrag(Fbs.Lg2.Beitrag,System.Int32)
+  id: KuerzeBeitrag(Fbs.Lg2.Beitrag,System.Int32)
+  parent: Fbs.Lg2.Sendung
+  langs:
+  - csharp
+  - vb
+  name: KuerzeBeitrag(Beitrag, int)
+  nameWithType: Sendung.KuerzeBeitrag(Beitrag, int)
+  fullName: Fbs.Lg2.Sendung.KuerzeBeitrag(Fbs.Lg2.Beitrag, int)
+  type: Method
+  source:
+    remote:
+      path: AUFGABE26/Radiosendung/Sendung.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: KuerzeBeitrag
+    path: ../Sendung.cs
+    startLine: 93
+  assemblies:
+  - Radiosendung
+  namespace: Fbs.Lg2
+  syntax:
+    content: public void KuerzeBeitrag(Beitrag beitrag, int neueDauerSekunden)
+    parameters:
+    - id: beitrag
+      type: Fbs.Lg2.Beitrag
+    - id: neueDauerSekunden
+      type: System.Int32
+    content.vb: Public Sub KuerzeBeitrag(beitrag As Beitrag, neueDauerSekunden As Integer)
+  overload: Fbs.Lg2.Sendung.KuerzeBeitrag*
+  nameWithType.vb: Sendung.KuerzeBeitrag(Beitrag, Integer)
+  fullName.vb: Fbs.Lg2.Sendung.KuerzeBeitrag(Fbs.Lg2.Beitrag, Integer)
+  name.vb: KuerzeBeitrag(Beitrag, Integer)
+- uid: Fbs.Lg2.Sendung.FuegeEilmeldungHinzu(Fbs.Lg2.Eilmeldung)
+  commentId: M:Fbs.Lg2.Sendung.FuegeEilmeldungHinzu(Fbs.Lg2.Eilmeldung)
+  id: FuegeEilmeldungHinzu(Fbs.Lg2.Eilmeldung)
+  parent: Fbs.Lg2.Sendung
+  langs:
+  - csharp
+  - vb
+  name: FuegeEilmeldungHinzu(Eilmeldung)
+  nameWithType: Sendung.FuegeEilmeldungHinzu(Eilmeldung)
+  fullName: Fbs.Lg2.Sendung.FuegeEilmeldungHinzu(Fbs.Lg2.Eilmeldung)
+  type: Method
+  source:
+    remote:
+      path: AUFGABE26/Radiosendung/Sendung.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: FuegeEilmeldungHinzu
+    path: ../Sendung.cs
+    startLine: 103
+  assemblies:
+  - Radiosendung
+  namespace: Fbs.Lg2
+  summary: >-
+    Inserts an emergency announcement directly before the currently planned contribution
+
+    (i.e. at the front of the schedule).
+  example: []
+  syntax:
+    content: public void FuegeEilmeldungHinzu(Eilmeldung eilmeldung)
+    parameters:
+    - id: eilmeldung
+      type: Fbs.Lg2.Eilmeldung
+    content.vb: Public Sub FuegeEilmeldungHinzu(eilmeldung As Eilmeldung)
+  overload: Fbs.Lg2.Sendung.FuegeEilmeldungHinzu*
+- uid: Fbs.Lg2.Sendung.FuegeEilmeldungMittenImProgrammHinzu(Fbs.Lg2.Eilmeldung,System.Int32)
+  commentId: M:Fbs.Lg2.Sendung.FuegeEilmeldungMittenImProgrammHinzu(Fbs.Lg2.Eilmeldung,System.Int32)
+  id: FuegeEilmeldungMittenImProgrammHinzu(Fbs.Lg2.Eilmeldung,System.Int32)
+  parent: Fbs.Lg2.Sendung
+  langs:
+  - csharp
+  - vb
+  name: FuegeEilmeldungMittenImProgrammHinzu(Eilmeldung, int)
+  nameWithType: Sendung.FuegeEilmeldungMittenImProgrammHinzu(Eilmeldung, int)
+  fullName: Fbs.Lg2.Sendung.FuegeEilmeldungMittenImProgrammHinzu(Fbs.Lg2.Eilmeldung, int)
+  type: Method
+  source:
+    remote:
+      path: AUFGABE26/Radiosendung/Sendung.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: FuegeEilmeldungMittenImProgrammHinzu
+    path: ../Sendung.cs
+    startLine: 120
+  assemblies:
+  - Radiosendung
+  namespace: Fbs.Lg2
+  summary: >-
+    Optional advanced: inserts the emergency announcement at the current running position.
+
+    The currently playing contribution is split into two parts:
+      - the first part (up to the announcement's start) stays in the schedule
+      - the remaining rest is added as a NEW contribution right after the announcement.
+  example: []
+  syntax:
+    content: public void FuegeEilmeldungMittenImProgrammHinzu(Eilmeldung eilmeldung, int bereitsAusgestrahlteSekunden)
+    parameters:
+    - id: eilmeldung
+      type: Fbs.Lg2.Eilmeldung
+    - id: bereitsAusgestrahlteSekunden
+      type: System.Int32
+    content.vb: Public Sub FuegeEilmeldungMittenImProgrammHinzu(eilmeldung As Eilmeldung, bereitsAusgestrahlteSekunden As Integer)
+  overload: Fbs.Lg2.Sendung.FuegeEilmeldungMittenImProgrammHinzu*
+  nameWithType.vb: Sendung.FuegeEilmeldungMittenImProgrammHinzu(Eilmeldung, Integer)
+  fullName.vb: Fbs.Lg2.Sendung.FuegeEilmeldungMittenImProgrammHinzu(Fbs.Lg2.Eilmeldung, Integer)
+  name.vb: FuegeEilmeldungMittenImProgrammHinzu(Eilmeldung, Integer)
+references:
+- uid: Fbs.Lg2
+  commentId: N:Fbs.Lg2
+  name: Fbs.Lg2
+  nameWithType: Fbs.Lg2
+  fullName: Fbs.Lg2
+  spec.csharp:
+  - uid: Fbs
+    name: Fbs
+  - name: .
+  - uid: Fbs.Lg2
+    name: Lg2
+  spec.vb:
+  - uid: Fbs
+    name: Fbs
+  - name: .
+  - uid: Fbs.Lg2
+    name: Lg2
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Fbs.Lg2.Sendung.Name*
+  commentId: Overload:Fbs.Lg2.Sendung.Name
+  href: Fbs.Lg2.Sendung.html#Fbs_Lg2_Sendung_Name
+  name: Name
+  nameWithType: Sendung.Name
+  fullName: Fbs.Lg2.Sendung.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Fbs.Lg2.Sendung.Moderator*
+  commentId: Overload:Fbs.Lg2.Sendung.Moderator
+  href: Fbs.Lg2.Sendung.html#Fbs_Lg2_Sendung_Moderator
+  name: Moderator
+  nameWithType: Sendung.Moderator
+  fullName: Fbs.Lg2.Sendung.Moderator
+- uid: Fbs.Lg2.Sendung.StartUhrzeit*
+  commentId: Overload:Fbs.Lg2.Sendung.StartUhrzeit
+  href: Fbs.Lg2.Sendung.html#Fbs_Lg2_Sendung_StartUhrzeit
+  name: StartUhrzeit
+  nameWithType: Sendung.StartUhrzeit
+  fullName: Fbs.Lg2.Sendung.StartUhrzeit
+- uid: System.TimeSpan
+  commentId: T:System.TimeSpan
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.timespan
+  name: TimeSpan
+  nameWithType: TimeSpan
+  fullName: System.TimeSpan
+- uid: Fbs.Lg2.Sendung.MaxDauer*
+  commentId: Overload:Fbs.Lg2.Sendung.MaxDauer
+  href: Fbs.Lg2.Sendung.html#Fbs_Lg2_Sendung_MaxDauer
+  name: MaxDauer
+  nameWithType: Sendung.MaxDauer
+  fullName: Fbs.Lg2.Sendung.MaxDauer
+- uid: Fbs.Lg2.Sendung.Beitraege*
+  commentId: Overload:Fbs.Lg2.Sendung.Beitraege
+  href: Fbs.Lg2.Sendung.html#Fbs_Lg2_Sendung_Beitraege
+  name: Beitraege
+  nameWithType: Sendung.Beitraege
+  fullName: Fbs.Lg2.Sendung.Beitraege
+- uid: System.Collections.Generic.IReadOnlyList{Fbs.Lg2.Beitrag}
+  commentId: T:System.Collections.Generic.IReadOnlyList{Fbs.Lg2.Beitrag}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<Beitrag>
+  nameWithType: IReadOnlyList<Beitrag>
+  fullName: System.Collections.Generic.IReadOnlyList<Fbs.Lg2.Beitrag>
+  nameWithType.vb: IReadOnlyList(Of Beitrag)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of Fbs.Lg2.Beitrag)
+  name.vb: IReadOnlyList(Of Beitrag)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: Fbs.Lg2.Beitrag
+    name: Beitrag
+    href: Fbs.Lg2.Beitrag.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Fbs.Lg2.Beitrag
+    name: Beitrag
+    href: Fbs.Lg2.Beitrag.html
+  - name: )
+- uid: System.Collections.Generic.IReadOnlyList`1
+  commentId: T:System.Collections.Generic.IReadOnlyList`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<T>
+  nameWithType: IReadOnlyList<T>
+  fullName: System.Collections.Generic.IReadOnlyList<T>
+  nameWithType.vb: IReadOnlyList(Of T)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of T)
+  name.vb: IReadOnlyList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: Fbs.Lg2.Sendung.AnzahlBeitraege*
+  commentId: Overload:Fbs.Lg2.Sendung.AnzahlBeitraege
+  href: Fbs.Lg2.Sendung.html#Fbs_Lg2_Sendung_AnzahlBeitraege
+  name: AnzahlBeitraege
+  nameWithType: Sendung.AnzahlBeitraege
+  fullName: Fbs.Lg2.Sendung.AnzahlBeitraege
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Fbs.Lg2.Sendung.GeplanteGesamtzeit*
+  commentId: Overload:Fbs.Lg2.Sendung.GeplanteGesamtzeit
+  href: Fbs.Lg2.Sendung.html#Fbs_Lg2_Sendung_GeplanteGesamtzeit
+  name: GeplanteGesamtzeit
+  nameWithType: Sendung.GeplanteGesamtzeit
+  fullName: Fbs.Lg2.Sendung.GeplanteGesamtzeit
+- uid: Fbs.Lg2.Sendung.VerbleibendeRestzeit*
+  commentId: Overload:Fbs.Lg2.Sendung.VerbleibendeRestzeit
+  href: Fbs.Lg2.Sendung.html#Fbs_Lg2_Sendung_VerbleibendeRestzeit
+  name: VerbleibendeRestzeit
+  nameWithType: Sendung.VerbleibendeRestzeit
+  fullName: Fbs.Lg2.Sendung.VerbleibendeRestzeit
+- uid: Fbs.Lg2.Sendung.#ctor*
+  commentId: Overload:Fbs.Lg2.Sendung.#ctor
+  href: Fbs.Lg2.Sendung.html#Fbs_Lg2_Sendung__ctor_System_String_System_String_System_TimeSpan_System_TimeSpan_
+  name: Sendung
+  nameWithType: Sendung.Sendung
+  fullName: Fbs.Lg2.Sendung.Sendung
+  nameWithType.vb: Sendung.New
+  fullName.vb: Fbs.Lg2.Sendung.New
+  name.vb: New
+- uid: Fbs.Lg2.Sendung.StartzeitVon*
+  commentId: Overload:Fbs.Lg2.Sendung.StartzeitVon
+  href: Fbs.Lg2.Sendung.html#Fbs_Lg2_Sendung_StartzeitVon_Fbs_Lg2_Beitrag_
+  name: StartzeitVon
+  nameWithType: Sendung.StartzeitVon
+  fullName: Fbs.Lg2.Sendung.StartzeitVon
+- uid: Fbs.Lg2.Beitrag
+  commentId: T:Fbs.Lg2.Beitrag
+  parent: Fbs.Lg2
+  href: Fbs.Lg2.Beitrag.html
+  name: Beitrag
+  nameWithType: Beitrag
+  fullName: Fbs.Lg2.Beitrag
+- uid: Fbs.Lg2.Sendung.BelegeNeuePositionEin*
+  commentId: Overload:Fbs.Lg2.Sendung.BelegeNeuePositionEin
+  href: Fbs.Lg2.Sendung.html#Fbs_Lg2_Sendung_BelegeNeuePositionEin_Fbs_Lg2_Beitrag_
+  name: BelegeNeuePositionEin
+  nameWithType: Sendung.BelegeNeuePositionEin
+  fullName: Fbs.Lg2.Sendung.BelegeNeuePositionEin
+- uid: Fbs.Lg2.Sendung.EntferneBeitrag*
+  commentId: Overload:Fbs.Lg2.Sendung.EntferneBeitrag
+  href: Fbs.Lg2.Sendung.html#Fbs_Lg2_Sendung_EntferneBeitrag_Fbs_Lg2_Beitrag_
+  name: EntferneBeitrag
+  nameWithType: Sendung.EntferneBeitrag
+  fullName: Fbs.Lg2.Sendung.EntferneBeitrag
+- uid: Fbs.Lg2.Sendung.KuerzeBeitrag*
+  commentId: Overload:Fbs.Lg2.Sendung.KuerzeBeitrag
+  href: Fbs.Lg2.Sendung.html#Fbs_Lg2_Sendung_KuerzeBeitrag_Fbs_Lg2_Beitrag_System_Int32_
+  name: KuerzeBeitrag
+  nameWithType: Sendung.KuerzeBeitrag
+  fullName: Fbs.Lg2.Sendung.KuerzeBeitrag
+- uid: Fbs.Lg2.Sendung.FuegeEilmeldungHinzu*
+  commentId: Overload:Fbs.Lg2.Sendung.FuegeEilmeldungHinzu
+  href: Fbs.Lg2.Sendung.html#Fbs_Lg2_Sendung_FuegeEilmeldungHinzu_Fbs_Lg2_Eilmeldung_
+  name: FuegeEilmeldungHinzu
+  nameWithType: Sendung.FuegeEilmeldungHinzu
+  fullName: Fbs.Lg2.Sendung.FuegeEilmeldungHinzu
+- uid: Fbs.Lg2.Eilmeldung
+  commentId: T:Fbs.Lg2.Eilmeldung
+  parent: Fbs.Lg2
+  href: Fbs.Lg2.Eilmeldung.html
+  name: Eilmeldung
+  nameWithType: Eilmeldung
+  fullName: Fbs.Lg2.Eilmeldung
+- uid: Fbs.Lg2.Sendung.FuegeEilmeldungMittenImProgrammHinzu*
+  commentId: Overload:Fbs.Lg2.Sendung.FuegeEilmeldungMittenImProgrammHinzu
+  href: Fbs.Lg2.Sendung.html#Fbs_Lg2_Sendung_FuegeEilmeldungMittenImProgrammHinzu_Fbs_Lg2_Eilmeldung_System_Int32_
+  name: FuegeEilmeldungMittenImProgrammHinzu
+  nameWithType: Sendung.FuegeEilmeldungMittenImProgrammHinzu
+  fullName: Fbs.Lg2.Sendung.FuegeEilmeldungMittenImProgrammHinzu

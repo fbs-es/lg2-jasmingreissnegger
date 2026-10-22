@@ -1,0 +1,607 @@
+### YamlMime:ManagedReference
+items:
+- uid: Fbs.Lg2.Musikbeitrag
+  commentId: T:Fbs.Lg2.Musikbeitrag
+  id: Musikbeitrag
+  parent: Fbs.Lg2
+  children:
+  - Fbs.Lg2.Musikbeitrag.#ctor(System.String,System.Int32,System.String,System.String,System.String)
+  - Fbs.Lg2.Musikbeitrag.Album
+  - Fbs.Lg2.Musikbeitrag.DetailBeschreibung
+  - Fbs.Lg2.Musikbeitrag.Kategorie
+  - Fbs.Lg2.Musikbeitrag.Kuenstler
+  - Fbs.Lg2.Musikbeitrag.Musikgenre
+  langs:
+  - csharp
+  - vb
+  name: Musikbeitrag
+  nameWithType: Musikbeitrag
+  fullName: Fbs.Lg2.Musikbeitrag
+  type: Class
+  source:
+    remote:
+      path: AUFGABE26/Radiosendung/Musikbeitrag.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: Musikbeitrag
+    path: ../Musikbeitrag.cs
+    startLine: 3
+  assemblies:
+  - Radiosendung
+  namespace: Fbs.Lg2
+  summary: 'A music contribution: a song with artist, album, and music genre.'
+  example: []
+  syntax:
+    content: 'public sealed class Musikbeitrag : Beitrag'
+    content.vb: Public NotInheritable Class Musikbeitrag Inherits Beitrag
+  inheritance:
+  - System.Object
+  - Fbs.Lg2.Beitrag
+  inheritedMembers:
+  - Fbs.Lg2.Beitrag.Titel
+  - Fbs.Lg2.Beitrag.DauerSekunden
+  - Fbs.Lg2.Beitrag.AendereDauer(System.Int32)
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Fbs.Lg2.Musikbeitrag.Kuenstler
+  commentId: P:Fbs.Lg2.Musikbeitrag.Kuenstler
+  id: Kuenstler
+  parent: Fbs.Lg2.Musikbeitrag
+  langs:
+  - csharp
+  - vb
+  name: Kuenstler
+  nameWithType: Musikbeitrag.Kuenstler
+  fullName: Fbs.Lg2.Musikbeitrag.Kuenstler
+  type: Property
+  source:
+    remote:
+      path: AUFGABE26/Radiosendung/Musikbeitrag.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: Kuenstler
+    path: ../Musikbeitrag.cs
+    startLine: 9
+  assemblies:
+  - Radiosendung
+  namespace: Fbs.Lg2
+  syntax:
+    content: public string Kuenstler { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Kuenstler As String
+  overload: Fbs.Lg2.Musikbeitrag.Kuenstler*
+- uid: Fbs.Lg2.Musikbeitrag.Album
+  commentId: P:Fbs.Lg2.Musikbeitrag.Album
+  id: Album
+  parent: Fbs.Lg2.Musikbeitrag
+  langs:
+  - csharp
+  - vb
+  name: Album
+  nameWithType: Musikbeitrag.Album
+  fullName: Fbs.Lg2.Musikbeitrag.Album
+  type: Property
+  source:
+    remote:
+      path: AUFGABE26/Radiosendung/Musikbeitrag.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: Album
+    path: ../Musikbeitrag.cs
+    startLine: 10
+  assemblies:
+  - Radiosendung
+  namespace: Fbs.Lg2
+  syntax:
+    content: public string Album { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Album As String
+  overload: Fbs.Lg2.Musikbeitrag.Album*
+- uid: Fbs.Lg2.Musikbeitrag.Musikgenre
+  commentId: P:Fbs.Lg2.Musikbeitrag.Musikgenre
+  id: Musikgenre
+  parent: Fbs.Lg2.Musikbeitrag
+  langs:
+  - csharp
+  - vb
+  name: Musikgenre
+  nameWithType: Musikbeitrag.Musikgenre
+  fullName: Fbs.Lg2.Musikbeitrag.Musikgenre
+  type: Property
+  source:
+    remote:
+      path: AUFGABE26/Radiosendung/Musikbeitrag.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: Musikgenre
+    path: ../Musikbeitrag.cs
+    startLine: 11
+  assemblies:
+  - Radiosendung
+  namespace: Fbs.Lg2
+  syntax:
+    content: public string Musikgenre { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Musikgenre As String
+  overload: Fbs.Lg2.Musikbeitrag.Musikgenre*
+- uid: Fbs.Lg2.Musikbeitrag.Kategorie
+  commentId: P:Fbs.Lg2.Musikbeitrag.Kategorie
+  id: Kategorie
+  parent: Fbs.Lg2.Musikbeitrag
+  langs:
+  - csharp
+  - vb
+  name: Kategorie
+  nameWithType: Musikbeitrag.Kategorie
+  fullName: Fbs.Lg2.Musikbeitrag.Kategorie
+  type: Property
+  source:
+    remote:
+      path: AUFGABE26/Radiosendung/Musikbeitrag.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: Kategorie
+    path: ../Musikbeitrag.cs
+    startLine: 13
+  assemblies:
+  - Radiosendung
+  namespace: Fbs.Lg2
+  example: []
+  syntax:
+    content: public override string Kategorie { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Overrides ReadOnly Property Kategorie As String
+  overridden: Fbs.Lg2.Beitrag.Kategorie
+  overload: Fbs.Lg2.Musikbeitrag.Kategorie*
+- uid: Fbs.Lg2.Musikbeitrag.#ctor(System.String,System.Int32,System.String,System.String,System.String)
+  commentId: M:Fbs.Lg2.Musikbeitrag.#ctor(System.String,System.Int32,System.String,System.String,System.String)
+  id: '#ctor(System.String,System.Int32,System.String,System.String,System.String)'
+  parent: Fbs.Lg2.Musikbeitrag
+  langs:
+  - csharp
+  - vb
+  name: Musikbeitrag(string, int, string, string, string)
+  nameWithType: Musikbeitrag.Musikbeitrag(string, int, string, string, string)
+  fullName: Fbs.Lg2.Musikbeitrag.Musikbeitrag(string, int, string, string, string)
+  type: Constructor
+  source:
+    remote:
+      path: AUFGABE26/Radiosendung/Musikbeitrag.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: .ctor
+    path: ../Musikbeitrag.cs
+    startLine: 15
+  assemblies:
+  - Radiosendung
+  namespace: Fbs.Lg2
+  syntax:
+    content: public Musikbeitrag(string titel, int dauerSekunden, string kuenstler, string album, string musikgenre)
+    parameters:
+    - id: titel
+      type: System.String
+    - id: dauerSekunden
+      type: System.Int32
+    - id: kuenstler
+      type: System.String
+    - id: album
+      type: System.String
+    - id: musikgenre
+      type: System.String
+    content.vb: Public Sub New(titel As String, dauerSekunden As Integer, kuenstler As String, album As String, musikgenre As String)
+  overload: Fbs.Lg2.Musikbeitrag.#ctor*
+  nameWithType.vb: Musikbeitrag.New(String, Integer, String, String, String)
+  fullName.vb: Fbs.Lg2.Musikbeitrag.New(String, Integer, String, String, String)
+  name.vb: New(String, Integer, String, String, String)
+- uid: Fbs.Lg2.Musikbeitrag.DetailBeschreibung
+  commentId: M:Fbs.Lg2.Musikbeitrag.DetailBeschreibung
+  id: DetailBeschreibung
+  parent: Fbs.Lg2.Musikbeitrag
+  langs:
+  - csharp
+  - vb
+  name: DetailBeschreibung()
+  nameWithType: Musikbeitrag.DetailBeschreibung()
+  fullName: Fbs.Lg2.Musikbeitrag.DetailBeschreibung()
+  type: Method
+  source:
+    remote:
+      path: AUFGABE26/Radiosendung/Musikbeitrag.cs
+      branch: main
+      repo: git@github.com:fbs-es/lg2-jasmingreissnegger.git
+    id: DetailBeschreibung
+    path: ../Musikbeitrag.cs
+    startLine: 36
+  assemblies:
+  - Radiosendung
+  namespace: Fbs.Lg2
+  example: []
+  syntax:
+    content: public override string DetailBeschreibung()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function DetailBeschreibung() As String
+  overridden: Fbs.Lg2.Beitrag.DetailBeschreibung
+  overload: Fbs.Lg2.Musikbeitrag.DetailBeschreibung*
+references:
+- uid: Fbs.Lg2
+  commentId: N:Fbs.Lg2
+  name: Fbs.Lg2
+  nameWithType: Fbs.Lg2
+  fullName: Fbs.Lg2
+  spec.csharp:
+  - uid: Fbs
+    name: Fbs
+  - name: .
+  - uid: Fbs.Lg2
+    name: Lg2
+  spec.vb:
+  - uid: Fbs
+    name: Fbs
+  - name: .
+  - uid: Fbs.Lg2
+    name: Lg2
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Fbs.Lg2.Beitrag
+  commentId: T:Fbs.Lg2.Beitrag
+  parent: Fbs.Lg2
+  href: Fbs.Lg2.Beitrag.html
+  name: Beitrag
+  nameWithType: Beitrag
+  fullName: Fbs.Lg2.Beitrag
+- uid: Fbs.Lg2.Beitrag.Titel
+  commentId: P:Fbs.Lg2.Beitrag.Titel
+  parent: Fbs.Lg2.Beitrag
+  href: Fbs.Lg2.Beitrag.html#Fbs_Lg2_Beitrag_Titel
+  name: Titel
+  nameWithType: Beitrag.Titel
+  fullName: Fbs.Lg2.Beitrag.Titel
+- uid: Fbs.Lg2.Beitrag.DauerSekunden
+  commentId: P:Fbs.Lg2.Beitrag.DauerSekunden
+  parent: Fbs.Lg2.Beitrag
+  href: Fbs.Lg2.Beitrag.html#Fbs_Lg2_Beitrag_DauerSekunden
+  name: DauerSekunden
+  nameWithType: Beitrag.DauerSekunden
+  fullName: Fbs.Lg2.Beitrag.DauerSekunden
+- uid: Fbs.Lg2.Beitrag.AendereDauer(System.Int32)
+  commentId: M:Fbs.Lg2.Beitrag.AendereDauer(System.Int32)
+  parent: Fbs.Lg2.Beitrag
+  isExternal: true
+  href: Fbs.Lg2.Beitrag.html#Fbs_Lg2_Beitrag_AendereDauer_System_Int32_
+  name: AendereDauer(int)
+  nameWithType: Beitrag.AendereDauer(int)
+  fullName: Fbs.Lg2.Beitrag.AendereDauer(int)
+  nameWithType.vb: Beitrag.AendereDauer(Integer)
+  fullName.vb: Fbs.Lg2.Beitrag.AendereDauer(Integer)
+  name.vb: AendereDauer(Integer)
+  spec.csharp:
+  - uid: Fbs.Lg2.Beitrag.AendereDauer(System.Int32)
+    name: AendereDauer
+    href: Fbs.Lg2.Beitrag.html#Fbs_Lg2_Beitrag_AendereDauer_System_Int32_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: Fbs.Lg2.Beitrag.AendereDauer(System.Int32)
+    name: AendereDauer
+    href: Fbs.Lg2.Beitrag.html#Fbs_Lg2_Beitrag_AendereDauer_System_Int32_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Fbs.Lg2.Musikbeitrag.Kuenstler*
+  commentId: Overload:Fbs.Lg2.Musikbeitrag.Kuenstler
+  href: Fbs.Lg2.Musikbeitrag.html#Fbs_Lg2_Musikbeitrag_Kuenstler
+  name: Kuenstler
+  nameWithType: Musikbeitrag.Kuenstler
+  fullName: Fbs.Lg2.Musikbeitrag.Kuenstler
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Fbs.Lg2.Musikbeitrag.Album*
+  commentId: Overload:Fbs.Lg2.Musikbeitrag.Album
+  href: Fbs.Lg2.Musikbeitrag.html#Fbs_Lg2_Musikbeitrag_Album
+  name: Album
+  nameWithType: Musikbeitrag.Album
+  fullName: Fbs.Lg2.Musikbeitrag.Album
+- uid: Fbs.Lg2.Musikbeitrag.Musikgenre*
+  commentId: Overload:Fbs.Lg2.Musikbeitrag.Musikgenre
+  href: Fbs.Lg2.Musikbeitrag.html#Fbs_Lg2_Musikbeitrag_Musikgenre
+  name: Musikgenre
+  nameWithType: Musikbeitrag.Musikgenre
+  fullName: Fbs.Lg2.Musikbeitrag.Musikgenre
+- uid: Fbs.Lg2.Beitrag.Kategorie
+  commentId: P:Fbs.Lg2.Beitrag.Kategorie
+  parent: Fbs.Lg2.Beitrag
+  href: Fbs.Lg2.Beitrag.html#Fbs_Lg2_Beitrag_Kategorie
+  name: Kategorie
+  nameWithType: Beitrag.Kategorie
+  fullName: Fbs.Lg2.Beitrag.Kategorie
+- uid: Fbs.Lg2.Musikbeitrag.Kategorie*
+  commentId: Overload:Fbs.Lg2.Musikbeitrag.Kategorie
+  href: Fbs.Lg2.Musikbeitrag.html#Fbs_Lg2_Musikbeitrag_Kategorie
+  name: Kategorie
+  nameWithType: Musikbeitrag.Kategorie
+  fullName: Fbs.Lg2.Musikbeitrag.Kategorie
+- uid: Fbs.Lg2.Musikbeitrag.#ctor*
+  commentId: Overload:Fbs.Lg2.Musikbeitrag.#ctor
+  href: Fbs.Lg2.Musikbeitrag.html#Fbs_Lg2_Musikbeitrag__ctor_System_String_System_Int32_System_String_System_String_System_String_
+  name: Musikbeitrag
+  nameWithType: Musikbeitrag.Musikbeitrag
+  fullName: Fbs.Lg2.Musikbeitrag.Musikbeitrag
+  nameWithType.vb: Musikbeitrag.New
+  fullName.vb: Fbs.Lg2.Musikbeitrag.New
+  name.vb: New
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Fbs.Lg2.Beitrag.DetailBeschreibung
+  commentId: M:Fbs.Lg2.Beitrag.DetailBeschreibung
+  parent: Fbs.Lg2.Beitrag
+  href: Fbs.Lg2.Beitrag.html#Fbs_Lg2_Beitrag_DetailBeschreibung
+  name: DetailBeschreibung()
+  nameWithType: Beitrag.DetailBeschreibung()
+  fullName: Fbs.Lg2.Beitrag.DetailBeschreibung()
+  spec.csharp:
+  - uid: Fbs.Lg2.Beitrag.DetailBeschreibung
+    name: DetailBeschreibung
+    href: Fbs.Lg2.Beitrag.html#Fbs_Lg2_Beitrag_DetailBeschreibung
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Fbs.Lg2.Beitrag.DetailBeschreibung
+    name: DetailBeschreibung
+    href: Fbs.Lg2.Beitrag.html#Fbs_Lg2_Beitrag_DetailBeschreibung
+  - name: (
+  - name: )
+- uid: Fbs.Lg2.Musikbeitrag.DetailBeschreibung*
+  commentId: Overload:Fbs.Lg2.Musikbeitrag.DetailBeschreibung
+  href: Fbs.Lg2.Musikbeitrag.html#Fbs_Lg2_Musikbeitrag_DetailBeschreibung
+  name: DetailBeschreibung
+  nameWithType: Musikbeitrag.DetailBeschreibung
+  fullName: Fbs.Lg2.Musikbeitrag.DetailBeschreibung

@@ -85,6 +85,11 @@ public sealed class Review
             throw new ReviewAlreadyRepliedException(
                 $"Review {_id} already has a reply (id {_reply.ReplyId}).");
         }
+        if (replyDate < _createdAt)
+        {
+            throw new InvalidDateException(
+                $"Reply date ({replyDate:O}) must not be before the review date ({_createdAt:O}).");
+        }
         var reply = new Reply(this, text, replyDate);
         _reply = reply;
         CheckInvariants();

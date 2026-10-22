@@ -16,6 +16,7 @@ public sealed class Customer
     public string Name => _name;
     public string Email => _email;
     public int OrderCount => _orders.Count;
+    public IReadOnlyList<Order> Orders => _orders.AsReadOnly();
     public int OpenOrderCount
     {
         get

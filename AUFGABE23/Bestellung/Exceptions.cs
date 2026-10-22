@@ -48,6 +48,11 @@ public sealed class OrderNotModifiableException : DomainException
     public OrderNotModifiableException(string message) : base(message) { }
 }
 
+public sealed class EmptyOrderException : DomainException
+{
+    public EmptyOrderException(string message) : base(message) { }
+}
+
 public sealed class InvariantViolationException : DomainException
 {
     public InvariantViolationException(string message) : base(message) { }

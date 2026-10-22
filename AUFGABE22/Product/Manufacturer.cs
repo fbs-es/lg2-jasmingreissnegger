@@ -16,6 +16,7 @@ public sealed class Manufacturer
     public string Name => _name;
     public string SupportEmail => _supportEmail;
     public int ProductCount => _products.Count;
+    public IReadOnlyList<Product> Products => _products.AsReadOnly();
 
     public bool ManufacturesProduct(Product product)
     {

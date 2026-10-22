@@ -15,6 +15,7 @@ public sealed class Scooter
     public int BatteryLevel => _batteryLevel;
     public bool IsLocked => _isLocked;
     public int RentalCount => _rentalHistory.Count;
+    public IReadOnlyList<RentalHistoryEntry> RentalHistory => _rentalHistory.AsReadOnly();
     public decimal TotalRevenue
     {
         get

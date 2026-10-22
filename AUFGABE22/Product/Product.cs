@@ -18,6 +18,7 @@ public sealed class Product
     public decimal Price => _price;
     public Manufacturer Manufacturer => _manufacturer;
     public int ReviewCount => _reviews.Count;
+    public IReadOnlyList<Review> Reviews => _reviews.AsReadOnly();
 
     public bool HasReviewFrom(Customer customer)
     {
@@ -73,11 +74,12 @@ public sealed class Product
         CheckInvariants();
     }
 
-    public decimal AverageStars()
+    /// <summary>Average stars of all reviews, or null if the product has no reviews yet (0 would look like a real rating).</summary>
+    public decimal? AverageStars()
     {
         if (_reviews.Count == 0)
         {
-            return 0m;
+            return null;
         }
 
         decimal sum = 0m;

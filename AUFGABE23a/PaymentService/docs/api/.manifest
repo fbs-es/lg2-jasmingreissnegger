@@ -1,0 +1,18 @@
+{
+  "Fbs.Lg2.Payment": "Fbs.Lg2.Payment.yml",
+  "Fbs.Lg2.Payment.IPaymentService": "Fbs.Lg2.Payment.IPaymentService.yml",
+  "Fbs.Lg2.Payment.IPaymentService.Charge(System.Decimal,System.String)": "Fbs.Lg2.Payment.IPaymentService.yml",
+  "Fbs.Lg2.Payment.IPaymentService.Refund(System.String,System.Decimal)": "Fbs.Lg2.Payment.IPaymentService.yml",
+  "Fbs.Lg2.Payment.InMemoryPaymentService": "Fbs.Lg2.Payment.InMemoryPaymentService.yml",
+  "Fbs.Lg2.Payment.InMemoryPaymentService.Charge(System.Decimal,System.String)": "Fbs.Lg2.Payment.InMemoryPaymentService.yml",
+  "Fbs.Lg2.Payment.InMemoryPaymentService.Refund(System.String,System.Decimal)": "Fbs.Lg2.Payment.InMemoryPaymentService.yml",
+  "Fbs.Lg2.Payment.NullPaymentService": "Fbs.Lg2.Payment.NullPaymentService.yml",
+  "Fbs.Lg2.Payment.NullPaymentService.Charge(System.Decimal,System.String)": "Fbs.Lg2.Payment.NullPaymentService.yml",
+  "Fbs.Lg2.Payment.NullPaymentService.Refund(System.String,System.Decimal)": "Fbs.Lg2.Payment.NullPaymentService.yml",
+  "Fbs.Lg2.Payment.PaymentResult": "Fbs.Lg2.Payment.PaymentResult.yml",
+  "Fbs.Lg2.Payment.PaymentResult.Approved(System.String)": "Fbs.Lg2.Payment.PaymentResult.yml",
+  "Fbs.Lg2.Payment.PaymentResult.Declined(System.String)": "Fbs.Lg2.Payment.PaymentResult.yml",
+  "Fbs.Lg2.Payment.PaymentResult.FailureReason": "Fbs.Lg2.Payment.PaymentResult.yml",
+  "Fbs.Lg2.Payment.PaymentResult.Success": "Fbs.Lg2.Payment.PaymentResult.yml",
+  "Fbs.Lg2.Payment.PaymentResult.TransactionId": "Fbs.Lg2.Payment.PaymentResult.yml"
+}

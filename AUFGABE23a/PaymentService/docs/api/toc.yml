@@ -1,0 +1,19 @@
+### YamlMime:TableOfContent
+items:
+- uid: Fbs.Lg2.Payment
+  name: Fbs.Lg2.Payment
+  type: Namespace
+  items:
+  - uid: Fbs.Lg2.Payment.IPaymentService
+    name: IPaymentService
+    type: Interface
+  - uid: Fbs.Lg2.Payment.InMemoryPaymentService
+    name: InMemoryPaymentService
+    type: Class
+  - uid: Fbs.Lg2.Payment.NullPaymentService
+    name: NullPaymentService
+    type: Class
+  - uid: Fbs.Lg2.Payment.PaymentResult
+    name: PaymentResult
+    type: Class
+memberLayout: SamePage

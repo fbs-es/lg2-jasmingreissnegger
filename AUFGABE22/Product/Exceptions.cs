@@ -31,6 +31,11 @@ public sealed class InvalidCommentException : DomainException
     public InvalidCommentException(string message) : base(message) { }
 }
 
+public sealed class InvalidDateException : DomainException
+{
+    public InvalidDateException(string message) : base(message) { }
+}
+
 public sealed class ReviewAlreadyRepliedException : DomainException
 {
     public ReviewAlreadyRepliedException(string message) : base(message) { }

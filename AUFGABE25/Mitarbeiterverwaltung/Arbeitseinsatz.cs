@@ -13,7 +13,7 @@ public sealed class Arbeitseinsatz
     public int Minutes => _minutes;
     public bool Billed => _billed;
 
-    public Arbeitseinsatz(DateTime date, int minutes)
+    internal Arbeitseinsatz(DateTime date, int minutes)
     {
         if (date > DateTime.UtcNow.Date)
         {
@@ -29,7 +29,7 @@ public sealed class Arbeitseinsatz
         _billed = false;
     }
 
-    public void MarkAsBilled()
+    internal void MarkAsBilled()
     {
         _billed = true;
     }

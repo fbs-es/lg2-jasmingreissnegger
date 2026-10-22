@@ -1,0 +1,69 @@
+### YamlMime:ManagedReference
+items:
+- uid: Fbs.Lg2.Payment
+  commentId: N:Fbs.Lg2.Payment
+  id: Fbs.Lg2.Payment
+  children:
+  - Fbs.Lg2.Payment.IPaymentService
+  - Fbs.Lg2.Payment.InMemoryPaymentService
+  - Fbs.Lg2.Payment.NullPaymentService
+  - Fbs.Lg2.Payment.PaymentResult
+  langs:
+  - csharp
+  - vb
+  name: Fbs.Lg2.Payment
+  nameWithType: Fbs.Lg2.Payment
+  fullName: Fbs.Lg2.Payment
+  type: Namespace
+  assemblies:
+  - PaymentService
+references:
+- uid: Fbs.Lg2.Payment.InMemoryPaymentService
+  commentId: T:Fbs.Lg2.Payment.InMemoryPaymentService
+  href: Fbs.Lg2.Payment.InMemoryPaymentService.html
+  name: InMemoryPaymentService
+  nameWithType: InMemoryPaymentService
+  fullName: Fbs.Lg2.Payment.InMemoryPaymentService
+- uid: Fbs.Lg2.Payment.PaymentResult
+  commentId: T:Fbs.Lg2.Payment.PaymentResult
+  parent: Fbs.Lg2.Payment
+  href: Fbs.Lg2.Payment.PaymentResult.html
+  name: PaymentResult
+  nameWithType: PaymentResult
+  fullName: Fbs.Lg2.Payment.PaymentResult
+- uid: Fbs.Lg2.Payment.IPaymentService
+  commentId: T:Fbs.Lg2.Payment.IPaymentService
+  parent: Fbs.Lg2.Payment
+  href: Fbs.Lg2.Payment.IPaymentService.html
+  name: IPaymentService
+  nameWithType: IPaymentService
+  fullName: Fbs.Lg2.Payment.IPaymentService
+- uid: Fbs.Lg2.Payment.NullPaymentService
+  commentId: T:Fbs.Lg2.Payment.NullPaymentService
+  href: Fbs.Lg2.Payment.NullPaymentService.html
+  name: NullPaymentService
+  nameWithType: NullPaymentService
+  fullName: Fbs.Lg2.Payment.NullPaymentService
+- uid: Fbs.Lg2.Payment
+  commentId: N:Fbs.Lg2.Payment
+  name: Fbs.Lg2.Payment
+  nameWithType: Fbs.Lg2.Payment
+  fullName: Fbs.Lg2.Payment
+  spec.csharp:
+  - uid: Fbs
+    name: Fbs
+  - name: .
+  - uid: Fbs.Lg2
+    name: Lg2
+  - name: .
+  - uid: Fbs.Lg2.Payment
+    name: Payment
+  spec.vb:
+  - uid: Fbs
+    name: Fbs
+  - name: .
+  - uid: Fbs.Lg2
+    name: Lg2
+  - name: .
+  - uid: Fbs.Lg2.Payment
+    name: Payment

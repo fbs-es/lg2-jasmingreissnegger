@@ -1,0 +1,269 @@
+{
+  "docfx_version": "2.81.0+ba844df625370a6bd7c1ecab0d0ec4d1d9128ac4",
+  "source_base_path": "C:/Repositories/lg2-jasmingreissnegger/AUFGABE26/Radiosendung/docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fbs.Lg2.Beitrag.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fbs.Lg2.Beitrag.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fbs.Lg2.Beitrag",
+      "Summary": "<p sourcefile=\"api/Fbs.Lg2.Beitrag.yml\" sourcestartlinenumber=\"1\">Base class for every contribution in a radio show. Cannot be instantiated directly.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fbs.Lg2.DomainException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fbs.Lg2.DomainException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fbs.Lg2.DomainException",
+      "Summary": "<p sourcefile=\"api/Fbs.Lg2.DomainException.yml\" sourcestartlinenumber=\"1\">Base type for every domain exception thrown by the radio station model.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fbs.Lg2.Eilmeldung.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fbs.Lg2.Eilmeldung.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fbs.Lg2.Eilmeldung",
+      "Summary": "<p sourcefile=\"api/Fbs.Lg2.Eilmeldung.yml\" sourcestartlinenumber=\"1\">Emergency announcement: a high-urgency Werbung that must be inserted into the running show immediately.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fbs.Lg2.InvalidBudgetException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fbs.Lg2.InvalidBudgetException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fbs.Lg2.InvalidBudgetException",
+      "Summary": "<p sourcefile=\"api/Fbs.Lg2.InvalidBudgetException.yml\" sourcestartlinenumber=\"1\">Thrown when a budget is negative.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fbs.Lg2.InvalidDurationException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fbs.Lg2.InvalidDurationException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fbs.Lg2.InvalidDurationException",
+      "Summary": "<p sourcefile=\"api/Fbs.Lg2.InvalidDurationException.yml\" sourcestartlinenumber=\"1\">Thrown when a duration is outside the allowed range (zero or negative).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fbs.Lg2.InvalidNameException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fbs.Lg2.InvalidNameException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fbs.Lg2.InvalidNameException",
+      "Summary": "<p sourcefile=\"api/Fbs.Lg2.InvalidNameException.yml\" sourcestartlinenumber=\"1\">Thrown when a required string is null, empty, or whitespace.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fbs.Lg2.InvalidUrgencyException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fbs.Lg2.InvalidUrgencyException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fbs.Lg2.InvalidUrgencyException",
+      "Summary": "<p sourcefile=\"api/Fbs.Lg2.InvalidUrgencyException.yml\" sourcestartlinenumber=\"1\">Thrown when the urgency level is outside the allowed range (1-5).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fbs.Lg2.InvariantViolationException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fbs.Lg2.InvariantViolationException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fbs.Lg2.InvariantViolationException",
+      "Summary": "<p sourcefile=\"api/Fbs.Lg2.InvariantViolationException.yml\" sourcestartlinenumber=\"1\">Thrown when an internal invariant has been violated - indicates a programming error.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fbs.Lg2.Musikbeitrag.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fbs.Lg2.Musikbeitrag.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fbs.Lg2.Musikbeitrag",
+      "Summary": "<p sourcefile=\"api/Fbs.Lg2.Musikbeitrag.yml\" sourcestartlinenumber=\"1\">A music contribution: a song with artist, album, and music genre.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fbs.Lg2.RadioProgram.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fbs.Lg2.RadioProgram.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fbs.Lg2.RadioProgram",
+      "Summary": "<p sourcefile=\"api/Fbs.Lg2.RadioProgram.yml\" sourcestartlinenumber=\"1\">A daily radio program: the time-ordered list of shows broadcast in one day.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fbs.Lg2.RadioSender.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fbs.Lg2.RadioSender.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fbs.Lg2.RadioSender",
+      "Summary": "<p sourcefile=\"api/Fbs.Lg2.RadioSender.yml\" sourcestartlinenumber=\"1\">The radio station: name, broadcast frequency, and the daily program.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fbs.Lg2.Sendung.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fbs.Lg2.Sendung.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fbs.Lg2.Sendung",
+      "Summary": "<p sourcefile=\"api/Fbs.Lg2.Sendung.yml\" sourcestartlinenumber=\"1\">A radio show: a fixed time block within a radio program, managed as a schedule of contributions.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fbs.Lg2.ShowOverCapacityException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fbs.Lg2.ShowOverCapacityException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fbs.Lg2.ShowOverCapacityException",
+      "Summary": "<p sourcefile=\"api/Fbs.Lg2.ShowOverCapacityException.yml\" sourcestartlinenumber=\"1\">Thrown when adding a contribution would exceed the show's maximum duration.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fbs.Lg2.ShowTimeLimitExceededException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fbs.Lg2.ShowTimeLimitExceededException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fbs.Lg2.ShowTimeLimitExceededException",
+      "Summary": "<p sourcefile=\"api/Fbs.Lg2.ShowTimeLimitExceededException.yml\" sourcestartlinenumber=\"1\">Thrown when an emergency announcement would push the show past its time limit.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fbs.Lg2.Werbung.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fbs.Lg2.Werbung.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fbs.Lg2.Werbung",
+      "Summary": "<p sourcefile=\"api/Fbs.Lg2.Werbung.yml\" sourcestartlinenumber=\"1\">An advertising contribution: customer name, budget, urgency level (1-5), and target region.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fbs.Lg2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fbs.Lg2.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fbs.Lg2",
+      "Summary": null
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

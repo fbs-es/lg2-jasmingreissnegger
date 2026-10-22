@@ -32,6 +32,7 @@ public sealed class Customer
     public Scooter? CurrentRental => _currentRental;
     public int SentDunningEmailCount => _sentDunningEmails.Count;
     public int RentalCount => _rentalHistory.Count;
+    public IReadOnlyList<RentalHistoryEntry> RentalHistory => _rentalHistory.AsReadOnly();
 
     internal string? GetLastDunningEmail()
     {
@@ -124,6 +125,15 @@ public sealed class Customer
         StartRental(scooter, DateTime.UtcNow);
     }
 
+    public void EndRental()
+    {
+        EndRental(DateTime.UtcNow);
+    }
+
+    /// <summary>
+    /// Ends the current rental. Billing rule: every started minute is charged
+    /// (e.g. 30 s = 1 min, 61 s = 2 min). A ride of 0 seconds is rejected.
+    /// </summary>
     public void EndRental(DateTime endTime)
     {
         if (_currentRental is null || _currentRentalStartTime is null)
@@ -131,20 +141,16 @@ public sealed class Customer
             throw new NoActiveRentalException(
                 $"Customer {_id} has no active rental to end.");
         }
-        if (endTime < _currentRentalStartTime)
+        if (endTime <= _currentRentalStartTime)
         {
             throw new InvalidRentalDurationException(
-                $"End time ({endTime:O}) must not be before start time ({_currentRentalStartTime:O}).");
+                $"End time ({endTime:O}) must be after start time ({_currentRentalStartTime:O}).");
         }
 
         Scooter scooter = _currentRental;
         DateTime startTime = _currentRentalStartTime.Value;
         TimeSpan duration = endTime - startTime;
         int minutes = (int)Math.Ceiling(duration.TotalMinutes);
-        if (minutes <= 0)
-        {
-            minutes = 1;
-        }
         decimal cost = CostPerMinute * minutes;
 
         _balance -= cost;

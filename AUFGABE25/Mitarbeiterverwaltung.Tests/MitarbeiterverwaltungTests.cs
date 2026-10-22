@@ -127,10 +127,30 @@ public class FestangestellterTests
     }
 
     [Fact]
-    public void BerechneGehalt_AddsVacationBonus()
+    public void BerechneGehalt_IsTariffSalary_VacationDoesNotChangeIt()
     {
         var f = new Festangestellter("Anna", "M", 2000m, 2018, 20);
-        f.BerechneGehalt().ShouldBe(2000m + 20m * 25m);
+        f.BerechneGehalt().ShouldBe(2000m);
+    }
+
+    [Fact]
+    public void PasseGehaltAn_RaisesTariffSalary_RoundedToCents()
+    {
+        var f = new Festangestellter("Anna", "M", 2345.67m, 2018, 20);
+        f.PasseGehaltAn(3m);
+        // 2345.67 * 1.03 = 2416.0401 -> 2416.04
+        f.Grundgehalt.ShouldBe(2416.04m);
+        f.BerechneGehalt().ShouldBe(2416.04m);
+    }
+
+    [Theory]
+    [InlineData(-100)]
+    [InlineData(-150)]
+    public void PasseGehaltAn_MinusHundredPercentOrLess_Throws(int prozent)
+    {
+        var f = new Festangestellter("Anna", "M", 2000m, 2018, 20);
+        Should.Throw<InvalidSalaryException>(() => f.PasseGehaltAn(prozent));
+        f.Grundgehalt.ShouldBe(2000m);
     }
 
     [Fact]
@@ -138,7 +158,7 @@ public class FestangestellterTests
     {
         var f = new Festangestellter("Anna", "M", 2000m, 2018, 20);
         f.SetzeGehalt(3000m);
-        f.BerechneGehalt().ShouldBe(3000m + 20m * 25m);
+        f.BerechneGehalt().ShouldBe(3000m);
     }
 
     [Fact]
@@ -217,6 +237,23 @@ public class AuszubildenderTests
         a.Ausbildungsjahr.ShouldBe(3);
         a.BerechneGehalt().ShouldBe(2000m * 0.80m);
     }
+
+    [Fact]
+    public void BerechneGehalt_IsRoundedToCents()
+    {
+        var a = new Auszubildender("Bob", "S", 1234.57m, "FISI", 2);
+        // 1234.57 * 0.65 = 802.4705 -> 802.47
+        a.BerechneGehalt().ShouldBe(802.47m);
+    }
+
+    [Fact]
+    public void PasseGehaltAn_RaisesTariffBase_PayStillDependsOnYear()
+    {
+        var a = new Auszubildender("Bob", "S", 2000m, "FISI", 1);
+        a.PasseGehaltAn(10m);
+        a.Grundgehalt.ShouldBe(2200m);
+        a.BerechneGehalt().ShouldBe(1100m);
+    }
 }
 
 public class AushilfeTests
@@ -226,7 +263,7 @@ public class AushilfeTests
     {
         var a = new Aushilfe("Clara", "Weber", 25m);
         a.Vorname.ShouldBe("Clara");
-        a.Grundgehalt.ShouldBe(25m);
+        a.Stundensatz.ShouldBe(25m);
         a.Kategorie.ShouldBe("Aushilfe");
         a.ArbeitseinsatzCount.ShouldBe(0);
     }
@@ -241,9 +278,11 @@ public class AushilfeTests
     public void ErfasseArbeitseinsatz_AppendsToHistory()
     {
         var a = new Aushilfe("Clara", "Weber", 25m);
-        a.ErfasseArbeitseinsatz(new Arbeitseinsatz(DateTime.UtcNow.Date.AddDays(-1), 60));
-        a.ErfasseArbeitseinsatz(new Arbeitseinsatz(DateTime.UtcNow.Date.AddDays(-2), 120));
+        a.ErfasseArbeitseinsatz(DateTime.UtcNow.Date.AddDays(-1), 60);
+        a.ErfasseArbeitseinsatz(DateTime.UtcNow.Date.AddDays(-2), 120);
         a.ArbeitseinsatzCount.ShouldBe(2);
+        a.Arbeitseinsaetze.Count.ShouldBe(2);
+        a.Arbeitseinsaetze.ShouldNotBeAssignableTo<System.Collections.Generic.List<Arbeitseinsatz>>();
     }
 
     [Fact]
@@ -257,8 +296,8 @@ public class AushilfeTests
     public void BerechneGehalt_SumsUnbilledHoursTimesRate()
     {
         var a = new Aushilfe("Clara", "Weber", 20m);
-        a.ErfasseArbeitseinsatz(new Arbeitseinsatz(DateTime.UtcNow.Date.AddDays(-1), 60));
-        a.ErfasseArbeitseinsatz(new Arbeitseinsatz(DateTime.UtcNow.Date.AddDays(-2), 120));
+        a.ErfasseArbeitseinsatz(DateTime.UtcNow.Date.AddDays(-1), 60);
+        a.ErfasseArbeitseinsatz(DateTime.UtcNow.Date.AddDays(-2), 120);
         a.BerechneGehalt().ShouldBe(20m * (60m / 60m) + 20m * (120m / 60m));
     }
 
@@ -266,10 +305,9 @@ public class AushilfeTests
     public void BerechneGehalt_BilledEntries_AreExcluded()
     {
         var a = new Aushilfe("Clara", "Weber", 20m);
-        var billed = new Arbeitseinsatz(DateTime.UtcNow.Date.AddDays(-1), 60);
-        billed.MarkAsBilled();
-        a.ErfasseArbeitseinsatz(billed);
-        a.ErfasseArbeitseinsatz(new Arbeitseinsatz(DateTime.UtcNow.Date.AddDays(-2), 120));
+        a.ErfasseArbeitseinsatz(DateTime.UtcNow.Date.AddDays(-1), 60);
+        a.RechneAb();
+        a.ErfasseArbeitseinsatz(DateTime.UtcNow.Date.AddDays(-2), 120);
         a.BerechneGehalt().ShouldBe(20m * 2m);
     }
 
@@ -277,18 +315,58 @@ public class AushilfeTests
     public void UnbilledHours_SumsOnlyUnbilled()
     {
         var a = new Aushilfe("Clara", "Weber", 20m);
-        var billed = new Arbeitseinsatz(DateTime.UtcNow.Date.AddDays(-1), 60);
-        billed.MarkAsBilled();
-        a.ErfasseArbeitseinsatz(billed);
-        a.ErfasseArbeitseinsatz(new Arbeitseinsatz(DateTime.UtcNow.Date.AddDays(-2), 180));
-        a.UnbilledHours.ShouldBe(180);
+        a.ErfasseArbeitseinsatz(DateTime.UtcNow.Date.AddDays(-1), 60);
+        a.RechneAb();
+        a.ErfasseArbeitseinsatz(DateTime.UtcNow.Date.AddDays(-2), 180);
+        a.UnbilledHours.ShouldBe(3m);
     }
 
     [Fact]
-    public void ErfasseArbeitseinsatz_Null_Throws()
+    public void UnbilledHours_PartialHours_AreDecimal()
     {
         var a = new Aushilfe("Clara", "Weber", 20m);
-        Should.Throw<ArgumentNullException>(() => a.ErfasseArbeitseinsatz(null!));
+        a.ErfasseArbeitseinsatz(DateTime.UtcNow.Date.AddDays(-1), 90);
+        a.UnbilledHours.ShouldBe(1.5m);
+    }
+
+    [Fact]
+    public void ErfasseArbeitseinsatz_InvalidMinutes_Throws_AndAddsNothing()
+    {
+        var a = new Aushilfe("Clara", "Weber", 20m);
+        Should.Throw<InvalidRangeException>(() => a.ErfasseArbeitseinsatz(DateTime.UtcNow.Date.AddDays(-1), 0));
+        a.ArbeitseinsatzCount.ShouldBe(0);
+    }
+
+    [Fact]
+    public void RechneAb_ReturnsAmount_MarksAllBilled_SecondCallReturnsZero()
+    {
+        var a = new Aushilfe("Clara", "Weber", 20m);
+        var e1 = a.ErfasseArbeitseinsatz(DateTime.UtcNow.Date.AddDays(-1), 60);
+        var e2 = a.ErfasseArbeitseinsatz(DateTime.UtcNow.Date.AddDays(-2), 30);
+
+        a.RechneAb().ShouldBe(30m);
+
+        e1.Billed.ShouldBeTrue();
+        e2.Billed.ShouldBeTrue();
+        a.UnbilledHours.ShouldBe(0m);
+        a.RechneAb().ShouldBe(0m);
+    }
+
+    [Fact]
+    public void BerechneGehalt_IsRoundedToCents()
+    {
+        var a = new Aushilfe("Clara", "Weber", 12.50m);
+        a.ErfasseArbeitseinsatz(DateTime.UtcNow.Date.AddDays(-1), 7);
+        // 12.50 * 7 / 60 = 1.458333... -> 1.46
+        a.BerechneGehalt().ShouldBe(1.46m);
+    }
+
+    [Fact]
+    public void PasseGehaltAn_RaisesHourlyRate()
+    {
+        var a = new Aushilfe("Clara", "Weber", 20m);
+        a.PasseGehaltAn(5m);
+        a.Stundensatz.ShouldBe(21m);
     }
 }
 
@@ -312,7 +390,7 @@ public class GehaltsberechnungPolymorphismTests
         var fest = new Festangestellter("A", "B", 2000m, 2020, 0);
         var azubi = new Auszubildender("C", "D", 2000m, "FISI", 2);
         var aushilfe = new Aushilfe("E", "F", 20m);
-        aushilfe.ErfasseArbeitseinsatz(new Arbeitseinsatz(DateTime.UtcNow.Date.AddDays(-1), 60));
+        aushilfe.ErfasseArbeitseinsatz(DateTime.UtcNow.Date.AddDays(-1), 60);
 
         decimal beforeFest = fest.BerechneGehalt();
         decimal beforeAzubi = azubi.BerechneGehalt();
@@ -320,10 +398,40 @@ public class GehaltsberechnungPolymorphismTests
 
         fest.SetzeGehalt(3000m);
         azubi.SetzeGehalt(3000m);
-        aushilfe.SetzeGehalt(40m);
+        aushilfe.SetzeStundensatz(40m);
 
         fest.BerechneGehalt().ShouldNotBe(beforeFest);
         azubi.BerechneGehalt().ShouldNotBe(beforeAzubi);
         aushilfe.BerechneGehalt().ShouldNotBe(beforeAushilfe);
+    }
+
+    [Fact]
+    public void PasseGehaltAn_IsPolymorphic_ViaBaseClassReference()
+    {
+        var aushilfe = new Aushilfe("E", "F", 20m);
+        aushilfe.ErfasseArbeitseinsatz(DateTime.UtcNow.Date.AddDays(-1), 60);
+        Mitarbeiter[] alle =
+        {
+            new Festangestellter("A", "B", 2000m, 2020, 25),
+            new Auszubildender("C", "D", 2000m, "FISI", 1),
+            aushilfe,
+        };
+
+        foreach (var m in alle)
+        {
+            m.PasseGehaltAn(10m);
+        }
+
+        alle[0].BerechneGehalt().ShouldBe(2200m);
+        alle[1].BerechneGehalt().ShouldBe(1100m);
+        alle[2].BerechneGehalt().ShouldBe(22m);
+    }
+
+    [Fact]
+    public void Aushilfe_IsNotATarifMitarbeiter()
+    {
+        new Aushilfe("E", "F", 20m).ShouldNotBeAssignableTo<TarifMitarbeiter>();
+        new Festangestellter("A", "B", 2000m, 2020, 25).ShouldBeAssignableTo<TarifMitarbeiter>();
+        new Auszubildender("C", "D", 2000m, "FISI", 1).ShouldBeAssignableTo<TarifMitarbeiter>();
     }
 }

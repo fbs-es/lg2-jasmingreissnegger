@@ -3,7 +3,7 @@ using System;
 namespace Fbs.Lg2;
 
 /// <summary>Apprentice: salary scales with the current training year.</summary>
-public sealed class Auszubildender : Mitarbeiter
+public sealed class Auszubildender : TarifMitarbeiter
 {
     private const int MinTrainingYear = 1;
     private const int MaxTrainingYear = 4;
@@ -55,7 +55,7 @@ public sealed class Auszubildender : Mitarbeiter
             4 => 0.90m,
             _ => 0.50m
         };
-        return Grundgehalt * faktor;
+        return RundeAufCent(Grundgehalt * faktor);
     }
 
     private void CheckInvariants()

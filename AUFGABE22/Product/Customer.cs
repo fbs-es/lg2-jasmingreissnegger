@@ -13,6 +13,7 @@ public sealed class Customer
     public int CustomerId => _id;
     public string Name => _name;
     public int ReviewCount => _reviews.Count;
+    public IReadOnlyList<Review> Reviews => _reviews.AsReadOnly();
 
     public bool HasReviewFor(Product product)
     {

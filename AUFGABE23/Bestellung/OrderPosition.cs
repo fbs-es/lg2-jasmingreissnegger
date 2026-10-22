@@ -10,6 +10,8 @@ public sealed class OrderPosition
     private decimal _historicalUnitPrice;
     private readonly Product _product;
     private readonly Order _order;
+    private string? _paymentTransactionId;
+    private bool _refunded;
 
     public int PositionNumber => _positionNumber;
     public int Quantity => _quantity;
@@ -17,6 +19,8 @@ public sealed class OrderPosition
     public decimal LineTotal => _quantity * _historicalUnitPrice;
     public Product Product => _product;
     public Order Order => _order;
+    public string? PaymentTransactionId => _paymentTransactionId;
+    public bool IsRefunded => _refunded;
 
     internal OrderPosition(Order order, Product product, int quantity, int positionNumber)
     {
@@ -38,6 +42,16 @@ public sealed class OrderPosition
         _quantity = quantity;
         _positionNumber = positionNumber;
         _historicalUnitPrice = product.Price;
+    }
+
+    internal void SetPaymentTransactionId(string? transactionId)
+    {
+        _paymentTransactionId = transactionId;
+    }
+
+    internal void MarkRefunded()
+    {
+        _refunded = true;
     }
 
     internal void IncreaseQuantity(int additional)

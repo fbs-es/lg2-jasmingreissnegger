@@ -2,10 +2,9 @@ using System;
 
 namespace Fbs.Lg2;
 
-/// <summary>Permanent employee: receives a fixed monthly salary plus vacation entitlement.</summary>
-public sealed class Festangestellter : Mitarbeiter
+/// <summary>Permanent employee: receives the fixed monthly tariff salary and has a vacation entitlement.</summary>
+public sealed class Festangestellter : TarifMitarbeiter
 {
-    private const decimal VacationBonusPerDay = 25m;
     private const int MinYear = 1900;
 
     private readonly int _einstellungsjahr;
@@ -48,7 +47,7 @@ public sealed class Festangestellter : Mitarbeiter
 
     public override decimal BerechneGehalt()
     {
-        return Grundgehalt + (_urlaubsanspruchTage * VacationBonusPerDay);
+        return RundeAufCent(Grundgehalt);
     }
 
     public int BerechneBetriebszugehoerigkeit()

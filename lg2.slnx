@@ -23,4 +23,12 @@
     <Project Path="AUFGABE25/Mitarbeiterverwaltung.Tests/Mitarbeiterverwaltung.Tests.csproj" />
     <Project Path="AUFGABE25/Mitarbeiterverwaltung/Mitarbeiterverwaltung.csproj" />
   </Folder>
+  <Folder Name="/AUFGABE23a/">
+    <Project Path="AUFGABE23a/PaymentService.Tests/PaymentService.Tests.csproj" />
+    <Project Path="AUFGABE23a/PaymentService/PaymentService.csproj" />
+  </Folder>
+  <Folder Name="/AUFGABE26/">
+    <Project Path="AUFGABE26/Radiosendung.Tests/Radiosendung.Tests.csproj" />
+    <Project Path="AUFGABE26/Radiosendung/Radiosendung.csproj" />
+  </Folder>
 </Solution>

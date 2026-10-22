@@ -24,6 +24,7 @@ public sealed class Product
     public int MinStock => _minStock;
     public Supplier Supplier => _supplier;
     public int SupplierOrderCount => _supplierOrders.Count;
+    public IReadOnlyList<SupplierOrder> SupplierOrders => _supplierOrders.AsReadOnly();
     public int TotalRestockQuantity
     {
         get
@@ -98,7 +99,7 @@ public sealed class Product
         CheckInvariants();
     }
 
-    public void DecreaseStock(int amount)
+    internal void DecreaseStock(int amount)
     {
         if (amount <= 0)
         {
@@ -120,7 +121,7 @@ public sealed class Product
         }
     }
 
-    public void IncreaseStock(int amount)
+    internal void IncreaseStock(int amount)
     {
         if (amount <= 0)
         {
@@ -133,12 +134,24 @@ public sealed class Product
 
     public bool NeedsReorder() => _stock <= _minStock;
 
-    private void TriggerReorder()
+    /// <summary>Checks the stock and creates a supplier order if needed. Returns the new supplier order, or null if no reorder was needed.</summary>
+    public SupplierOrder? CheckAndReorder()
     {
-        int reorderQuantity = Math.Max(_minStock, _minStock * 2 - _stock);
+        if (!NeedsReorder())
+        {
+            return null;
+        }
+        return TriggerReorder();
+    }
+
+    private SupplierOrder TriggerReorder()
+    {
+        // At least 1, otherwise a product with minStock 0 would create an invalid supplier order.
+        int reorderQuantity = Math.Max(1, Math.Max(_minStock, _minStock * 2 - _stock));
         var supplierOrder = new SupplierOrder(this, DateTime.UtcNow, reorderQuantity);
         _supplierOrders.Add(supplierOrder);
         _supplier.AttachSupplierOrder(supplierOrder);
+        return supplierOrder;
     }
 
     internal int GetLastSupplierOrderId()

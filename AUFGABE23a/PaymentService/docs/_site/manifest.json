@@ -1,0 +1,115 @@
+{
+  "docfx_version": "2.81.0+ba844df625370a6bd7c1ecab0d0ec4d1d9128ac4",
+  "source_base_path": "C:/Repositories/lg2-jasmingreissnegger/AUFGABE23a/PaymentService/docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fbs.Lg2.Payment.IPaymentService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fbs.Lg2.Payment.IPaymentService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fbs.Lg2.Payment.IPaymentService",
+      "Summary": "<p sourcefile=\"api/Fbs.Lg2.Payment.IPaymentService.yml\" sourcestartlinenumber=\"1\">Abstraction over a payment provider. Implementations can be Stripe, PayPal, in-memory test double, etc.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fbs.Lg2.Payment.InMemoryPaymentService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fbs.Lg2.Payment.InMemoryPaymentService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fbs.Lg2.Payment.InMemoryPaymentService",
+      "Summary": "<p sourcefile=\"api/Fbs.Lg2.Payment.InMemoryPaymentService.yml\" sourcestartlinenumber=\"1\">In-memory payment service for development and testing. Not for production use.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fbs.Lg2.Payment.NullPaymentService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fbs.Lg2.Payment.NullPaymentService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fbs.Lg2.Payment.NullPaymentService",
+      "Summary": "<p sourcefile=\"api/Fbs.Lg2.Payment.NullPaymentService.yml\" sourcestartlinenumber=\"1\">No-op payment service. Used as the default when no real payment provider is wired in.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fbs.Lg2.Payment.PaymentResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fbs.Lg2.Payment.PaymentResult.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fbs.Lg2.Payment.PaymentResult",
+      "Summary": "<p sourcefile=\"api/Fbs.Lg2.Payment.PaymentResult.yml\" sourcestartlinenumber=\"1\">Outcome of a payment charge or refund attempt.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fbs.Lg2.Payment.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fbs.Lg2.Payment.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fbs.Lg2.Payment",
+      "Summary": null
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

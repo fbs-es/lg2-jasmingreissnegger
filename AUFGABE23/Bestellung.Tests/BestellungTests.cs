@@ -101,6 +101,7 @@ public class CustomerTests
     {
         var c = new Customer("A", "a@b.com");
         var o = new Order(c, new DateTime(2026, 1, 1, 0, 0, 0, DateTimeKind.Utc));
+        o.AddPosition(new Product("Phone", 100m, 10, 1, new Supplier("Acme")), 1);
         o.MarkShipped();
         var o2 = new Order(c, new DateTime(2026, 1, 2, 0, 0, 0, DateTimeKind.Utc));
 
@@ -402,6 +403,7 @@ public class OrderTests
     {
         var c = NewCustomer();
         var o = new Order(c, Now);
+        o.AddPosition(NewProduct(), 1);
         o.MarkShipped();
         o.Status.ShouldBe(OrderStatus.Versendet);
     }
@@ -411,6 +413,7 @@ public class OrderTests
     {
         var c = NewCustomer();
         var o = new Order(c, Now);
+        o.AddPosition(NewProduct(), 1);
         o.MarkShipped();
 
         Should.Throw<OrderNotModifiableException>(() => o.MarkShipped());
@@ -458,13 +461,52 @@ public class OrderTests
     }
 
     [Fact]
-    public void Cancel_EmptyOrder_IsAllowed()
+    public void MarkShipped_EmptyOrder_Throws()
     {
+        var c = NewCustomer();
+        var o = new Order(c, Now);
+
+        Should.Throw<EmptyOrderException>(() => o.MarkShipped());
+        o.Status.ShouldBe(OrderStatus.Offen);
+    }
+
+    [Fact]
+    public void Cancel_EmptyDraftOrder_IsAllowed_NoRefundNeeded()
+    {
+        // An empty order is only a draft; discarding it is fine, shipping it is not (see above).
         var c = NewCustomer();
         var o = new Order(c, Now);
         o.Cancel();
         o.Status.ShouldBe(OrderStatus.Storniert);
         o.PositionCount.ShouldBe(0);
+    }
+
+    [Fact]
+    public void AddPosition_NullProduct_ThrowsArgumentNull()
+    {
+        var o = new Order(NewCustomer(), Now);
+        Should.Throw<ArgumentNullException>(() => o.AddPosition(null!, 1));
+    }
+
+    [Theory]
+    [InlineData(0)]
+    [InlineData(-1)]
+    public void AddPosition_NonPositiveQuantity_Throws_AndChangesNothing(int quantity)
+    {
+        var p = NewProduct();
+        var o = new Order(NewCustomer(), Now);
+        Should.Throw<InvalidQuantityException>(() => o.AddPosition(p, quantity));
+        o.PositionCount.ShouldBe(0);
+        p.Stock.ShouldBe(50);
+    }
+
+    [Fact]
+    public void Positions_AreReadOnly()
+    {
+        var o = new Order(NewCustomer(), Now);
+        o.AddPosition(NewProduct(), 1);
+        o.Positions.Count.ShouldBe(1);
+        o.Positions.ShouldNotBeAssignableTo<System.Collections.Generic.List<OrderPosition>>();
     }
 
     [Fact]
@@ -519,6 +561,53 @@ public class SupplierOrderTests
         p.DecreaseStock(2);
 
         p.SupplierOrderCount.ShouldBeGreaterThanOrEqualTo(1);
+    }
+
+    [Fact]
+    public void MinStockZero_SellingLastUnit_CreatesSupplierOrderWithQuantityAtLeastOne()
+    {
+        var s = new Supplier("Acme");
+        var p = new Product("Phone", 100m, 1, 0, s);
+
+        p.DecreaseStock(1);
+
+        p.Stock.ShouldBe(0);
+        p.SupplierOrders.Count.ShouldBe(1);
+        p.SupplierOrders[0].Quantity.ShouldBeGreaterThanOrEqualTo(1);
+    }
+
+    [Fact]
+    public void CheckAndReorder_StockAtOrBelowMin_CreatesSupplierOrder()
+    {
+        var s = new Supplier("Acme");
+        var p = new Product("Phone", 100m, 3, 5, s);
+
+        var so = p.CheckAndReorder();
+
+        so.ShouldNotBeNull();
+        so!.Product.ShouldBeSameAs(p);
+        p.SupplierOrders.ShouldBe(new[] { so });
+        s.SupplierOrders.ShouldBe(new[] { so });
+    }
+
+    [Fact]
+    public void CheckAndReorder_StockAboveMin_ReturnsNull()
+    {
+        var s = new Supplier("Acme");
+        var p = new Product("Phone", 100m, 10, 5, s);
+
+        p.CheckAndReorder().ShouldBeNull();
+        p.SupplierOrderCount.ShouldBe(0);
+    }
+
+    [Fact]
+    public void SupplierOrders_AreReadOnly()
+    {
+        var s = new Supplier("Acme");
+        var p = new Product("Phone", 100m, 3, 5, s);
+        p.CheckAndReorder();
+        p.SupplierOrders.ShouldNotBeAssignableTo<System.Collections.Generic.List<SupplierOrder>>();
+        s.SupplierOrders.ShouldNotBeAssignableTo<System.Collections.Generic.List<SupplierOrder>>();
     }
 
     [Fact]

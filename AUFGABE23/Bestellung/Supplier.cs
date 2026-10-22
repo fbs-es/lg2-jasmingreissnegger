@@ -16,6 +16,8 @@ public sealed class Supplier
     public string Name => _name;
     public int ProductCount => _products.Count;
     public int SupplierOrderCount => _supplierOrders.Count;
+    public IReadOnlyList<Product> Products => _products.AsReadOnly();
+    public IReadOnlyList<SupplierOrder> SupplierOrders => _supplierOrders.AsReadOnly();
     public int TotalSuppliedQuantity
     {
         get
